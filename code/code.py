@@ -28,6 +28,7 @@ mod.tag(
 key = actions.key
 function_list = []
 library_list = []
+# Petr Krysl 2020: add Julia 
 extension_lang_map = {
     "asm": "assembly",
     "bat": "batch",
@@ -47,6 +48,7 @@ extension_lang_map = {
     "ps1": "powershell",
     "py": "python",
     "r": "r",
+    "julia": "julia",
     "rb": "ruby",
     "s": "assembly",
     "sh": "bash",
