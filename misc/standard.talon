@@ -14,13 +14,19 @@ zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
 (page | scroll) up: key(pgup)
 (page | scroll) down: key(pgdown)
-copy that: edit.copy()
-cut that: edit.cut()
-paste that: edit.paste()
-undo that: edit.undo()
-redo that: edit.redo()
+# Petr Krysl 2020: I like the short versions of these commands.
+copy: edit.copy()
+cut: edit.cut()
+paste: edit.paste()
+undo: edit.undo()
+oops: edit.undo()
+redo: edit.redo()
+
 paste match: edit.paste_match_style()
-file save: edit.save()
+
+# Petr Krysl 2020: I got used to this.
+save it: edit.save()
+
 wipe: key(backspace)    
 (pad | padding): 
 	insert("  ") 
