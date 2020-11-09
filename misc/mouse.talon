@@ -2,20 +2,22 @@ control mouse: user.mouse_toggle_control_mouse()
 zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()	
-touch: 
-	mouse_click(0)
-	# close the mouse grid if open
-	user.grid_close()
 
-righty: 
-	mouse_click(1)
-	# close the mouse grid if open
-	user.grid_close()
+# Petr Krysl 2020: I am not used to these commands. I will replace it with my own.
+# touch: 
+# 	mouse_click(0)
+# 	# close the mouse grid if open
+# 	user.grid_close()
 
-midclick: 
-	mouse_click(2)
-	# close the mouse grid
-	user.grid_close()
+# righty: 
+# 	mouse_click(1)
+# 	# close the mouse grid if open
+# 	user.grid_close()
+
+# midclick: 
+# 	mouse_click(2)
+# 	# close the mouse grid
+# 	user.grid_close()
 
 #see keys.py for modifiers.
 #defaults
@@ -24,21 +26,30 @@ midclick:
 #option = alt
 #shift
 #super = windows key
-<user.modifiers> touch: 
+# Petr Krysl 2020: My own mouse commands
+<user.modifiers> chip: 
 	key("{modifiers}:down")
 	mouse_click(0)
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-<user.modifiers> righty: 
+<user.modifiers> chip right: 
 	key("{modifiers}:down")
 	mouse_click(1)
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-(dubclick | duke): 
+chip: 
+	mouse_click()
+	# close the mouse grid
+	user.grid_close()
+chip dub: 
 	mouse_click()
 	mouse_click()
+	# close the mouse grid
+	user.grid_close()
+chip right: 
+	mouse_click(1)
 	# close the mouse grid
 	user.grid_close()
 (tripclick | triplick): 
