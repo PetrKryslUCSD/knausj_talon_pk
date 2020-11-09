@@ -14,6 +14,9 @@ class edit_actions:
 		actions.insert(str(n))
 		actions.key("enter")
 
+	def line_clone():
+	    actions.key("ctrl-shift-d")
+
 @ctx.action_class("user")
 class user_actions:
 	def find(text: str):
