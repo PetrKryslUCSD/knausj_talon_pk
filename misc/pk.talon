@@ -19,6 +19,9 @@ switch app: key(alt-tab)
 # Global clipboard
 paste clip: key(ctrl-alt-v)
 
+# Use screen capture ScreenHunter
+snap it: key(ctrl-shift-f9)
+
 # Insert line above or below
 line above: 
     key(home)
