@@ -13,5 +13,7 @@ action(user.file_manager_open_parent):
     
 ^go <user.letter>$: user.file_manager_open_volume("{letter}:")
 go app data: user.file_manager_open_directory("%AppData%")
-go talon user: user.file_manager_open_directory("%AppData%/Talon/user")
 go program files: user.file_manager_open_directory("%programfiles%")
+go parent: key("backspace")
+go back[ward]: user.file_manager_go_back()
+go for[ward]: user.file_manager_go_forward()
