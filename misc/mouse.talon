@@ -48,7 +48,7 @@ chip dub:
 	mouse_click()
 	# close the mouse grid
 	user.grid_close()
-chip right: 
+(chip right | chipper): 
 	mouse_click(1)
 	# close the mouse grid
 	user.grid_close()
