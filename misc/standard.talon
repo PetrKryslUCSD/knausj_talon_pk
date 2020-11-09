@@ -31,6 +31,8 @@ wipe: key(backspace)
 (pad | padding): 
 	insert("  ") 
 	key(left)
+
+# Petr Krysl 2020: I prefer to insert the enter where the cursor is.
 slap:
-	edit.line_end()
+	#edit.line_end()
 	key(enter)
