@@ -2,7 +2,8 @@ tag: browser
 -
 (address bar | go address | go url): browser.focus_address()
 go home: browser.go_home()
-forward: browser.go_forward()
+# Petr Krysl 2020: Useful abbreviations
+go for[ward]: browser.go_forward()
 go back[ward]: browser.go_back()
 
 go private: browser.open_private_window()

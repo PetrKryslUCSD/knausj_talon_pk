@@ -6,6 +6,7 @@ import sys
 default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
     " "
 )
+
 letters_string = "abcdefghijklmnopqrstuvwxyz"
 
 default_digits = "zero one two three four five six seven eight nine".split(" ")
@@ -108,75 +109,51 @@ ctx.lists["self.modifier_key"] = {
     "alt": "alt",
     "command": "cmd",
     "control": "ctrl",  #'troll':   'ctrl',
+    "roll": "ctrl",  #'troll':   'ctrl',
     "option": "alt",
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
 }
 alphabet = dict(zip(default_alphabet, letters_string))
 ctx.lists["self.letter"] = alphabet
+# Petr Krysl 2020: I like these words for special characters
 ctx.lists["self.symbol_key"] = {
-    "back tick": "`",
+    "bee tick": "`",
     "`": "`",
     "comma": ",",
     ",": ",",
     "dot": ".",
-    "period": ".",
-    "semi": ";",
-    "semicolon": ";",
+    "wink": ";",
     "quote": "'",
-    "L square": "[",
-    "left square": "[",
-    "square": "[",
-    "R square": "]",
-    "right square": "]",
-    "forward slash": "/",
+    "open cat": "[",
+    "close cat": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
-    "equals": "=",
+    "eek": "=",
     "plus": "+",
-    "question mark": "?",
-    "tilde": "~",
+    "quest": "?",
+    "squiggle": "~",
     "bang": "!",
-    "exclamation point": "!",
-    "dollar": "$",
-    "dollar sign": "$",
-    "down score": "_",
-    "under score": "_",
+    "dolly": "$",
+    "score": "_",
     "colon": ":",
-    "paren": "(",
-    "L paren": "(",
-    "left paren": "(",
-    "R paren": ")",
-    "right paren": ")",
-    "brace": "{",
-    "left brace": "{",
-    "R brace": "}",
-    "right brace": "}",
-    "angle": "<",
-    "left angle": "<",
-    "less than": "<",
-    "rangle": ">",
-    "R angle": ">",
-    "right angle": ">",
-    "greater than": ">",
+    "loan": ":",
+    "open ren": "(",
+    "close ren": ")",
+    "open ace": "{",
+    "close ace": "}",
+    "open fork": "<",
+    "close fork": ">",
     "star": "*",
-    "asterisk": "*",
-    "pound": "#",
-    "hash": "#",
-    "hash sign": "#",
-    "number sign": "#",
-    "percent": "%",
-    "percent sign": "%",
-    "caret": "^",
-    "at sign": "@",
-    "and sign": "&",
-    "ampersand": "&",
+    "numb": "#",
+    "Percy": "%",
+    "hat": "^",
+    "swirl": "@",
     "amper": "&",
     "pipe": "|",
-    "dubquote": '"',
-    "double quote": '"',
+    "quote": '"',
 }
 
 
@@ -200,10 +177,12 @@ simple_keys = [
     "tab",
 ]
 
+# Petr Krysl 2020: I like these words for the delete and backspace keys
 alternate_keys = {
     "delete": "backspace",
     "forward delete": "delete",
-    #'junk': 'backspace',
+    "chook": "delete",
+    'kooch': 'backspace',
 }
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)
