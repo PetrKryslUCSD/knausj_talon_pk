@@ -6,6 +6,8 @@
 ^force markdown$: user.code_set_language_mode("markdown")
 ^force python$: user.code_set_language_mode("python")
 ^force are language$: user.code_set_language_mode("r")
+# Petr Krysl 2020: add Julia 
+^force Julia (lang|language)$: user.code_set_language_mode("julia")
 ^force talon [language]$: user.code_set_language_mode("talon")
 ^clear language modes$: user.code_clear_language_mode()
 [enable] debug mode:
