@@ -1,9 +1,7 @@
 os: windows
-#app.exe: C:\Program Files\zabkat\xplorer2_ult\xplorer2_64.exe
-app.exe: xplorer2_64.exe
-app.name: xplorer2_64
-app: /.*/
-and title: /(Save|Open|Browse|Select)/
+app.name: /explorer replacement/
+#app: /.*/
+#and title: /(Save|Open|Browse|Select)/
 -
 tag(): user.file_manager
 action(user.file_manager_go_back):
@@ -15,4 +13,5 @@ action(user.file_manager_open_parent):
     
 ^go <user.letter>$: user.file_manager_open_volume("{letter}:")
 go app data: user.file_manager_open_directory("%AppData%")
+go talon user: user.file_manager_open_directory("%AppData%/Talon/user")
 go program files: user.file_manager_open_directory("%programfiles%")
