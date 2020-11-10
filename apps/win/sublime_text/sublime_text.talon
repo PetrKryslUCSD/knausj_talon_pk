@@ -13,6 +13,12 @@ compal [<user.text>]:
 	key(ctrl-shift-p)
 	insert(user.text or "")
 
+find:
+	key(ctrl-f)
+
+find in files:
+	key(ctrl-shift-f)
+
 go any:
 	key(ctrl-p)
 
@@ -30,25 +36,23 @@ go tab:
 sword:
 	key(ctrl-d)
 
+# Indentation
 indent less:
 	key(ctrl-[)
 
 indent more:
 	key(ctrl-])
 
-# Re-indent selected code
 reindent: 
 	key(ctrl-shift-x)
 	key(ctrl-r)
 
+# Comments
 comment out:
 	key(ctrl-/)
 
 uncomment:
 	key(ctrl-/)
-
-assign:
-	insert(" = ")
 
 # Snippets
 if only: 
@@ -67,31 +71,33 @@ comprehension:
 	insert("cmprhn")
 	key(tab)
 
-# user.line_commands
-action(edit.line_swap_up):
-	key(ctrl-ctrl-up)
+where:
+	insert("whra")
+	key(tab)
 
-action(edit.line_swap_down):
-	key(ctrl-ctrl-down)
+# Miscellaneous editing
 
 action(edit.line_clone):
 	key(ctrl-shift-d)
 
-# user.find_and_replace
-action(user.find_toggle_match_by_case):
-	key(ctrl-alt-c)
+assign:
+	insert(" = ")
 
-action(user.find_toggle_match_by_word):
-	key(ctrl-alt-w)
+struct:
+	insert("struct  end")
+	key(left:4)
 
-action(user.find_toggle_match_by_regex):
-	key(ctrl-alt-r)
+of type:
+	insert("::")
 
-action(user.find_next):
-	key(ctrl-g)
+of subtype:
+	insert("<:")
 
-action(user.find_previous):
-	key(ctrl-shift-g)
+float 64:
+	insert("Float64")
 
-action(user.replace_confirm):
-	key(ctrl-alt-e)
+integer 64:
+	insert("Int64")
+
+Bool:
+	insert("Bool")
