@@ -9,6 +9,8 @@ tag(): user.line_commands
 # tag(): user.splits
 tag(): user.tabs
 
+# Navigation, searching
+
 compal [<user.text>]:
 	key(ctrl-shift-p)
 	insert(user.text or "")
@@ -32,11 +34,34 @@ go sym:
 go tab:
 	key(shift-alt-p)
 
+# Go to a code symbol match in the project
+go sym:
+	key("ctrl-shift-r")
+
+# Go to a fuzzy match
+go fuzz: 
+	key("ctrl-shift-r")
+
+# Switch to the neighboring group (either left or right)
+swig: 
+	key("ctrl-shift-x")
+	key("ctrl-shift-x")
+
+sidebar:
+	key("ctrl-k")
+	key("ctrl-b")
+
+# Re-center the view (watch out: conflicts with Origami)
+re-center:
+	key("ctrl-k")
+	key("ctrl-c")
+
 # For use with multi-cursors.
 sword:
 	key(ctrl-d)
 
 # Indentation
+
 indent less:
 	key(ctrl-[)
 
@@ -46,6 +71,9 @@ indent more:
 reindent: 
 	key(ctrl-shift-x)
 	key(ctrl-r)
+
+no indent:
+	key(ctrl-[:6)
 
 # Comments
 comment out:
@@ -79,6 +107,22 @@ where:
 
 action(edit.line_clone):
 	key(ctrl-shift-d)
+
+# Complete Julia code</description>
+leet:
+	key(ctrl-space)
+
+# Expand the selection to the interior between brackets
+ex kets:
+	key(ctrl-shift-m)
+
+# Expand the selection to line
+ex line:
+	key(ctrl-l)
+
+# Expand the selection to scope	
+ex cope:
+	key(ctrl-shift-space)
 
 assign:
 	insert(" = ")
