@@ -31,7 +31,8 @@ action(user.code_operator_in): " in "
 action(user.code_operator_and): " && "
 action(user.code_operator_or): " || "
 action(user.code_operator_bitwise_and): " & "
-action(user.code_null): "NULL"
+action(user.code_operator_structure_dereference): " -> "
+action(user.code_null): "nothing"
 action(user.code_state_if):
     insert("if () {}")
     key(left enter up end left:3)
@@ -42,7 +43,7 @@ action(user.code_state_else):
     insert(" else {}")
     key(left enter)
 action(user.code_state_for):
-    insert("for ( in ) {}")
+    insert("for  in ")
     key(left enter up end left:7)
 action(user.code_state_while):
     insert("while () {}")
@@ -61,12 +62,38 @@ action(user.code_next): "next"
 action(user.code_true): "true"
 action(user.code_false): "false"
 
-# R specific commands
+# Julia specific commands
 (chain|pipe that):
     key(end)
     " |> "
     key(enter)
-state na:
-    insert("NA")
+end: 
+    insert("end")
+
+# Evaluate Julia code
+eval:
+    key(ctrl-enter)
+
+# Evaluate Julia file using the build system
+eval file:
+    key(ctrl-b)
+
+#state na:
+#    insert("NA")
 
 # ^function define <user.text>$: user.code_private_function(text)
+
+macro fusion: insert("@. ") 
+macro assert: insert("@assert ") 
+macro history: insert("@history ") 
+macro bp: insert("@bp ") 
+macro code warn type: insert("@code_warntype ")
+macro elapsed: insert("@elapsed ")
+macro in bounds: insert("@inbounds ")
+macro info: insert("@info ")
+macro show: insert("@show ")
+macro test: insert("@test ") 
+macro time: insert("@time ") 
+macro view: insert("@view ")
+macro which: insert("@which ")
+
