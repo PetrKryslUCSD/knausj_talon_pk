@@ -7,6 +7,8 @@ tag: user.code_operators
 #opra dereference: user.code_operator_indirection()
 #opra address of: user.code_operator_address_of()
 opra arrow: user.code_operator_structure_dereference()
+opra fat arrow: insert(" => ")
+
 
 #lambda
 opra lambda: user.code_operator_lambda()
@@ -24,19 +26,19 @@ opra (plus | add): user.code_operator_addition()
 opra (plus | add) equals: user.code_operator_addition_assignment()
 opra (times | multiply): user.code_operator_multiplication()
 opra (times | multiply) equals: user.code_operator_multiplication_assignment()
-opra divide: user.code_operator_division()
-opra divide equals: user.code_operator_division_assignment()
+opra (divide | divy): user.code_operator_division()
+opra (divide | divy) equals: user.code_operator_division_assignment()
 opra mod: user.code_operator_modulo()
 opra mod equals: user.code_operator_modulo_assignment()
 (opra (power | exponent) | to the power [of]): user.code_operator_exponent()
 
 #comparison operators
-(opra | is) equal: user.code_operator_equal()
-(opra | is) not equal: user.code_operator_not_equal()
-(opra | is) (greater | more): user.code_operator_greater_than()
-(opra | is) (less | below) [than]: user.code_operator_less_than()
-(opra | is) greater [than] or equal: user.code_operator_greater_than_or_equal_to()
-(opra | is) less [than] or equal: user.code_operator_less_than_or_equal_to()
+(opra | logic) equal: user.code_operator_equal()
+(opra | logic) not equal: user.code_operator_not_equal()
+(opra | logic) (greater | more): user.code_operator_greater_than()
+(opra | logic) (less | below) [than]: user.code_operator_less_than()
+(opra | logic) greater [than] or equal: user.code_operator_greater_than_or_equal_to()
+(opra | logic) less [than] or equal: user.code_operator_less_than_or_equal_to()
 (opra | is) in: user.code_operator_in()
 
 #logical operators
@@ -56,6 +58,6 @@ opra mod equals: user.code_operator_modulo_assignment()
 [(opra | logic | bitwise)] (left right | shift right) equals: user.code_operator_bitwise_right_shift_equals()
 
 #tbd
-(opra | pad) colon: " : "
-(opra | pad) quest: " ? "
+(opra) loan: " : "
+(opra) quest: " ? "
 
