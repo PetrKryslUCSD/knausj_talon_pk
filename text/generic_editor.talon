@@ -28,11 +28,12 @@ go line start:
 go line end:
     edit.line_end()
 
-go way left:
+# Petr Krysl 2020: I like these shorter versions
+(go way left | pop):
     edit.line_start()
     edit.line_start()
 
-go way right:
+(go way right | push):
     edit.line_end()
 
 go way down:
@@ -41,10 +42,11 @@ go way down:
 go way up:
     edit.file_start()
 
-go page down:
+# Petr Krysl 2020: I like these shorter versions
+[go] page down:
     edit.page_down()
 
-go page up:
+[go] page up:
     edit.page_up()
 
 # selecting
