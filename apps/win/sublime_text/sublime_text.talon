@@ -44,7 +44,7 @@ go fuzz:
 
 
 spring <number>:
-	user.copy_to_clipboard(number)
+	clip.set_text(number)
 	key(ctrl-g)
 	key(ctrl-v)
 	key(enter)
@@ -139,7 +139,9 @@ ex line:
 ex cope:
 	key(ctrl-shift-space)
 
-args: ["()", key("left")]
+args:
+    insert("()")
+    key(left)
 
 assign:
 	insert(" = ")
