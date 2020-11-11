@@ -1,4 +1,4 @@
-#(jay son | jason ): "json"
+#
 #(http | htp): "http"
 #tls: "tls"
 #M D five: "md5"
@@ -21,6 +21,7 @@ paste: edit.paste()
 undo: edit.undo()
 oops: edit.undo()
 redo: edit.redo()
+(jay son | jason ): "json"
 
 paste match: edit.paste_match_style()
 
