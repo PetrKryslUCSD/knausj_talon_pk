@@ -32,6 +32,10 @@ class user_actions:
 		actions.insert(text)
 
 	replace_everywhere = find_everywhere
+	
+	def copy_to_clipboard(number: int):
+		"""Copy a string to the clipboard """
+		clip.set_text(f"{number}")
 
 @ctx.action_class("win")
 class win_actions:

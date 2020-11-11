@@ -15,10 +15,10 @@ compal [<user.text>]:
 	key(ctrl-shift-p)
 	insert(user.text or "")
 
-find:
+search:
 	key(ctrl-f)
 
-find in files:
+search in files:
 	key(ctrl-shift-f)
 
 go any:
@@ -41,6 +41,13 @@ go sym:
 # Go to a fuzzy match
 go fuzz: 
 	key("ctrl-shift-r")
+
+
+spring <number>:
+	user.copy_to_clipboard(number)
+	key(ctrl-g)
+	key(ctrl-v)
+	key(enter)
 
 # Switch to the neighboring group (either left or right)
 swig: 
@@ -105,6 +112,14 @@ where:
 
 # Miscellaneous editing
 
+(uppercase | upcase): 
+	key(ctrl-k)
+	key(ctrl-u)
+
+(lower | lowercase | downcase): 
+	key(ctrl-k)
+	key(ctrl-l)
+
 action(edit.line_clone):
 	key(ctrl-shift-d)
 
@@ -123,6 +138,8 @@ ex line:
 # Expand the selection to scope	
 ex cope:
 	key(ctrl-shift-space)
+
+args: ["()", key("left")]
 
 assign:
 	insert(" = ")
