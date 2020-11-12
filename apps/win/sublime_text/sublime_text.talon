@@ -139,6 +139,9 @@ ex line:
 ex cope:
 	key(ctrl-shift-space)
 
+# The following two commands work together to set a mark, move the point 
+# to somewhere else, and then extend the selection between the current 
+# position of the point and the mark. 
 (set mark | sark):
 	key(ctrl-k)
 	key(ctrl-space)
