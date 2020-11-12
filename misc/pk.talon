@@ -5,9 +5,10 @@ os: linux
 
 # some shortcuts
 insert my name:  insert("Petr Krysl")
-insert email:  insert("krysl.petr@gmail.com")
-insert email earthlink:  insert("pkrysl@earthlink.com")
-insert email ucsd:  insert("pkrysl@ucsd.edu")
+insert gmail:  insert("krysl.petr@gmail.com")
+insert private gmail:  insert("petr.krysl.san.diego@gmail.com")
+insert earthlink email:  insert("pkrysl@earthlink.com")
+insert ucsd email:  insert("pkrysl@ucsd.edu")
 
 # switch application on the desktop
 switch app: key(alt-tab)
