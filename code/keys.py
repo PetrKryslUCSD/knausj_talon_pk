@@ -124,7 +124,7 @@ ctx.lists["self.symbol_key"] = {
     ",": ",",
     "dot": ".",
     "wink": ";",
-    "quote": "'",
+    "trophy": "'",
     "open cat": "[",
     "close cat": "]",
     "slash": "/",
