@@ -131,6 +131,13 @@ where:
 action(edit.line_clone):
 	key(ctrl-shift-d)
 
+# Swap line up or down
+swap up:
+	key(ctrl-shift-up)
+
+swap down:
+	key(ctrl-shift-down)
+
 # Complete Julia code</description>
 leet:
 	key(ctrl-space)
