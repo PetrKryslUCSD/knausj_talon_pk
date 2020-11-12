@@ -139,6 +139,14 @@ ex line:
 ex cope:
 	key(ctrl-shift-space)
 
+(set mark | sark):
+	key(ctrl-k)
+	key(ctrl-space)
+
+(select to mark | ex ark):
+	key(ctrl-k)
+	key(ctrl-a)
+
 args:
     insert("()")
     key(left)
