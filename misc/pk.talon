@@ -1,11 +1,7 @@
-# Comments start with a # sign, and they must always be on their own line.
-#
-# This part, the context header, defines under which circumstances this file applies.
+# Petr Krysl 2020: Useful commands transitioned from Dragon
 os: windows
 os: linux
-# Anything above this (single!) dash is part of the header.
 -
-# Petr Krysl 2020: Useful commands transitioned from Dragon
 
 # some shortcuts
 insert my name:  insert("Petr Krysl")
@@ -32,5 +28,8 @@ line below:
     key(end)
     key(enter)
 
+commace: insert(", ")
+
 # For debugging
 print application name: print(app.name())
+        
