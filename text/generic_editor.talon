@@ -5,10 +5,10 @@ next one:
     edit.find_next()
 
 # Petr Krysl 2020: I like these shorter versions
-(go word left | hop left):
+(go word left | skip left):
     edit.word_left()
 
-(go word right | hop right):
+(go word right | skip right):
     edit.word_right()
 
 go left:
