@@ -256,7 +256,9 @@ def show_cursor_helper(show):
 #     ):
 #         if setting_mouse_enable_pop_click.get() >= 1:
 #             ctrl.mouse_click(button=0, hold=16000)
-            
+
+# Petr Krysl 2020: 
+# This modification by knausj enables clicking the mouse with a popping sound.
 def on_pop(active):
     if gaze_job or scroll_job:
         if setting_mouse_enable_pop_stops_scroll.get() >= 1:
