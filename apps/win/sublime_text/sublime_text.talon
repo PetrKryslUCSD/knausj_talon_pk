@@ -18,6 +18,9 @@ compal [<user.text>]:
 search:
 	key(ctrl-f)
 
+netch:
+	key(f3)
+
 search in files:
 	key(ctrl-shift-f)
 
@@ -26,9 +29,6 @@ go any:
 
 go line:
 	key(ctrl-g)
-
-go sym:
-	key(ctrl-shift-r)
 
 # Go to a tab using a list (Tab Filter package)
 go tab:
@@ -43,11 +43,19 @@ go fuzz:
 	key("ctrl-shift-r")
 
 # Spring to a given line (by number)
-spring <number>:
-	clip.set_text(number)
+go line <number>:
+	t = clip.text()
+	clip.set_text("{number}")
 	key(ctrl-g)
 	key(ctrl-v)
 	key(enter)
+	clip.set_text(t)
+
+spring <number>:
+	key(ctrl-g)
+	insert("{number}")
+	key(enter)
+	
 
 # Switch to the neighboring group (either left or right)
 swig: 
