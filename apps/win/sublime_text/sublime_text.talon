@@ -42,7 +42,7 @@ go sym:
 go fuzz: 
 	key("ctrl-shift-r")
 
-
+# Spring to a given line (by number)
 spring <number>:
 	clip.set_text(number)
 	key(ctrl-g)
@@ -72,7 +72,7 @@ sword:
 indent less:
 	key(ctrl-[)
 
-indent more:
+(indent more | tabby):
 	key(ctrl-])
 
 reindent: 
