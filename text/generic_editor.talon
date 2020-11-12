@@ -4,10 +4,11 @@ find it:
 next one:
     edit.find_next()
 
-go word left:
+# Petr Krysl 2020: I like these shorter versions
+(go word left | hop left):
     edit.word_left()
 
-go word right:
+(go word right | hop right):
     edit.word_right()
 
 go left:
@@ -70,10 +71,11 @@ select up:
 select down:
     edit.extend_line_down()
 
-select word left:
+# Petr Krysl 2020: I like these shorter versions
+(select word left | ex left):
     edit.extend_word_left()
 
-select word right:
+(select word right | ex right):
     edit.extend_word_right()
 
 select way left:
