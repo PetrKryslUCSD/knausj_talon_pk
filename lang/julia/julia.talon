@@ -97,3 +97,9 @@ macro time: insert("@time ")
 macro view: insert("@view ")
 macro which: insert("@which ")
 
+
+# Julia package commands
+pee envy: 
+    insert("using Pkg; ") 
+    insert('Pkg.activate("."); ') 
+    insert('Pkg.instantiate(); ') 
