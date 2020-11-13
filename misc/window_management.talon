@@ -16,7 +16,7 @@ snap <user.running_applications> [screen] <number>:
     user.move_app_to_screen(running_applications, number)
 
 # Petr Krysl 2020: Try the applications switcher 
-show app list: 
+show chooser: 
     key(alt:down)
     key(tab)
-hide app list: key(alt:up)
+choose: key(alt:up)
