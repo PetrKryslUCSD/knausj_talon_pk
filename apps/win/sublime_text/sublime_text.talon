@@ -194,3 +194,8 @@ integer 64:
 
 Bool:
 	insert("Bool")
+
+# Insert "- " in markdown to make a bullet
+bullet:
+	key(home)
+	insert("- ")
