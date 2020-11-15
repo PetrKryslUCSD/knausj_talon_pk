@@ -23,6 +23,8 @@ show cache: browser.show_clear_cache()
 
 dev tools: browser.toggle_dev_tools()
 
+search: key(ctrl-f)
+
 #todo - port to apps
 # navigating current page
 # help: key(?)
