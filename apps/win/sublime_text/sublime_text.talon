@@ -130,6 +130,8 @@ where:
 	key(ctrl-k)
 	key(ctrl-l)
 
+wrap: key(alt-q)
+
 action(edit.line_clone):
 	key(ctrl-shift-d)
 
