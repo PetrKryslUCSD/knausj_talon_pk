@@ -136,10 +136,10 @@ action(edit.line_clone):
 	key(ctrl-shift-d)
 
 # Swap line up or down
-swap up:
+scoot up:
 	key(ctrl-shift-up)
 
-swap down:
+scoot down:
 	key(ctrl-shift-down)
 
 # Complete Julia code</description>
