@@ -33,7 +33,7 @@ run calibration: user.mouse_calibrate()
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-<user.modifiers> chip right: 
+<user.modifiers> (chip right | chipper): 
 	key("{modifiers}:down")
 	mouse_click(1)
 	key("{modifiers}:up")
@@ -43,7 +43,7 @@ chip:
 	mouse_click()
 	# close the mouse grid
 	user.grid_close()
-chip dub: 
+[chip] dub: 
 	mouse_click()
 	mouse_click()
 	# close the mouse grid
