@@ -103,3 +103,11 @@ pee envy:
     insert("using Pkg; ") 
     insert('Pkg.activate("."); ') 
     insert('Pkg.instantiate(); ') 
+
+pee test: 
+    insert("using Pkg; ") 
+    insert('Pkg.test(); ') 
+
+pee update: 
+    insert("using Pkg; ") 
+    insert('Pkg.update(); ') 
