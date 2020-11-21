@@ -70,7 +70,7 @@ ctx.lists["user.code_functions"] = {
 "similar": "similar",
 "sine": "sin",
 "cosine": "cos",
-"size,": "size",
+"size": "size",
 "sort": "sort",
 "squirt": "sqrt",
 "squeeze": "squeeze",
