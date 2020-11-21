@@ -1,3 +1,8 @@
 talon copy context
-talon copy context
-talon copy context
+command history
+mod.apps.sublime_merge_exe = """
+os: windows
+and app.name: sublime_merge.exe
+"""
+
+There is a registry tweak called DPF_NOTITLE, you can look it up in a file called REGISTRY.TXT in the xplorer2 installation folder, but to turn it on requires registry editing after you quit xplorer2. For more information see REGISTRY.TXT file
