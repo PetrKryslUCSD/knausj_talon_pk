@@ -21,3 +21,9 @@ zoom out:
 
 zoom in:
 	key("ctrl-=")
+
+search:
+	key(ctrl-f)
+	
+netch:
+	key(f3)	
