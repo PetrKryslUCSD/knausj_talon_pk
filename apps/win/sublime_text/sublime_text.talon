@@ -37,7 +37,8 @@ go <number>:
 
 # Go to a tab using a list (Tab Filter package)
 go tab:
-	key(shift-alt-p)
+	key("ctrl-shift-x")
+	key("ctrl-p")
 
 # Go to a code symbol match in the project
 go sym:
@@ -64,6 +65,8 @@ swig:
 sidebar:
 	key("ctrl-k")
 	key("ctrl-b")
+
+focus sidebar: key("ctrl-0")
 
 # close file tab
 tab close: app.tab_close()
