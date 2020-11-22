@@ -40,11 +40,11 @@ _capitalize_defaults = [
 # Default words that need to be remapped.
 _word_map_defaults = {
     # E.g:
-    # "cash": "cache",
+    "cash": "cache",
 }
 
 # Default words that should be added to Talon's vocabulary.
-_simple_vocab_default = ["nmap", "admin", "Cisco", "Citrix", "VPN", "DNS", "Minecraft"]
+_simple_vocab_default = ["nmap", "admin", "Cisco", "Citrix", "VPN", "DNS", "Minecraft", "Dragon"]
 
 # Defaults for different pronounciations of words that need to be added to
 # Talon's vocabulary.
