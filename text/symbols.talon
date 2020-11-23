@@ -1,20 +1,23 @@
 question [mark]: "?"
 (downscore | underscore): "_"
 double dash: "--"
+# Petr Krysl 2020
+hyphen: "-"
 (bracket | brack | left bracket): "{"
 (rbrack | are bracket | right bracket): "}"
 triple quote: "'''"
 (dot dot | dotdot): ".."
 #ellipses: "…"
 ellipses: "..."
+# Petr Krysl 2020
 period: "."
 (comma and | comm ace): ", "
-plus: "+"
 arrow: "->"
 dub arrow: "=>"
 new line: "\\n"
 carriage return: "\\r"
 line feed: "\\r\\n"
+plus: "+"
 empty dubstring:
     '""'
     key(left)
