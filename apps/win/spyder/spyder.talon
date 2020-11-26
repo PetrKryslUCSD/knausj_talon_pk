@@ -19,15 +19,12 @@ action(edit.line_swap_down):
 action(edit.indent_more): key(tab)
 action(edit.indent_less): key(shift-tab)
 
-
+# Search
 search:
 	key(ctrl-f)
-
+# Find the next match
 netch:
 	key(f3)
-
-search in files:
-	key(ctrl-shift-f)
 
 	
 # Comments
@@ -42,12 +39,14 @@ assign:
 	insert(" = ")
 
 
-# Go to a tab using a list (Tab Filter package)
+# Go to a tab using a list 
 go tab:
 	key("ctrl-p")
 
+# To evaluate a selection (note that Spyder must be configured with this key binding)
 eval:
 	key(ctrl-enter)
 
+# To run file (note that Spyder must be configured with this key binding)
 eval file:
 	key(ctrl-b)
