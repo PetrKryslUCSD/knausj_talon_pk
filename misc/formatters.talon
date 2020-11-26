@@ -1,8 +1,9 @@
 #provide both anchored and unachored commands via 'over'
-(say | speak | phrase) <user.text>$: 
+# Petr Krysl: I don't want commands "say" or "speak."
+(phrase) <user.text>$: 
   result = user.formatted_text(text, "NOOP")
   insert(result)
-(say | speak | phrase) <user.text> over: 
+(phrase) <user.text> over: 
   result = user.formatted_text(text, "NOOP")
   insert(result)
 <user.format_text>+$: user.insert_many(format_text_list)
