@@ -62,11 +62,18 @@ swig:
 	key("ctrl-shift-x")
 	key("ctrl-shift-x")
 
+# Toggle sidebar
 sidebar:
 	key("ctrl-k")
 	key("ctrl-b")
 
 focus sidebar: key("ctrl-0")
+
+# Switch to single column layout
+single column: key("alt-shift-1")
+
+# Switch to two-column layout
+2 columns: key("alt-shift-2")
 
 # close file tab
 tab close: app.tab_close()
