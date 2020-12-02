@@ -99,15 +99,19 @@ macro which: insert("@which ")
 
 
 # Julia package commands
-pee envy: 
+pack envy: 
     insert("using Pkg; ") 
     insert('Pkg.activate("."); ') 
     insert('Pkg.instantiate(); ') 
 
-pee test: 
+pack test: 
     insert("using Pkg; ") 
     insert('Pkg.test(); ') 
 
-pee update: 
+pack update: 
     insert("using Pkg; ") 
     insert('Pkg.update(); ') 
+
+pack status: 
+    insert("using Pkg; ") 
+    insert('Pkg.status(); ') 
