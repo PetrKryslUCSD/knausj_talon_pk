@@ -202,3 +202,4 @@ Bool:
 bullet:
 	key(home)
 	insert("- ")
+	

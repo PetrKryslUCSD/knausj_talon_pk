@@ -1,5 +1,7 @@
 talon copy context
+
 command history
+
 mod.apps.sublime_merge_exe = """
 os: windows
 and app.name: sublime_merge.exe
