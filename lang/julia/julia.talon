@@ -18,7 +18,7 @@ action(user.code_operator_assignment): " = "
 action(user.code_operator_subtraction): " - "
 action(user.code_operator_addition): " + "
 action(user.code_operator_multiplication): " * "
-action(user.code_operator_exponent): " ^ "
+action(user.code_operator_exponent): "^"
 action(user.code_operator_division): " / "
 action(user.code_operator_modulo): " %% "
 action(user.code_operator_equal): " == "
@@ -67,6 +67,7 @@ action(user.code_false): "false"
     key(end)
     " |> "
     key(enter)
+
 end: 
     insert("end")
 
@@ -97,6 +98,54 @@ macro time: insert("@time ")
 macro view: insert("@view ")
 macro which: insert("@which ")
 
+
+# Comments
+comment out:
+    key(ctrl-/)
+
+uncomment:
+    key(ctrl-/)
+
+# Snippets
+if only: 
+    insert("bifo")
+    key(tab)
+
+if else: 
+    insert("bife")
+    key(tab)
+
+for loop: 
+    insert("frlp")
+    key(tab)
+
+comprehension: 
+    insert("cmprhn")
+    key(tab)
+
+where:
+    insert("whra")
+    key(tab)
+
+# A few useful shortcuts
+struct:
+    insert("struct  end")
+    key(left:4)
+
+of type:
+    insert("::")
+
+of subtype:
+    insert("<:")
+
+float <number>:
+    insert("Float{number}")
+
+integer <number>:
+    insert("Int{number}")
+
+Bool:
+    insert("Bool")
 
 # Julia package commands
 pack envy: 

@@ -95,34 +95,6 @@ reindent:
 no indent:
 	key(ctrl-[:6)
 
-# Comments
-comment out:
-	key(ctrl-/)
-
-uncomment:
-	key(ctrl-/)
-
-# Snippets
-if only: 
-	insert("bifo")
-	key(tab)
-
-if else: 
-	insert("bife")
-	key(tab)
-
-for loop: 
-	insert("frlp")
-	key(tab)
-
-comprehension: 
-	insert("cmprhn")
-	key(tab)
-
-where:
-	insert("whra")
-	key(tab)
-
 # Miscellaneous editing
 
 (uppercase | upcase): 
@@ -178,25 +150,6 @@ args:
 
 assign:
 	insert(" = ")
-
-struct:
-	insert("struct  end")
-	key(left:4)
-
-of type:
-	insert("::")
-
-of subtype:
-	insert("<:")
-
-float 64:
-	insert("Float64")
-
-integer 64:
-	insert("Int64")
-
-Bool:
-	insert("Bool")
 
 # Insert "- " in markdown to make a bullet
 bullet:
