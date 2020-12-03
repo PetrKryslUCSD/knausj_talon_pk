@@ -34,8 +34,8 @@ action(user.code_operator_bitwise_and): " & "
 action(user.code_operator_structure_dereference): " -> "
 action(user.code_null): "nothing"
 action(user.code_state_if):
-    insert("if () {}")
-    key(left enter up end left:3)
+    insert("if   end")
+    key(left enter up end left:4)
 action(user.code_state_else_if):
     insert(" else if () {}")
     key(left enter up end left:3)
@@ -98,6 +98,10 @@ macro time: insert("@time ")
 macro view: insert("@view ")
 macro which: insert("@which ")
 
+# Go to folder
+to folder:
+    key("ctrl-shift-x")
+    key("ctrl-f")
 
 # Comments
 comment out:
