@@ -7,7 +7,7 @@ os: linux
 insert my name:  insert("Petr Krysl")
 insert gmail:  insert("krysl.petr@gmail.com")
 insert private gmail:  insert("petr.krysl.san.diego@gmail.com")
-insert earthlink email:  insert("pkrysl@earthlink.com")
+insert earthlink email:  insert("pkrysl@earthlink.net")
 insert ucsd email:  insert("pkrysl@ucsd.edu")
 
 # switch application on the desktop
