@@ -68,6 +68,12 @@ action(user.code_false): "false"
     " |> "
     key(enter)
 
+pair it: 
+    insert(" => ")
+
+arrow it: 
+    insert(" -> ")
+
 end: 
     insert("end")
 
@@ -78,9 +84,6 @@ eval:
 # Evaluate Julia file using the build system
 eval file:
     key(ctrl-b)
-
-#state na:
-#    insert("NA")
 
 # ^function define <user.text>$: user.code_private_function(text)
 
