@@ -24,7 +24,7 @@ go program files:
 go parent: key("backspace")
 go dropbox: 
     user.file_manager_open_user_directory("Dropbox (Personal)")
-go dropbox courses: 
+go [dropbox] courses: 
     user.file_manager_open_user_directory("Dropbox (Personal)/Courses")
 go work:
     user.file_manager_open_user_directory("Documents/work")
