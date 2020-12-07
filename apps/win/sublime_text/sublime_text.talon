@@ -44,9 +44,6 @@ go tab:
 go sym:
 	key("ctrl-shift-r")
 
-# Go to a fuzzy match
-go fuzz: 
-	key("ctrl-shift-r")
 
 # Outdated: Spring to a given line (by number)
 #go line <number>:
