@@ -160,3 +160,11 @@ bullet:
 	key(home)
 	insert("- ")
 	
+
+# Evaluate code
+eval:
+    key(ctrl-enter)
+
+# Evaluate file using the build system
+eval file | run [file] | build:
+    key(ctrl-b)

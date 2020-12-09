@@ -77,14 +77,6 @@ arrow it:
 end: 
     insert("end")
 
-# Evaluate Julia code
-eval:
-    key(ctrl-enter)
-
-# Evaluate Julia file using the build system
-eval file:
-    key(ctrl-b)
-
 # ^function define <user.text>$: user.code_private_function(text)
 
 macro fusion: insert("@. ") 
