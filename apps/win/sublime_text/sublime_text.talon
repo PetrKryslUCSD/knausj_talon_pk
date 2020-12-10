@@ -41,7 +41,7 @@ go tab:
 	key("ctrl-p")
 
 # Go to a code symbol match in the project
-go sym:
+go symbol:
 	key("ctrl-shift-r")
 
 
@@ -109,7 +109,9 @@ no indent:
 	key(ctrl-k)
 	key(ctrl-l)
 
-wrap: key(alt-q)
+reflow:
+	key(ctrl-shift-x)
+	key(ctrl-shift-alt-q)
 
 action(edit.line_clone):
 	key(ctrl-shift-d)
