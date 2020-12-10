@@ -178,11 +178,10 @@ simple_keys = [
 ]
 
 # Petr Krysl 2020: I like these words for the delete and backspace keys
+# 
 alternate_keys = {
-    "delete": "backspace",
-    "forward delete": "delete",
-    "chook": "delete",
-    'kooch': 'backspace',
+    "del": "delete",
+    'backs': 'backspace',
 }
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)
