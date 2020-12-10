@@ -126,6 +126,10 @@ where:
     insert("whra")
     key(tab)
 
+document string:
+    insert("doksg")
+    key(tab)
+
 # A few useful shortcuts
 struct:
     insert("struct  end")
