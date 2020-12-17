@@ -130,6 +130,10 @@ document string:
     insert("doksg")
     key(tab)
 
+function def:
+    insert("fndf")
+    key(tab)
+
 # A few useful shortcuts
 struct:
     insert("struct  end")
@@ -167,3 +171,8 @@ pack update:
 pack status: 
     insert("using Pkg; ") 
     insert('Pkg.status(); ') 
+
+
+pack build: 
+    insert("using Pkg; ") 
+    insert('Pkg.build(); ') 
