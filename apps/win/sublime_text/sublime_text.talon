@@ -170,3 +170,13 @@ eval:
 # Evaluate file using the build system
 eval file | run [file] | build:
     key(ctrl-b)
+
+# Copy name of the file to the clipboard 
+clip name:
+	key("ctrl-shift-x")
+	key("ctrl-alt-c")
+
+# Store the path of the current file in the clipboard
+clip path:
+	key("ctrl-shift-x")
+	key("ctrl-shift-alt-c")
