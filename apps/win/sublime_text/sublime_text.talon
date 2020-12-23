@@ -80,7 +80,7 @@ re-center:
 	key("ctrl-k")
 	key("ctrl-c")
 
-# For use with multi-cursors.
+# For use with multi-cursors: select word. 
 sword:
 	key(ctrl-d)
 
