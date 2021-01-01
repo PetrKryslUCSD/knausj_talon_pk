@@ -44,6 +44,15 @@ go tab:
 go symbol:
 	key("ctrl-shift-r")
 
+# Go to a definition
+go defined:
+    key("ctrl-shift-x")
+    key("ctrl-shift-d")
+        
+# Go to mark: swap current position with the mark
+go ark:
+    key(ctrl-k)
+    key(ctrl-x)
 
 # Outdated: Spring to a given line (by number)
 #go line <number>:
