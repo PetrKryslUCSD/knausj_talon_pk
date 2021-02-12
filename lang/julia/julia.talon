@@ -92,6 +92,7 @@ macro test: insert("@test ")
 macro time: insert("@time ") 
 macro view: insert("@view ")
 macro which: insert("@which ")
+macro warn: insert("@warn ")
 
 # Go to folder
 to folder:
