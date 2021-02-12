@@ -20,3 +20,7 @@ show chooser:
     key(alt:down)
     key(tab)
 choose: key(alt:up)
+# Show context menu
+context: 
+	key(shift-f10)
+	
