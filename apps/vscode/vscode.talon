@@ -196,4 +196,61 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
   
-  
+# Petr Krysl 2021
+# Navigation, searching
+
+compal [<user.text>]:
+	key(ctrl-shift-p)
+	insert(user.text or "")
+
+search:
+	key(ctrl-f)
+
+netch:
+	key(f3)
+
+search in files:
+	key(ctrl-shift-f)
+
+
+go any:
+	key(ctrl-p)
+
+go line:
+	key(ctrl-g)
+
+go <number>:
+	key(ctrl-g)
+	insert("{number}")
+	key(enter)
+
+
+# Petr Krysl 2021
+# Selection
+
+# For use with multi-cursors: select word. 
+sword:
+	key(ctrl-d)
+
+Excel:    
+  key(shift-alt-right)
+
+shrink:
+  key(shift-alt-left)
+
+(set mark | sark):
+	key(ctrl-alt-k)
+
+# Note: the keyboard shortcut needs to be redefined from the default because of a conflict
+(select to mark | ex ark):
+	key(ctrl-shift-alt-j)
+
+(previous mark | park):
+	key(ctrl-alt-j)
+
+# Petr Krysl 2021
+# Miscellanea
+
+assign:
+	insert(" = ")
+
