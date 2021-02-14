@@ -163,10 +163,6 @@ args:
     insert("()")
     key(left)
 
-open bra:
-    insert("[")
-
-
 assign:
 	insert(" = ")
 
