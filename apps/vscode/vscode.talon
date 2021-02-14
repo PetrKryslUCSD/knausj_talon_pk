@@ -248,6 +248,9 @@ shrink:
 (previous mark | park):
 	key(ctrl-alt-j)
 
+(delete marks | clark):
+	key(ctrl-shift-alt-c)
+
 # Petr Krysl 2021
 # Miscellanea
 
