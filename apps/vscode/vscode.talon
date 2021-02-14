@@ -224,6 +224,26 @@ go <number>:
 	insert("{number}")
 	key(enter)
 
+# Re-center the view (watch out: shortcut to select a line)
+re-center:
+	key("ctrl-l")
+
+
+# Indentation
+
+indent less:
+	key(ctrl-[)
+
+indent more:
+	key(ctrl-])
+
+# Need to add a key binding as nonexistent by default
+reindent: 
+	key(ctrl-shift-x)
+	key(ctrl-r)
+
+no indent:
+	key(ctrl-[:6)
 
 # Petr Krysl 2021
 # Selection
@@ -257,3 +277,11 @@ shrink:
 assign:
 	insert(" = ")
 
+
+# Evaluate code
+eval:
+    key(alt-enter)
+
+# Evaluate file using the build system
+eval file | run [file] | build:
+    key(ctrl-b)
