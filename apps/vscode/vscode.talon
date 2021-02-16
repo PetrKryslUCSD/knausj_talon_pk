@@ -216,6 +216,9 @@ search in files:
 go any:
 	key(ctrl-p)
 
+go symbol:	
+	key(ctrl-shift-o)
+
 go line:
 	key(ctrl-g)
 
@@ -284,4 +287,5 @@ eval:
 
 # Evaluate file using the build system
 eval file | run [file] | build:
+	key(ctrl-shift-x)
     key(ctrl-b)
