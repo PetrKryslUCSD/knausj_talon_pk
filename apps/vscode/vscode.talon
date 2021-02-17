@@ -274,6 +274,16 @@ shrink:
 (delete marks | clark):
 	key(ctrl-shift-alt-c)
 
+# editing
+
+# Swap line up or down
+scoot up:
+	key(alt-up)
+
+scoot down:
+	key(alt-down)
+
+
 # Petr Krysl 2021
 # Miscellanea
 
