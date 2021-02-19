@@ -196,6 +196,12 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
   
+
+# 
+# Petr Krysl 2021
+# Some of the commands below require mapping of keys that is different from the default .
+# Refer to the keybindings.json file in this directory. 
+
 # Petr Krysl 2021
 # Navigation, searching
 
@@ -313,3 +319,5 @@ side-by-side:
 # Complete Julia code (via IntelliSense)
 pleat:
 	key(ctrl-space)
+
+

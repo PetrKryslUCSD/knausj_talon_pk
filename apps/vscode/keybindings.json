@@ -1,0 +1,35 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+shift+alt+l",
+        "command": "bookmarks.expandSelectionToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "-bookmarks.expandSelectionToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+j",
+        "command": "bookmarks.expandSelectionToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "-bookmarks.expandSelectionToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+c",
+        "command": "bookmarks.clear"
+    },
+    {
+        "key": "ctrl+shift+x ctrl+r",
+        "command": "editor.action.reindentselectedlines"
+    },
+    {
+        "key": "ctrl+shift+x ctrl+b",
+        "command": "language-julia.executeFile"
+    }
+]
