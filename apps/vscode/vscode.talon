@@ -227,7 +227,8 @@ go <number>:
 	insert("{number}")
 	key(enter)
 
-# Re-center the view (watch out: shortcut to select a line)
+# Re-center the view (watch out: in conflict with shortcut to select a line)
+# Requires extension: Center Editor Window
 re-center:
 	key("ctrl-l")
 
@@ -299,3 +300,8 @@ eval:
 eval file | run [file] | build:
 	key(ctrl-shift-x)
     key(ctrl-b)
+
+# Petr Krysl 2021
+# GUI 
+side-by-side:
+	key(ctrl-\)
