@@ -227,6 +227,9 @@ go <number>:
 	insert("{number}")
 	key(enter)
 
+go tab:
+	key(ctrl-tab)
+
 # Re-center the view (watch out: in conflict with shortcut to select a line)
 # Requires extension: Center Editor Window
 re-center:
@@ -305,3 +308,8 @@ eval file | run [file] | build:
 # GUI 
 side-by-side:
 	key(ctrl-\)
+
+
+# Complete Julia code (via IntelliSense)
+pleat:
+	key(ctrl-space)
