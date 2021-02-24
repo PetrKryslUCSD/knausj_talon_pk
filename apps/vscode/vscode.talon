@@ -225,6 +225,9 @@ go any:
 go symbol:	
 	key(ctrl-shift-o)
 
+go def:
+	key(f12)
+	
 go line:
 	key(ctrl-g)
 
@@ -306,9 +309,9 @@ eval:
     key(alt-enter)
 
 # Evaluate file using the build system
-eval file | run [file] | build:
+eval file | run [file]:
 	key(ctrl-shift-x)
-    key(ctrl-b)
+	key(ctrl-b)
 
 # Petr Krysl 2021
 # GUI 
