@@ -106,6 +106,10 @@ comment out:
 uncomment:
     key(ctrl-/)
 
+# Re-wrap: requires the Rewrap extension 
+reflow:
+    key(alt-q)
+
 # Snippets
 if only: 
     insert("bifo")
