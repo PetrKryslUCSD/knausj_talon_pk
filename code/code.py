@@ -48,7 +48,7 @@ extension_lang_map = {
     "ps1": "powershell",
     "py": "python",
     "r": "r",
-    "julia": "julia",
+    "jl": "julia",
     "rb": "ruby",
     "s": "assembly",
     "sh": "bash",
