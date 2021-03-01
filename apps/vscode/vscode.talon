@@ -218,7 +218,7 @@ netch:
 search in files:
 	key(ctrl-shift-f)
 
-
+# Go anywhere 
 go any:
 	key(ctrl-p)
 
@@ -236,8 +236,13 @@ go <number>:
 	insert("{number}")
 	key(enter)
 
+# move through tabs
 go tab:
 	key(ctrl-tab)
+
+# go to bracket
+go bra:
+	key(ctrl-shift-\)
 
 # Re-center the view (watch out: in conflict with shortcut to select a line)
 # Requires extension: Center Editor Window
@@ -274,6 +279,23 @@ Excel:
 shrink:
   key(shift-alt-left)
 
+# Using anchor
+anchor:
+	key(ctrl-k)
+	key(ctrl-b)
+
+# extend the selection to 
+ex anchor:
+	key(ctrl-k)
+	key(ctrl-k)
+
+# extend selection to bracket
+ex bra:
+	key(ctrl-shift-x)
+	key(ctrl-shift-b)
+
+
+# Using Bookmarks
 (set mark | sark):
 	key(ctrl-alt-k)
 
