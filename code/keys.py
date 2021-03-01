@@ -181,7 +181,9 @@ simple_keys = [
 # 
 alternate_keys = {
     "del": "delete",
+    "rub": "delete",
     'backs': 'backspace',
+    'smack': 'backspace',
 }
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)
