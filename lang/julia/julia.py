@@ -16,6 +16,7 @@ ctx.lists["user.code_functions"] = {
 "change folder": "cd",
 "collect": "collect",
 "conn as array": "connasarray",
+"conjugate": "conj",
 "copy to": "copyto!",
 "correlation": "cor",
 "cosine": "cos",
