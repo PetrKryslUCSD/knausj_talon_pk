@@ -158,25 +158,3 @@ integer <number>:
 
 Bool:
     insert("Bool")
-
-# Julia package commands
-pack envy: 
-    insert("using Pkg; ") 
-    insert('Pkg.activate("."); ') 
-    insert('Pkg.instantiate(); ') 
-
-pack test: 
-    insert("using Pkg; ") 
-    insert('Pkg.test(); ') 
-
-pack update: 
-    insert("using Pkg; ") 
-    insert('Pkg.update(); ') 
-
-pack status: 
-    insert("using Pkg; ") 
-    insert('Pkg.status(); ') 
-
-pack build: 
-    insert("using Pkg; ") 
-    insert('Pkg.build(); ') 

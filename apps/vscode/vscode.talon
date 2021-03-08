@@ -346,3 +346,27 @@ pleat:
 	key(ctrl-space)
 
 
+
+# Julia package commands. These should be moved to Julia.talon 
+# after it becomes possible to switch to a different context 
+# in the terminal.
+pack envy: 
+    insert("using Pkg; ") 
+    insert('Pkg.activate("."); ') 
+    insert('Pkg.instantiate(); ') 
+
+pack test: 
+    insert("using Pkg; ") 
+    insert('Pkg.test(); ') 
+
+pack update: 
+    insert("using Pkg; ") 
+    insert('Pkg.update(); ') 
+
+pack status: 
+    insert("using Pkg; ") 
+    insert('Pkg.status(); ') 
+
+pack build: 
+    insert("using Pkg; ") 
+    insert('Pkg.build(); ') 
