@@ -340,6 +340,8 @@ eval file | run [file]:
 side-by-side:
 	key(ctrl-\)
 
+sidebar:
+	key(ctrl-b)
 
 # Complete Julia code (via IntelliSense)
 pleat:
