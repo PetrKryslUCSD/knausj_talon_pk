@@ -14,6 +14,9 @@ go back: user.file_manager_go_back()
 go forward: user.file_manager_go_forward()
 daddy: user.file_manager_open_parent()
 
+# Petr Krysl 2021
+go work in progress: user.file_manager_open_user_directory("wip")
+
 ^follow <number>$: user.file_manager_open_directory(number - 1)
 ^open <number>$: user.file_manager_open_file(number - 1)
 ^folder <number>$: user.file_manager_select_directory(number - 1)
