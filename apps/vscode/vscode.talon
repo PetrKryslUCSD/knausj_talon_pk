@@ -318,6 +318,18 @@ scoot up:
 scoot down:
 	key(alt-down)
 
+(uppercase | upcase): 
+	key(ctrl-shift-x)
+	key(ctrl-u)
+
+(lower | lowercase | downcase): 
+	key(ctrl-shift-x)
+	key(ctrl-l)
+
+(titlecase | titcase): 
+	key(ctrl-shift-x)
+	key(ctrl-t)
+
 
 # Petr Krysl 2021
 # Miscellanea
