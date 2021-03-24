@@ -241,7 +241,7 @@ go tab:
 	key(ctrl-tab)
 
 # go to bracket
-go bra:
+go cket:
 	key(ctrl-shift-\)
 
 # Re-center the view (watch out: in conflict with shortcut to select a line)
@@ -290,7 +290,7 @@ ex anchor:
 	key(ctrl-k)
 
 # extend selection to bracket
-ex bra:
+ex cket:
 	key(ctrl-shift-x)
 	key(ctrl-shift-b)
 

@@ -111,33 +111,34 @@ reflow:
     key(alt-q)
 
 # Snippets
+# Requires Setting "editor.tabCompletion": "on"
 if only: 
     insert("bifo")
-    # key(tab)
+    key(tab)
 
 if else: 
     insert("bife")
-    # key(tab)
+    key(tab)
 
 for loop: 
     insert("frlp")
-    # key(tab)
+    key(tab)
 
 comprehension: 
     insert("cmprhn")
-    # key(tab)
+    key(tab)
 
 where:
     insert("whra")
-    # key(tab)
+    key(tab)
 
 document string:
     insert("doksg")
-    # key(tab)
+    key(tab)
 
 function def:
     insert("fndf")
-    # key(tab)
+    key(tab)
 
 # A few useful shortcuts
 struct:
