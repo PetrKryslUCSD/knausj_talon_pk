@@ -14,7 +14,7 @@ ctx = Context()
 
 ctx.matches = r"""
 os: windows
-and app.name: sublime_text.exe
+and app.exe: sublime_text.exe
 """
 
 @ctx.action_class("edit")
@@ -72,7 +72,12 @@ class win_actions:
         result = title.rsplit(" - Sublime Text", 1)[0]
         result = result.rsplit(" (", 1)[0]
         result = result.rsplit(" •", 1)[0]
+        result.strip()
+        # print('***********', result)
         return result if "." in result else ""
 
-    # def file_ext():
-    #     return actions.win.filename().split(".")[-1]
+    # To be removed in talon 0.2
+    def file_ext():
+        e = actions.win.filename().split(".")[-1]
+        # print(f'*****{e}******')
+        return e
