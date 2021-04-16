@@ -15,3 +15,16 @@ and app.name: Foxit Reader 10.1
 os: windows
 and app.name: FoxitReader.exe
 """
+
+mod.apps.code_exe = """
+os: windows
+and app.name: Code.exe
+"""
+
+mod.apps.visual_studio_code = """
+os: windows
+and app.name: Visual Studio Code
+os: windows
+and app.name: Code.exe
+"""
+
