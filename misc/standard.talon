@@ -12,6 +12,7 @@
 #word shell: "shell".
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
+
 (page | scroll) up: key(pgup)
 (page | scroll) down: key(pgdown)
 # Petr Krysl 2020: I like the short versions of these commands.

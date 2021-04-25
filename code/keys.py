@@ -1,6 +1,6 @@
 from typing import Set
 
-from talon import Module, Context, actions
+from talon import Module, Context, actions, app
 import sys
 
 default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near oak pit quench red sun trap urge vest whale plex yank zip".split(
@@ -23,6 +23,7 @@ mod.list("number_key", desc="All number keys")
 mod.list("modifier_key", desc="All modifier keys")
 mod.list("function_key", desc="All function keys")
 mod.list("special_key", desc="All special keys")
+mod.list("punctuation", desc="words for inserting punctuation into text")
 
 
 @mod.capture(rule="{self.modifier_key}+")
@@ -73,6 +74,12 @@ def function_key(m) -> str:
     return m.function_key
 
 
+@mod.capture(rule="( <self.letter> | <self.number_key> | <self.symbol_key> )")
+def any_alphanumeric_key(m) -> str:
+    "any alphanumeric key"
+    return str(m)
+
+
 @mod.capture(
     rule="( <self.letter> | <self.number_key> | <self.symbol_key> "
     "| <self.arrow_key> | <self.function_key> | <self.special_key> )"
@@ -105,24 +112,57 @@ def letters(m) -> str:
 
 
 ctx = Context()
-ctx.lists["self.modifier_key"] = {
-    "alt": "alt",
-    "command": "cmd",
+modifier_keys = {
+    # If you find 'alt' is often misrecognized, try using 'alter'.
+    "alt": "alt",  #'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "roll": "ctrl",  #'troll':   'ctrl',
     "option": "alt",
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
 }
+if app.platform  == "mac":
+    modifier_keys["command"] = "cmd"
+    modifier_keys["option"] = "alt"
+ctx.lists["self.modifier_key"] = modifier_keys
 alphabet = dict(zip(default_alphabet, letters_string))
 ctx.lists["self.letter"] = alphabet
-# Petr Krysl 2020: I like these words for special characters
-ctx.lists["self.symbol_key"] = {
-    "bee tick": "`",
+
+# `punctuation_words` is for words you want available BOTH in dictation and as
+# key names in command mode. `symbol_key_words` is for key names that should be
+# available in command mode, but NOT during dictation.
+punctuation_words = {
+    # TODO: I'm not sure why we need these, I think it has something to do with
+    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
     "`": "`",
+    ",": ",",  # <== these things
     "comma": ",",
-    ",": ",",
     "dot": ".",
+    "period": ".",
+    "semicolon": ";",
+    "colon": ":",
+    "forward slash": "/",
+    "question mark": "?",
+    "exclamation mark": "!",
+    "exclamation point": "!",
+    "dollar sign": "$",
+    "asterisk": "*",
+    "hash sign": "#",
+    "number sign": "#",
+    "percent sign": "%",
+    "at sign": "@",
+    "and sign": "&",
+    "ampersand": "&",
+}
+symbol_key_words = {
+    "dot": ".",
+    "quote": "'",
+    "L square": "[",
+    "left square": "[",
+    "square": "[",
+    "R square": "]",
+    "right square": "]",
+    "bee tick": "`",
     "wink": ";",
     "trophy": "'",
     "slash": "/",
@@ -151,12 +191,41 @@ ctx.lists["self.symbol_key"] = {
     "Percy": "%",
     "hat": "^",
     "swirl": "@",
+    "tilde": "~",
+    "bang": "!",
+    "dollar": "$",
+    "down score": "_",
+    "under score": "_",
+    "paren": "(",
+    "L paren": "(",
+    "left paren": "(",
+    "R paren": ")",
+    "right paren": ")",
+    "brace": "{",
+    "left brace": "{",
+    "R brace": "}",
+    "right brace": "}",
+    "angle": "<",
+    "left angle": "<",
+    "less than": "<",
+    "rangle": ">",
+    "R angle": ">",
+    "right angle": ">",
+    "greater than": ">",
+    "star": "*",
+    "pound": "#",
+    "hash": "#",
+    "percent": "%",
+    "caret": "^",
     "amper": "&",
     "pipe": "|",
     "quote": '"',
 }
 
-
+# make punctuation words also included in {user.symbol_keys}
+symbol_key_words.update(punctuation_words)
+ctx.lists["self.punctuation"] = punctuation_words
+ctx.lists["self.symbol_key"] = symbol_key_words
 ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
 ctx.lists["self.arrow_key"] = {
     "down": "down",
@@ -185,9 +254,14 @@ alternate_keys = {
     'backs': 'backspace',
     'smack': 'backspace',
 }
-keys = {k: k for k in simple_keys}
-keys.update(alternate_keys)
-ctx.lists["self.special_key"] = keys
+# mac apparently doesn't have the menu key.
+if app.platform in ("windows", "linux"):
+    alternate_keys["menu key"] = "menu"
+    alternate_keys["print screen"] = "printscr"
+
+special_keys = {k: k for k in simple_keys}
+special_keys.update(alternate_keys)
+ctx.lists["self.special_key"] = special_keys
 ctx.lists["self.function_key"] = {
     f"F {default_f_digits[i]}": f"f{i + 1}" for i in range(12)
 }

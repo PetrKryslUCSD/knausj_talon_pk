@@ -1,6 +1,4 @@
 go <user.arrow_keys>: key(arrow_keys)
-#disabled due to https://github.com/talonvoice/beta/issues/90
-#<user.number_key>: key(number_key)
 <user.letter>: key(letter)
 # Petr Krysl 2020: Pressing shift
 (shiv | uppercase) <user.letters> [(lowercase | sunk)]: 
