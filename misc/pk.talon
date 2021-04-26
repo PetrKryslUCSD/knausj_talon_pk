@@ -5,6 +5,8 @@ os: linux
 
 # some shortcuts
 insert my name:  insert("Petr Krysl")
+insert my last name:  insert("Krysl")
+insert my first name:  insert("Petr")
 insert gmail:  insert("krysl.petr@gmail.com")
 insert private gmail:  insert("petr.krysl.san.diego@gmail.com")
 insert earthlink email:  insert("pkrysl@earthlink.net")
