@@ -73,11 +73,11 @@ class win_actions:
         result = result.rsplit(" (", 1)[0]
         result = result.rsplit(" •", 1)[0]
         result.strip()
-        # print('***********', result)
+        # print('*********comment**', result)
         return result if "." in result else ""
 
-    # To be removed in talon 0.2
-    def file_ext():
-        e = actions.win.filename().split(".")[-1]
-        # print(f'*****{e}******')
-        return e
+    # To be removed in talon 0.2. Not needed 04/27/2021
+    # def file_ext():
+    #     e = "." + actions.win.filename().split(".")[-1]
+    #     print(f'*****{e}******')
+    #     return e
