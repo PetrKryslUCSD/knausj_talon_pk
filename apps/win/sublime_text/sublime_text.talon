@@ -45,7 +45,7 @@ go symbol:
 	key("ctrl-shift-r")
 
 # Go to a definition
-go defined:
+go def:
     key("ctrl-shift-x")
     key("ctrl-shift-d")
         
