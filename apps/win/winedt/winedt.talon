@@ -24,7 +24,7 @@ netch: key(f3)
 go line: key(ctrl-g)
 
 sark: key("alt-f11") 
-go ark: key(ctrl-f11)
+ex ark: key(ctrl-shift-f11)
 
 compile: key(shift-ctrl-p)
 
@@ -40,3 +40,5 @@ insert citation:
     insert("~\\cite{}")
 
 reflow: key(alt-shift-insert)
+
+tit case: key(alt-up)
