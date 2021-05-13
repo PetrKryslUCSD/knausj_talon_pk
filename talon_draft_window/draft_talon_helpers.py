@@ -80,9 +80,9 @@ class ContextSensitiveDictationActions:
         area = draft_manager.area
         return area[area.sel.right : area.sel.right + 50]
 
-    def paste(text: str):
+    # def paste(text: str):
         # todo: remove once user.paste works reliably with the draft window
-        actions.insert(text)
+        # actions.insert(text)
 
 
 @ctx_focused.action_class("edit")
