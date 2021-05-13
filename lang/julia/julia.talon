@@ -113,11 +113,11 @@ reflow:
 # Snippets
 # Requires Setting "editor.tabCompletion": "on"
 if only: 
-    insert("ifob")
+    insert("bifo")
     key(tab)
 
 if else: 
-    insert("ifeb")
+    insert("bife")
     key(tab)
 
 for loop: 
