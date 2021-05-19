@@ -31,6 +31,10 @@ line below:
     key(end)
     key(enter)
 
+new paragraph:
+    key(enter)    
+    key(enter)    
+
 commace: insert(", ")
 
 # For debugging
