@@ -34,6 +34,8 @@ settings():
     # work in some applications. You may wish to enable this on a
     # per-application basis.
     #user.context_sensitive_dictation = 1
+
+    speech.record_all = 0
 	
 # uncomment tag to enable mouse grid
 # tag(): user.mouse_grid_enabled
