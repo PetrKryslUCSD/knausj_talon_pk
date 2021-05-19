@@ -18,3 +18,13 @@ and app.name: FoxitReader.exe
 
 # paste this into the Python repl
 import time; time.sleep(2); scope.get("app"); scope.get("win"); scope.get("code")
+
+os: windows
+and app.name: xplorer² - explorer replacement
+os: windows
+and app.exe: xplorer2_64.exe
+
+os: windows
+and app.name: xplorer² - explorer replacement
+os: windows
+and app.exe: xplorer2_64.exe

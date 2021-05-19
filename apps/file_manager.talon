@@ -13,8 +13,6 @@ go talon user: user.file_manager_open_directory(path.talon_user())
 go user: user.file_manager_open_directory(path.user_home())
 go back: user.file_manager_go_back()
 go forward: user.file_manager_go_forward()
-# Petr Krysl 2021
-go work in progress: user.file_manager_open_user_directory("wip")
 daddy: user.file_manager_open_parent()
 ^follow <number>$: 
     directory = user.file_manager_get_directory_by_index(number - 1)
@@ -46,4 +44,3 @@ folder last: user.file_manager_previous_folder_page()
 
 file next: user.file_manager_next_file_page()
 file last: user.file_manager_previous_file_page()
-
