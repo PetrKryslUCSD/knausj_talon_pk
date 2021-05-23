@@ -85,7 +85,7 @@ single column: key("alt-shift-1")
 tab close: app.tab_close()
 
 # Re-center the view (watch out: conflicts with Origami)
-re-center:
+recenter:
 	key("ctrl-k")
 	key("ctrl-c")
 
