@@ -82,7 +82,7 @@ end:
 macro fusion: insert("@. ") 
 macro assert: insert("@assert ") 
 macro history: insert("@history ") 
-macro bp: insert("@bp ") 
+macro breakpoint: insert("@bp ") 
 macro code warn type: insert("@code_warntype ")
 macro elapsed: insert("@elapsed ")
 macro in bounds: insert("@inbounds ")
@@ -94,10 +94,21 @@ macro view: insert("@view ")
 macro which: insert("@which ")
 macro warn: insert("@warn ")
 
-# Go to folder
+# Change to the folder of the open file
 to folder:
     key("ctrl-shift-x")
     key("ctrl-f")
+
+# Run the open file by include(). Save the file first.
+run:
+    key("ctrl-s")
+    key("ctrl-shift-x")
+    key("ctrl-e")
+
+# Ask for help on item
+hint:
+    key("ctrl-shift-x")
+    key("ctrl-alt-h")
 
 # Comments
 comment out:
