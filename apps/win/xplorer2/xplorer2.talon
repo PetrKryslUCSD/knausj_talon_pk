@@ -6,7 +6,7 @@ action(user.file_manager_go_back):
 action(user.file_manager_go_forward):
     key("alt-right")
 action(user.file_manager_open_parent):
-    key("alt-up")
+    key("alt-backspace")
     
 ^go <user.letter>$: user.file_manager_open_volume("{letter}:")
 go app data: user.file_manager_open_directory("%AppData%")
