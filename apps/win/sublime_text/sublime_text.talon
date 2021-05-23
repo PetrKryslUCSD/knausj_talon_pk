@@ -177,7 +177,7 @@ eval:
     key(ctrl-enter)
 
 # Evaluate file using the build system
-eval file | run [file] | build:
+build:
     key(ctrl-b)
 
 # Copy name of the file to the clipboard 
