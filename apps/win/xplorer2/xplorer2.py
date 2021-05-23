@@ -98,9 +98,7 @@ class user_actions:
         return path
 
     def file_manager_terminal_here():
-        actions.key("ctrl-l")
-        actions.insert("cmd.exe")
-        actions.key("enter")
+        actions.key("f10")
 
     def file_manager_show_properties():
         """Shows the properties for the file"""
