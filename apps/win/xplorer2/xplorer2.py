@@ -5,16 +5,13 @@ import os
 mod = Module()
 apps = mod.apps
 
-
-# There is a registry tweak called DPF_NOTITLE, you can look it up in a file 
-# called REGISTRY.TXT in the xplorer2 installation folder, but to turn it on 
-# requires registry editing after you quit xplorer2. For more information 
-# see REGISTRY.TXT file
-#app.exe: xplorer2_64.exe
-#title: /xplorer²/
-#app: /xplorer²/
-#and title: /(Save|Open|Browse|Select)/
-
+# An explanation on how to get the title set up:
+# Petr Krysl 2021
+# Q: Could I also ask about the title bar of the window: could I set 
+# it to whatever I want?
+# A: There is a registry tweak called DPF_NOTITLE, you can look it 
+# up in a file called REGISTRY.TXT in the xplorer2 installation folder,
+# but to turn it on requires registry editing after you quit xplorer2. 
 apps.xplorer2 = """
 os: windows
 and app.name: /xplorer².*/
@@ -23,7 +20,6 @@ and app.name: /xplorer².*/
 ctx = Context()
 ctx.matches = r"""
 app: xplorer2
-app: windows_file_browser
 """
 
 user_path = os.path.expanduser("~")
