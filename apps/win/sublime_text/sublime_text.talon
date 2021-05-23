@@ -133,7 +133,7 @@ scoot down:
 	key(ctrl-shift-down)
 
 # Complete Julia code</description>
-leet:
+completion:
 	key(ctrl-space)
 
 # Expand the selection to the interior between brackets
