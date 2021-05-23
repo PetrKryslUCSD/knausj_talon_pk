@@ -79,7 +79,7 @@ focus sidebar: key("ctrl-0")
 single column: key("alt-shift-1")
 
 # Switch to two-column layout
-2 columns: key("alt-shift-2")
+two columns: key("alt-shift-2")
 
 # close file tab
 tab close: app.tab_close()
