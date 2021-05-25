@@ -1,6 +1,7 @@
 # app.name: "Sublime Text"
 os: windows
-title: /- Sublime Text/
+and app.exe: sublime_text.exe
+
 -
 tag(): user.find_and_replace
 tag(): user.line_commands
@@ -122,7 +123,7 @@ reflow:
 	key(ctrl-shift-x)
 	key(ctrl-shift-alt-q)
 
-action(edit.line_clone):
+dupe line:
 	key(ctrl-shift-d)
 
 # Swap line up or down
