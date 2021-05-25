@@ -34,26 +34,30 @@ action(user.code_operator_bitwise_and): " & "
 action(user.code_operator_structure_dereference): " -> "
 action(user.code_null): "nothing"
 action(user.code_state_if):
-    insert("if   end")
-    key(left enter up end left:4)
-action(user.code_state_else_if):
-    insert(" else if () {}")
-    key(left enter up end left:3)
+    insert("if condition")
+    key(enter)
+    insert("end")
+    key(up:1 end left:4)
+    key("ctrl-d")
 action(user.code_state_else):
-    insert(" else {}")
-    key(left enter)
+    insert("else")
+    key(enter)
 action(user.code_state_for):
-    insert("for  in ")
-    key(left enter up end left:7)
+    insert("for index_ in eachindex(collection)")
+    key(enter)
+    insert("end")
+    key(up:1 end left:7)
+    key("ctrl-d")
 action(user.code_state_while):
-    insert("while () {}")
-    key(left enter up end left:3)
-toggle library: user.code_toggle_libraries()
-library <user.code_libraries>:
-    user.code_insert_library(code_libraries, "")
-    key(end enter)
-action(user.code_import):
+    insert("while condition")
+    insert("end")
+    key(up:1 end left:7)
+    key("ctrl-d")
+state using <user.text>:
     insert("using ")
+    insert(text)
+action(user.code_import):
+    insert("import ")
 action(user.code_comment): "# "
 action(user.code_state_return):
    insert("return ")
@@ -61,12 +65,28 @@ action(user.code_break): "break"
 action(user.code_next): "next"
 action(user.code_true): "true"
 action(user.code_false): "false"
+state comprehension:
+    insert("[index_ for index_ in eachindex(collection)]")
+    key(end left:7)
+    key("ctrl-d")
+state where:
+    insert(" where {}")
+    key(end left:1)
+dock string: 
+    key(home)
+    key(enter up)
+    insert("\"\"\"")
+    key(end enter)
+    key(end enter)
+    insert("\"\"\"")
+    key(up:1)
+    insert("    ")
+    key("ctrl-v")
+    key(end enter)
+    key(end enter)
+    key(backspace)
 
 # Julia specific commands
-(chain|pipe that):
-    key(end)
-    " |> "
-    key(enter)
 
 pair it: 
     insert(" => ")
@@ -120,36 +140,6 @@ uncomment:
 # Re-wrap: requires the Rewrap extension 
 reflow:
     key(alt-q)
-
-# Snippets
-# Requires Setting "editor.tabCompletion": "on"
-if only: 
-    insert("bifo")
-    key(tab)
-
-if else: 
-    insert("bife")
-    key(tab)
-
-for loop: 
-    insert("frlp")
-    key(tab)
-
-comprehension: 
-    insert("cmprhn")
-    key(tab)
-
-where:
-    insert("whra")
-    key(tab)
-
-document string:
-    insert("doksg")
-    key(tab)
-
-function def:
-    insert("fndf")
-    key(tab)
 
 # A few useful shortcuts
 struct:
