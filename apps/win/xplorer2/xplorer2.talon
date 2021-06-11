@@ -18,3 +18,6 @@ go program files: user.file_manager_open_directory("%programfiles%")
 # called REGISTRY.TXT in the xplorer2 installation folder, but to turn it on 
 # requires registry editing after you quit xplorer2. For more information 
 # see REGISTRY.TXT file
+
+peek:
+    key(alt-q)
