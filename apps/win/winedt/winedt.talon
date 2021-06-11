@@ -33,7 +33,7 @@ insert equation:
     key(left)
     insert("\\ref{}")
 
-insert reference: 
+insert ref: 
     insert("\\ref{}")
 
 insert citation: 
