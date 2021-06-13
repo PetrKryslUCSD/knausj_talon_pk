@@ -82,8 +82,15 @@ single column: key("alt-shift-1")
 # Switch to two-column layout
 two columns: key("alt-shift-2")
 
+# Operating on Tabs
 # close file tab
 tab close: app.tab_close()
+tab back:
+    key(ctrl-shift-tab)
+
+# Jumping about
+jump back: key(alt--)
+jump for: key("alt-shift--")
 
 # Re-center the view (watch out: conflicts with Origami)
 recenter:
@@ -93,6 +100,10 @@ recenter:
 # For use with multi-cursors: select word. 
 sword:
 	key(ctrl-d)
+
+# For use with multi-cursors: unselect word. 
+dross:
+    key(ctrl-u)
 
 # Indentation
 
