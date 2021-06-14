@@ -130,6 +130,10 @@ no indent:
 	key(ctrl-k)
 	key(ctrl-l)
 
+(titlecase | titcase): 
+        key(ctrl-k)
+        key(ctrl-t)
+
 reflow:
 	key(ctrl-shift-x)
 	key(ctrl-shift-alt-q)
