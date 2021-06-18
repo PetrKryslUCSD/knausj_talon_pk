@@ -13,8 +13,9 @@
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
 
-(page | scroll) up: key(pgup)
-(page | scroll) down: key(pgdown)
+# Petr Krysl 2020: I want to avoid confusing scoot with scroll.
+page up: key(pgup)
+page down: key(pgdown)
 # Petr Krysl 2020: I like the short versions of these commands.
 copy: edit.copy()
 cut: edit.cut()
@@ -27,12 +28,7 @@ redo: edit.redo()
 paste match: edit.paste_match_style()
 
 # Petr Krysl 2020: I got used to this.
-save it: edit.save()
-
-wipe: key(backspace)    
-(pad | padding): 
-	insert("  ") 
-	key(left)
+save [it]: edit.save()
 
 # Petr Krysl 2020: I prefer to insert the enter where the cursor is.
 slap:
