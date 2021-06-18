@@ -79,11 +79,17 @@ select word:
 (select word right | ex right):
     edit.extend_word_right()
 
-select way left:
+(select way left | ex way left):
     edit.extend_line_start()
 
-select way right:
+(select way right | ex way right):
     edit.extend_line_end()
+
+(select up | ex up):
+    edit.extend_line_up()
+
+(select down | ex down):
+    edit.extend_line_down()
 
 select way up:
     edit.extend_file_start()
