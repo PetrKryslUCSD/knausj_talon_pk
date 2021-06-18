@@ -4,7 +4,7 @@ from talon import Module, Context, actions, app
 import sys
 
 # Petr Krysl, changed word for n
-# abcdefghimnopqrstuvwx 
+# abcdefghimnopqrstuvwxz
 default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made nose oak pit quench red soy trap urge vest whale plex yank zip".split(
     " "
 )
@@ -143,6 +143,8 @@ punctuation_words = {
     "period": ".",
     "semicolon": ";",
     "colon": ":",
+    "-": "-", # Petr Krysl 2021, to dictate for instance 
+    "hyphen": "-", # Petr Krysl 2021, to dictate for instance 
     "forward slash": "/",
     "question mark": "?",
     #"exclamation mark": "!",
@@ -163,7 +165,7 @@ symbol_key_words = {
     "minus": "-",
     "dash": "-",
     # Petr Krysl 2021
-    "quote": "'",
+    "quote": "\"",
     "comma": ",",
     "bee tick": "`",
     "wink": ";",
