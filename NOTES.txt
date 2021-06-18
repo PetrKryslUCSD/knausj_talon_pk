@@ -24,7 +24,5 @@ and app.name: xplorer² - explorer replacement
 os: windows
 and app.exe: xplorer2_64.exe
 
-os: windows
-and app.name: xplorer² - explorer replacement
-os: windows
-and app.exe: xplorer2_64.exe
+# simulate the effect of a statement
+sim("shift air made")
