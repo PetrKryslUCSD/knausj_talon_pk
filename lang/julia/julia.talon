@@ -85,6 +85,17 @@ dock string:
     key(end enter)
     key(end enter)
     key(backspace)
+test module:
+    insert("module mbas001\n")
+    insert("using Test\n")
+    insert("function test()\n")
+    insert("   @test 1 == 1\n")
+    insert("   true\n")
+    insert("end\n")
+    insert("end\n")
+    insert("using .mbas001\n")
+    insert("mbas001.test()\n")
+
 
 # Julia specific commands
 
