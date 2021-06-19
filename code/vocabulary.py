@@ -46,10 +46,11 @@ _capitalize_defaults = [
     "December",
 ]
 
-# Default words that need to be remapped.
+# Default words that need to be remapped.cash
 _word_map_defaults = {
     # E.g:
-    "cash": "cache",
+    "cache": "cash",
+    # This is the opposite ordering to words_to_replace.csv (the latter has the target word first)
 }
 _word_map_defaults.update({word.lower(): word for word in _capitalize_defaults})
 
@@ -66,7 +67,12 @@ ctx.settings["dictate.word_map"] = get_list_from_csv(
 
 
 # Default words that should be added to Talon's vocabulary.
+<<<<<<< HEAD
 _simple_vocab_default = ["nmap", "admin", "Cisco", "Citrix", "VPN", "DNS", "Minecraft", "Dragon"]
+=======
+# Don't edit this. Edit 'additional_vocabulary.csv' instead
+_simple_vocab_default = ["nmap", "admin", "Cisco", "Citrix", "VPN", "DNS", "Minecraft"]
+>>>>>>> d8f4d3e157eb125fe5ad62033827fc00c9ee50bc
 
 # Defaults for different pronounciations of words that need to be added to
 # Talon's vocabulary.

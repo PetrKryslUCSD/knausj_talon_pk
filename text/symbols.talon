@@ -6,8 +6,9 @@ hyphen: "-"
 (bracket | brack | left bracket): "{"
 (rbrack | are bracket | right bracket): "}"
 triple quote: "'''"
+(triple grave | triple back tick | gravy):
+    insert("```")
 (dot dot | dotdot): ".."
-#ellipses: "…"
 ellipses: "..."
 # Petr Krysl 2020
 period: "."
@@ -35,31 +36,36 @@ empty escaped string:
 (inside parens | args):
 	insert("()")
 	key(left)
-inside (squares | list): 
-	insert("[]") 
+inside (squares | list):
+	insert("[]")
 	key(left)
-inside (bracket | braces): 
-	insert("{}") 
+inside (bracket | braces):
+	insert("{}")
 	key(left)
-inside percent: 
-	insert("%%") 
+inside percent:
+	insert("%%")
 	key(left)
 inside quotes:
 	insert('""')
 	key(left)
-angle that: 
+inside (graves | back ticks):
+	insert("``")
+	key(left)
+angle that:
     text = edit.selected_text()
     user.paste("<{text}>")
-(bracket | brace) that: 
+(bracket | brace) that:
     text = edit.selected_text()
     user.paste("{{{text}}}")
-(parens | args) that: 
+(parens | args) that:
     text = edit.selected_text()
     user.paste("({text})")
-percent that: 
+percent that:
     text = edit.selected_text()
     user.paste("%{text}%")
 quote that:
     text = edit.selected_text()
     user.paste('"{text}"')
-
+(grave | back tick) that:
+    text = edit.selected_text()
+    user.paste('`{text}`')

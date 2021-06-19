@@ -1,1 +1,6 @@
+
 *.sublime-workspace
+# Dev stuff
+__pycache__
+*.sw?
+

@@ -141,6 +141,7 @@ punctuation_words = {
     "comma": ",",
     "dot": ".",
     "period": ".",
+    "full stop": ".",
     "semicolon": ";",
     "colon": ":",
     "-": "-", # Petr Krysl 2021, to dictate for instance 
