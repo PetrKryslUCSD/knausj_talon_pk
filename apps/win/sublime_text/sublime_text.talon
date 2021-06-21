@@ -101,8 +101,13 @@ recenter:
 sword:
 	key(ctrl-d)
 
-# For use with multi-cursors: unselect word. 
+# For use with multi-cursors: unselect word, select the next one. 
 dross:
+    key(ctrl-k)
+    key(ctrl-d)
+
+# Soft undo
+soft undo:
     key(ctrl-u)
 
 # Indentation
