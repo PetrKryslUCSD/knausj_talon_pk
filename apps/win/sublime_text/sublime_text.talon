@@ -111,11 +111,10 @@ soft undo:
     key(ctrl-u)
 
 # Indentation
+action(edit.indent_less):
+	key("ctrl-[")
 
-indent less:
-	key(ctrl-[)
-
-(indent more | tabby):
+action(edit.indent_more):
 	key(ctrl-])
 
 reindent: 
@@ -123,7 +122,7 @@ reindent:
 	key(ctrl-r)
 
 no indent:
-	key(ctrl-[:6)
+	key(ctrl-[:7)
 
 # Miscellaneous editing
 
