@@ -19,7 +19,7 @@ compal [<user.text>]:
 search:
 	key(ctrl-f)
 
-netch:
+(netch | next match):
 	key(f3)
 
 search in files:
@@ -96,6 +96,9 @@ jump for: key("alt-shift--")
 recenter:
 	key("ctrl-k")
 	key("ctrl-c")
+
+bookmark set: key(ctrl-f2)
+bookmark next: key(f2)
 
 # For use with multi-cursors: select word. 
 sword:
