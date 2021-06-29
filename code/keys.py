@@ -4,8 +4,8 @@ from talon import Module, Context, actions, app
 import sys
 
 # Petr Krysl, changed word for n
-# abcdefghimnopqrstuvwxz
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made nose oak pit quench red soy trap urge vest whale plex yank zip".split(
+# abcdefghimnopqrstuvwxz 
+default_alphabet = "air bat cap drum each fox gust harp ice jury keel look made nose oak pit quench red suit trap urge vest whale plex yank zip".split(
     " "
 )
 
