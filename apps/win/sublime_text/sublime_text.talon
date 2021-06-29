@@ -19,7 +19,7 @@ compal [<user.text>]:
 search:
 	key(ctrl-f)
 
-(netch | next match):
+(maxed | match next):
 	key(f3)
 
 search in files:
