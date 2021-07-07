@@ -64,10 +64,14 @@ go ark:
 #	key(enter)
 #	clip.set_text(t)
 
-# Switch to the neighboring group (either left or right)
+# Switch focus to the neighboring group (either left or right)
 swig: 
 	key("ctrl-shift-x")
 	key("ctrl-shift-x")
+
+# Move view to group <number>
+move view to <number>:
+    key("ctrl-shift-{number}")
 
 # Toggle sidebar
 sidebar:
