@@ -6,6 +6,8 @@ go home: browser.go_home()
 go for[ward]: browser.go_forward()
 go back[ward]: browser.go_back()
 
+go to {user.website}: browser.go(website)
+
 go private: browser.open_private_window()
 
 bookmark show: browser.bookmarks()
