@@ -70,7 +70,7 @@ swig:
 	key("ctrl-shift-x")
 
 # Move view to group <number>
-move view to <number>:
+move view <number>:
     key("ctrl-shift-{number}")
 
 # Toggle sidebar
@@ -85,6 +85,7 @@ single column: key("alt-shift-1")
 
 # Switch to two-column layout
 two columns: key("alt-shift-2")
+
 
 # Operating on Tabs
 # close file tab
