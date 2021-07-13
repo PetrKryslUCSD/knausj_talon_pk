@@ -105,6 +105,10 @@ recenter:
 bookmark set: key(ctrl-f2)
 bookmark next: key(f2)
 
+# Replaying ST macro
+replay mac:
+    key(ctrl-shift-q)
+
 # For use with multi-cursors: select word. 
 sword:
 	key(ctrl-d)
