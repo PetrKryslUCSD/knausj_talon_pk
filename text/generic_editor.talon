@@ -30,11 +30,11 @@ go line end:
     edit.line_end()
 
 # Petr Krysl 2020: I like these shorter versions
-(go way left | pop):
+(go way left | way left):
     edit.line_start()
     edit.line_start()
 
-(go way right | push):
+(go way right | way right):
     edit.line_end()
 
 go way down:

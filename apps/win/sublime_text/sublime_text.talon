@@ -69,8 +69,8 @@ swig:
 	key("ctrl-shift-x")
 	key("ctrl-shift-x")
 
-# Move view to group <number>
-move view <number>:
+# Move view to group (column) <number>
+move column <number>:
     key("ctrl-shift-{number}")
 
 # Toggle sidebar
@@ -121,6 +121,10 @@ dross:
 # Soft undo
 soft undo:
     key(ctrl-u)
+
+# Folding
+fold: key("ctrl-shift-[")
+unfold: key("ctrl-shift-]")
 
 # Indentation
 action(edit.indent_less):

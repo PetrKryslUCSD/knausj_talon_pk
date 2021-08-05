@@ -327,7 +327,7 @@ assign:
 
 # Evaluate code
 eval:
-    key(alt-enter)
+    key(ctrl-enter)
 
 # Evaluate file using the build system
 eval file | run [file]:
@@ -343,7 +343,7 @@ sidebar:
 	key(ctrl-b)
 
 # Complete Julia code (via IntelliSense)
-pleat:
+completion:
 	key(ctrl-space)
 
 
