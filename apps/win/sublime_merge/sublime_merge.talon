@@ -13,4 +13,7 @@ commit:
 push:
 	key(ctrl-alt-up)
 
-    
+pull:
+    key(ctrl-alt-down)
+
+refresh: key(ctrl-shift-h)
