@@ -42,3 +42,6 @@ insert citation:
 reflow: key(alt-shift-insert)
 
 tit case: key(alt-up)
+
+bookmark set: key("alt-f11") 
+bookmark next: key("ctrl-f11")  
