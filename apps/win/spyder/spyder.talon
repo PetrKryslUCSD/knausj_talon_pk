@@ -1,5 +1,7 @@
 os: windows
-app.name: pythonw.exe
+and app.name: Python
+os: windows
+and app.exe: pythonw.exe
 -
 tag(): user.find_and_replace
 tag(): user.line_commands
@@ -47,5 +49,6 @@ eval:
 	key(ctrl-enter)
 
 # To run file (note that Spyder must be configured with this key binding)
-eval file:
+run [file]:
 	key(ctrl-b)
+
