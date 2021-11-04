@@ -45,8 +45,8 @@ if app.platform == "windows":
         default_folder = os.path.join("~", "Desktop")
 
         directories_to_remap = {
-            "Desktop": os.path.join(one_drive_path, "Desktop"),
-            "Documents": os.path.join(one_drive_path, "Documents"),
+            "Desktop": os.path.join(user_path, "Desktop"),
+            "Documents": os.path.join(user_path, "Documents"),
             "Downloads": os.path.join(user_path, "Downloads"),
             "Music": os.path.join(user_path, "Music"),
             "OneDrive": one_drive_path,

@@ -108,7 +108,8 @@ arrow it:
 end: 
     insert("end")
 
-^funk <user.text>$: user.code_private_function(text)
+^funk <user.code_functions>:
+    user.code_insert_function(code_functions, "")
 
 macro fusion: insert("@. ") 
 macro assert: insert("@assert ") 

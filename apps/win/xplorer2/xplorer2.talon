@@ -21,3 +21,5 @@ go program files: user.file_manager_open_directory("%programfiles%")
 
 peek:
     key(alt-q)
+
+    

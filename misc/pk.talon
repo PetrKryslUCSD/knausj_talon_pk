@@ -15,7 +15,7 @@ insert ucsd email:  insert("pkrysl@ucsd.edu")
 # switch application on the desktop
 switch app: key(alt-tab)
 
-# Global clipboard
+# Global clipboard (Ditto program needs to be configured to use this shortcut)
 paste clip: key(ctrl-alt-v)
 
 # Use screen capture ScreenHunter

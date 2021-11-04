@@ -37,10 +37,10 @@ go line end:
 (go way right | way right):
     edit.line_end()
 
-go way down:
+(go way down | way down):
     edit.file_end()
 
-go way up:
+(go way up | way up):
     edit.file_start()
     
 go bottom:
