@@ -1,5 +1,7 @@
 os: windows
-title: /- Sublime Merge/
+and app.name: Sublime Merge
+os: windows
+and app.exe: sublime_merge.exe
 -
 
 

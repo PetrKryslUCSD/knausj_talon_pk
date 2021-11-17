@@ -92,6 +92,8 @@ two columns: key("alt-shift-2")
 tab close: app.tab_close()
 tab back:
     key(ctrl-shift-tab)
+tab for:
+    key(ctrl-shift-tab)
 
 # Jumping about
 jump back: key(alt--)

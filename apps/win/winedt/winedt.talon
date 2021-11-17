@@ -1,4 +1,7 @@
-app: winedt
+os: windows
+and app.name: WinEdt 10.0
+os: windows
+and app.exe: WinEdt.exe
 -
 tag(): user.find_and_replace
 tag(): user.line_commands
