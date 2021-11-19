@@ -5,7 +5,7 @@ import sys
 
 # Petr Krysl, changed word for n
 # abcdefghimnopqrstuvwxz 
-default_alphabet = "air bat cap drum each fox gust harp is jury keel look made nose oats pin quench red sit trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fox gust harp is jury keel look made nose oats pin quench red soot trap urge vest whale plex yank zip".split(
     " "
 )
 
