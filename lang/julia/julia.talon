@@ -143,12 +143,9 @@ hint:
     key("ctrl-alt-h")
 
 # Comments
-comment out:
+toggle comment:
     key(ctrl-/)
-
-uncomment:
-    key(ctrl-/)
-
+ 
 # Re-wrap: requires the Rewrap extension 
 reflow:
     key(alt-q)
