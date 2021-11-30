@@ -3,9 +3,9 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-# Petr Krysl, changed word for n, and i
+# Petr Krysl, changed word for n, and i, c (cap was interfering with cut)
 # abcdefghimnopqrstuvwxz 
-default_alphabet = "air bat cap drum each fox gust harp ilk jury keel look made nose oats pin quench red soot trap urge vest whale plex yank zip".split(
+default_alphabet = "air blue caf drum eve fox gust harp ilk jury keel look made nose oats pin quench red soot trap urge vest whale plex yank zip".split(
     " "
 )
 
@@ -181,8 +181,8 @@ symbol_key_words = {
     "score": "_",
     "colon": ":",
     "loan": ":",
-    "open cket": "[",
-    "close cket": "]",
+    "open square": "[",
+    "close square": "]",
     "open par": "(",
     "close par": ")",
     "open curly": "{",
