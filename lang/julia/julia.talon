@@ -1,11 +1,10 @@
 mode: user.julia
 mode: command
-and code.language: julia
 -
 # TODO: functions
 
 tag(): user.code_operators
-tag(): user.code_comment
+# tag(): user.code_comment
 tag(): user.code_generic
 settings():
     user.code_private_function_formatter = "SNAKE_CASE"
@@ -43,7 +42,7 @@ action(user.code_state_else):
     insert("else")
     key(enter)
 action(user.code_state_for):
-    insert("for index_ in eachindex(collection)")
+    insert("for index_ in ")
     key(enter)
     insert("end")
     key(up:1 end left:7)
@@ -58,7 +57,7 @@ state using <user.text>:
     insert(text)
 action(user.code_import):
     insert("import ")
-action(user.code_comment): "# "
+# action(user.code_comment): "# "
 action(user.code_state_return):
    insert("return ")
 action(user.code_break): "break"
@@ -125,6 +124,9 @@ macro time: insert("@time ")
 macro view: insert("@view ")
 macro which: insert("@which ")
 macro warn: insert("@warn ")
+macro infiltrate: insert("@infiltrate ")
+macro exit: insert("@exit ")
+macro continue: insert("@continue ")
 
 # Change to the folder of the open file
 to folder:
@@ -143,7 +145,7 @@ hint:
     key("ctrl-alt-h")
 
 # Comments
-toggle comment:
+toggle [comment]:
     key(ctrl-/)
  
 # Re-wrap: requires the Rewrap extension 
