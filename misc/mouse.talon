@@ -27,7 +27,7 @@ run calibration: user.mouse_calibrate()
 #shift
 #super = windows key
 # Petr Krysl 2020: My own mouse commands
-<user.modifiers> chip: 
+<user.modifiers> (chip left | chiple): 
 	key("{modifiers}:down")
 	mouse_click(0)
 	key("{modifiers}:up")
@@ -39,20 +39,20 @@ run calibration: user.mouse_calibrate()
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-chip: 
+chiple: 
 	mouse_click()
 	# close the mouse grid
 	user.grid_close()
-[chip] dub: 
+dub chiple: 
 	mouse_click()
 	mouse_click()
 	# close the mouse grid
 	user.grid_close()
-(chip right | chipper): 
+chipper: 
 	mouse_click(1)
 	# close the mouse grid
 	user.grid_close()
-(tripclick | triplick): 
+trip chiple: 
 	mouse_click()
 	mouse_click()
 	mouse_click()
