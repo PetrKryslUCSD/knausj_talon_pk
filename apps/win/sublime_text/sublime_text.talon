@@ -19,7 +19,7 @@ compal [<user.text>]:
 search:
 	key(ctrl-f)
 
-(maxed | match next):
+(netch | next match):
 	key(f3)
 
 search in files:
@@ -257,3 +257,7 @@ pack status:
 pack build: 
     insert("using Pkg; ") 
     insert('Pkg.build(); ') 
+
+pack precompile: 
+    insert("using Pkg; ") 
+    insert('Pkg.precompile(); ') 
