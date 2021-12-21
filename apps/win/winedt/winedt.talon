@@ -31,15 +31,15 @@ ex ark: key(ctrl-shift-f11)
 
 compile: key(shift-ctrl-p)
 
-insert equation: 
+latex equation: 
     insert("~()")
     key(left)
     insert("\\ref{}")
 
-insert ref: 
+latex ref: 
     insert("\\ref{}")
 
-insert citation: 
+latex citation: 
     insert("~\\cite{}")
 
 reflow: key(alt-shift-insert)
