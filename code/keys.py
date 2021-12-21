@@ -4,8 +4,8 @@ from talon import Module, Context, actions, app
 import sys
 
 # Petr Krysl, changed word for n, and i, c (cap was interfering with cut)
-# abcdefghimnopqrstuvwxz 
-default_alphabet = "air blue caf drum eve fox gust harp ilk jury keel look made nose oats pin quench red soot trap urge vest whale plex yank zip".split(
+# abcdefghijklmnopqrstuvwxyz
+default_alphabet = "amp blue caf drum eve fox gust harp ilk jury keel look made nose oats pal quench red soot trap urge vest whale plex yank zip".split(
     " "
 )
 
@@ -190,7 +190,7 @@ symbol_key_words = {
     "open fork": "<",
     "close fork": ">",
     "star": "*",
-    "numb": "#",
+    "hash": "#",
     "Percy": "%",
     "hat": "^",
     "swirl": "@",
@@ -232,7 +232,7 @@ simple_keys = [
 # Petr Krysl 2020: I like these words for the delete and backspace keys
 # 
 alternate_keys = {
-    "rub": "delete",
+    "del": "delete",
     'smack': 'backspace',
 }
 # mac apparently doesn't have the menu key.
