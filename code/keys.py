@@ -3,9 +3,11 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-# Petr Krysl, changed word for n, and i, c (cap was interfering with cut)
+# Petr Krysl, changed word for n, and i, c (cap was interfering with cut), soot
+# was being interpreted as cut
+
 # abcdefghijklmnopqrstuvwxyz
-default_alphabet = "amp blue caf drum eve fox gust harp ilk jury keel look made nose oats pal quench red soot trap urge vest whale plex yank zip".split(
+default_alphabet = "amp blue caf drum eve fox gust harp ilk jury keel look made nose oats pal quench red soy trap urge vest whale plex yank zip".split(
     " "
 )
 
