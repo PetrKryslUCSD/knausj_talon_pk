@@ -70,7 +70,7 @@ swig:
 	key("ctrl-shift-x")
 
 # Move view to group (column) <number>
-move column <number>:
+cast column <number>:
     key("ctrl-shift-{number}")
 
 # Toggle sidebar
@@ -86,6 +86,9 @@ single column: key("alt-shift-1")
 # Switch to two-column layout
 two columns: key("alt-shift-2")
 
+# Focus column
+focus column  <number>:
+    key("ctrl-{number}")
 
 # Operating on Tabs
 # close file tab
@@ -126,7 +129,13 @@ soft undo:
 
 # Folding
 fold: key("ctrl-shift-[")
+fold all: 
+    key("ctrl-k")
+    key("ctrl-1")
 unfold: key("ctrl-shift-]")
+unfold all: 
+    key("ctrl-k")
+    key("ctrl-j")
 
 # Indentation
 action(edit.indent_less):
@@ -249,6 +258,11 @@ pack envy:
     insert("using Pkg; ") 
     insert('Pkg.activate("."); ') 
     insert('Pkg.instantiate(); ') 
+
+pack envy revise: 
+    insert("using Revise; using Pkg; ") 
+    insert('Pkg.activate("."); ') 
+    insert('Pkg.instantiate();') 
 
 pack test: 
     insert("using Pkg; ") 
