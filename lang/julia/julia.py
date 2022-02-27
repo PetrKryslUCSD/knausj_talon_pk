@@ -3,13 +3,33 @@ from talon import Module, Context, actions, ui, imgui, settings
 mod = Module()
 
 ctx = Context()
-ctx.matches = 'tag: user.julia'
+
+ctx.matches = r"""
+tag: user.julia
+"""
+
+ctx.tags = [
+"user.code_imperative",
+"user.code_comment_line",
+"user.code_comment_block_c_like",
+"user.code_comment_documentation",
+"user.code_data_bool",
+"user.code_functions",
+"user.code_functions_gui",
+"user.code_libraries",
+"user.code_libraries_gui",
+"user.code_operators_array",
+"user.code_operators_assignment",
+"user.code_operators_bitwise",
+"user.code_operators_math",
+]
 
 ctx.lists['user.code_libraries'] = {
     'linear algebra': 'LinearAlgebra',
     'are pack': 'Arpack',
     'revise': 'Revise',
 }
+
 ctx.lists['user.code_functions'] = {
     "abs": "abs",
     "all run": "allrun",
@@ -24,7 +44,7 @@ ctx.lists['user.code_functions'] = {
     "count": "count",
     "covariance": "cov",
     "deep copy": "deepcopy",
-    "debt": "det",
+    "det": "det",
     "diff": "diff",
     "difference": "diff",
     "display": "display",
@@ -34,8 +54,8 @@ ctx.lists['user.code_functions'] = {
     "ell type": "eltype",
     "enumerate": "enumerate",
     "figure": "figure",
-    "Phil in place": "fill!",
-    "Phil": "fill",
+    "fill in place": "fill!",
+    "fill": "fill",
     "find all": "findall",
     "for each": "foreach",
     "get": "get",
@@ -112,123 +132,114 @@ class UserActions:
     def code_operator_increment():
         actions.insert(' += 1')
 
-    def code_operator_indirection():
-        actions.auto('*')
-
-    def code_operator_address_of():
-        actions.auto('&')
-
     def code_operator_assignment():
-        actions.auto(' = ')
+        actions.insert(' = ')
 
     def code_operator_subtraction():
-        actions.auto(' - ')
+        actions.insert(' - ')
 
     def code_operator_subtraction_assignment():
-        actions.auto(' -= ')
+        actions.insert(' -= ')
 
     def code_operator_addition():
-        actions.auto(' + ')
+        actions.insert(' + ')
 
     def code_operator_addition_assignment():
-        actions.auto(' += ')
+        actions.insert(' += ')
 
     def code_operator_multiplication():
-        actions.auto(' * ')
+        actions.insert(' * ')
 
     def code_operator_multiplication_assignment():
-        actions.auto(' *= ')
+        actions.insert(' *= ')
 
     def code_operator_exponent():
-        actions.auto('.pow()');
+        actions.insert('.pow()');
         actions.edit.left();
 
     def code_operator_division():
-        actions.auto(' / ')
+        actions.insert(' / ')
 
     def code_operator_division_assignment():
-        actions.auto(' /= ')
+        actions.insert(' /= ')
 
     def code_operator_modulo():
-        actions.auto(' % ')
+        actions.insert(' % ')
 
     def code_operator_modulo_assignment():
-        actions.auto(' %= ')
+        actions.insert(' %= ')
 
     def code_operator_equal():
-        actions.auto(' == ')
+        actions.insert(' == ')
 
     def code_operator_not_equal():
-        actions.auto(' != ')
+        actions.insert(' != ')
 
     def code_operator_greater_than():
-        actions.auto(' > ')
+        actions.insert(' > ')
 
     def code_operator_greater_than_or_equal_to():
-        actions.auto(' >= ')
+        actions.insert(' >= ')
 
     def code_operator_less_than():
-        actions.auto(' < ')
+        actions.insert(' < ')
 
     def code_operator_less_than_or_equal_to():
-        actions.auto(' <= ')
+        actions.insert(' <= ')
 
     def code_operator_and():
-        actions.auto(' && ')
+        actions.insert(' && ')
 
     def code_operator_or():
-        actions.auto(' || ')
+        actions.insert(' || ')
 
     def code_operator_bitwise_and():
-        actions.auto(' & ')
+        actions.insert(' & ')
 
     def code_operator_bitwise_or():
-        actions.auto(' | ')
+        actions.insert(' | ')
 
     def code_operator_bitwise_exclusive_or():
-        actions.auto(' ^ ')
+        actions.insert(' ^ ')
 
     def code_operator_bitwise_left_shift():
-        actions.auto(' << ')
+        actions.insert(' << ')
 
     def code_operator_bitwise_left_shift_assignment():
-        actions.auto(' <<= ')
+        actions.insert(' <<= ')
 
     def code_operator_bitwise_right_shift():
-        actions.auto(' >> ')
+        actions.insert(' >> ')
 
     def code_operator_bitwise_right_shift_assignment():
-        actions.auto(' >>= ')
+        actions.insert(' >>= ')
 
     def code_operator_object_accessor():
-        actions.auto('.')
+        actions.insert('.')
 
     def code_state_switch():
         actions.insert('match ')
 
     def code_block():
-        actions.auto('{\n\n}')
+        actions.insert('{\n\n}')
         actions.edit.left()
         actions.edit.up()
         actions.key('tab')
 
     def code_import():
-        actions.auto('import ')
+        actions.insert('import ')
 
     def code_comment_line_prefix():
-        actions.auto('#')
+        actions.insert('#')
 
     def code_comment_documentation():
-        actions.auto('""" ')
-
-    def code_self():
-        actions.auto('self')
+        actions.insert('""" ')
 
     def code_insert_true():
-        actions.auto('true')
+        actions.insert('true')
 
     def code_insert_false():
-        actions.auto('false')
+        actions.insert('false')
 
     def code_state_if():
         actions.insert('if ')
@@ -247,19 +258,13 @@ class UserActions:
         actions.edit.left()
 
     def code_private_function(text: str):
-        actions.insert('function ')
+        actions.insert('')
         formatter = settings.get('user.code_private_function_formatter')
         function_name = actions.user.formatted_text(text, formatter)
         actions.user.code_insert_function(function_name, None)
 
-    def code_protected_function(text: str):
-        actions.insert('pub(crate) fn ')
-        formatter = settings.get('user.code_protected_function_formatter')
-        function_name = actions.user.formatted_text(text, formatter)
-        actions.user.code_insert_function(function_name, None)
-
     def code_public_function(text: str):
-        actions.insert('function ')
+        actions.insert('s')
         formatter = settings.get('user.code_public_function_formatter')
         function_name = actions.user.formatted_text(text, formatter)
         actions.user.code_insert_function(function_name, None)
@@ -275,6 +280,9 @@ class UserActions:
 
     def code_state_for():
         actions.insert('for ')
+
+    def code_state_while():
+        actions.insert('while ')
 
     def code_state_return():
         actions.insert('return ')
