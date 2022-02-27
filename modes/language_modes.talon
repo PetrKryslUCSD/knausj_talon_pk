@@ -6,6 +6,7 @@
 ^force type script$: user.code_set_language_mode("typescript")
 ^force markdown$: user.code_set_language_mode("markdown")
 ^force python$: user.code_set_language_mode("python")
+^force julia$: user.code_set_language_mode("julia")
 ^force terraform$: user.code_set_language_mode("terraform")
 ^force are language$: user.code_set_language_mode("r")
 ^force rust$: user.code_set_language_mode("rust")
