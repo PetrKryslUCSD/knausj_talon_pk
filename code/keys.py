@@ -3,14 +3,14 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-# Petr Krysl, changed word for n, and i, c (cap was interfering with cut), soot
+# Petr Krysl, 2022
+# changed word for n, and i, c (cap was interfering with cut), soot
 # was being interpreted as cut
 
 # abcdefghijklmnopqrstuvwxyz
 default_alphabet = "amp blue caf drum eve fox gust harp ilk jury keel look made nose oats pal quench red soy trap urge vest whale plex yank zip".split(
     " "
 )
-
 letters_string = "abcdefghijklmnopqrstuvwxyz"
 
 default_digits = "zero one two three four five six seven eight nine".split(" ")
@@ -120,8 +120,6 @@ modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     "alt": "alt",  #'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
-    "roll": "ctrl",  #'troll':   'ctrl',
-    "option": "alt",
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
 }
@@ -132,53 +130,53 @@ ctx.lists["self.modifier_key"] = modifier_keys
 alphabet = dict(zip(default_alphabet, letters_string))
 ctx.lists["self.letter"] = alphabet
 
-# `punctuation_words` is for words you want available BOTH in dictation and as
-# key names in command mode. `symbol_key_words` is for key names that should be
-# available in command mode, but NOT during dictation.
+# `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
+# `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
     # TODO: I'm not sure why we need these, I think it has something to do with
     # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
     "`": "`",
     ",": ",",  # <== these things
+    "be tick": "`", # Petr Krysl, 2022
+    "grave": "`",
     "comma": ",",
-    "dot": ".",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
     "colon": ":",
-    "-": "-", # Petr Krysl 2021, to dictate for instance 
-    "hyphen": "-", # Petr Krysl 2021, to dictate for instance 
     "forward slash": "/",
-    "question mark": "?",
-    #"exclamation mark": "!",
-    #"exclamation point": "!",
-    #"dollar sign": "$",
-    "asterisk": "*",
-    #"hash sign": "#",
-    #"number sign": "#",
-    "percent sign": "%",
-    #"at sign": "@",
-    #"and sign": "&",
-    "ampersand": "&",
+    "quest": "?", # Petr Krysl, 2022
+    "exclamation mark": "!",
+    "bang": "!", # Petr Krysl, 2022
+    "*": "*", # Petr Krysl, 2022
+    "hash": "#", # Petr Krysl, 2022
+    "number sign": "#",
+    "Percy": "%", # Petr Krysl, 2022
+    "swirl": "@", # Petr Krysl, 2022
+    "amper": "&", # Petr Krysl, 2022
+
+    # Currencies
+    "dolly": "$", # Petr Krysl, 2022
+    "pound sign": "£",
 }
-symbol_key_words = {
+symbol_key_words = {  # Petr Krysl, 2022 /\--9"!`;'=~'_$[](){}<>^@%#*|""
     "dot": ".",
+    "point": ".",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
-    # Petr Krysl 2021
-    "quote": "\"",
+    "equals": "=",
+    "plus": "+",
+    "bang": "!",
     "comma": ",",
     "bee tick": "`",
     "wink": ";",
     "trophy": "'",
-    "point": ".",
     "equals": "=",
     "plus": "+",
     "quest": "?",
     "squiggle": "~",
-    "bang": "!",
     "dolly": "$",
     "score": "_",
     "colon": ":",
@@ -191,20 +189,18 @@ symbol_key_words = {
     "close curly": "}",
     "open fork": "<",
     "close fork": ">",
-    "star": "*",
-    "hash": "#",
-    "Percy": "%",
     "hat": "^",
     "swirl": "@",
-    "dollar": "$",
-    "less than": "<",
-    "rangle": ">",
-    "R angle": ">",
-    "right angle": ">",
-    "greater than": ">",
     "amper": "&",
     "pipe": "|",
     "quote": '"',
+    "star": "*",
+    "hash": "#",
+    "Percy": "%",
+
+    # Currencies
+    "dollar": "$",
+    "pound": "£",
 }
 
 # make punctuation words also included in {user.symbol_keys}
@@ -231,11 +227,13 @@ simple_keys = [
     "tab",
 ]
 
-# Petr Krysl 2020: I like these words for the delete and backspace keys
-# 
+# Petr Krysl 2022: I like these words for the delete and backspace keys
 alternate_keys = {
     "del": "delete",
     'smack': 'backspace',
+    #'junk': 'backspace',
+    "page up": "pageup",
+    "page down": "pagedown",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
@@ -252,7 +250,10 @@ ctx.lists["self.function_key"] = {
 
 @mod.action_class
 class Actions:
-    def get_alphabet() -> dict:
-        """Provides the alphabet dictionary"""
-        return alphabet
-
+    def move_cursor(s: str):
+        """Given a sequence of directions, eg. 'left left up', moves the cursor accordingly using edit.{left,right,up,down}."""
+        for d in s.split():
+            if d in ('left','right','up','down'):
+                getattr(actions.edit, d)()
+            else:
+                raise RuntimeError(f'invalid arrow key: {d}')

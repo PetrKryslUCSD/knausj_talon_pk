@@ -1,336 +1,280 @@
-import re
-
-from talon import Context, Module, actions, settings
+from talon import Module, Context, actions, ui, imgui, settings
 
 mod = Module()
+
 ctx = Context()
-ctx.matches = r"""
-mode: user.julia
-mode: command
-and code.language: julia
-"""
-ctx.lists["user.code_functions"] = {
-"abs": "abs",
-"all run": "allrun",
-"broadcast": "broadcast",
-"change folder": "cd",
-"collect": "collect",
-"conn as array": "connasarray",
-"conjugate": "conj",
-"copy to": "copyto!",
-"correlation": "cor",
-"cosine": "cos",
-"count": "count",
-"covariance": "cov",
-"deep copy": "deepcopy",
-"debt": "det",
-"diff": "diff",
-"difference": "diff",
-"display": "display",
-"dot": "dot",
-"each index": "eachindex",
-"eigen": "eigen",
-"ell type": "eltype",
-"enumerate": "enumerate",
-"figure": "figure",
-"Phil in place": "fill!",
-"Phil": "fill",
-"find all": "findall",
-"for each": "foreach",
-"get": "get",
-"hoe cat": "hcat",
-"imag": "imag",
-"include": "include",
-"is a prox": "isapprox",
-"isempty": "is empty",
-"last index": "lastindex",
-"len": "length",
-"length": "length",
-"log": "log",
-"max": "max",
-"maximum": "maximum",
-"mean": "mean",
-"min": "min",
-"minimum": "minimum",
-"norm": "norm",
-"one": "one",
-"open": "open",
-"fun": "phun",
-"plot": "plot",
-"print": "print",
-"print line": "println",
-"push": "push!",
-"random": "rand",
-"lynn space": "range",
-"range": "range",
-"round": "round",
-"real": "real",
-"reshape": "reshape",
-"scatter": "scatter",
-"similar": "similar",
-"sine": "sin",
-"size": "size",
-"sort": "sort",
-"squirt": "sqrt",
-"squeeze": "squeeze",
-"sub set": "subset",
-"subset": "subset",
-"sum": "sum",
-"time": "time",
-"time nano": "time_ns",
-"trace": "tr",
-"transpose": "transpose",
-"type of": "typeof",
-"unique": "unique",
-"vee cat": "vcat",
-"vec": "vec",
-"vector": "vec",
-"view": "view",
-"zero": "zero",
-"zip": "zip",
+ctx.matches = 'tag: user.julia'
+
+ctx.lists['user.code_libraries'] = {
+    'linear algebra': 'LinearAlgebra',
+    'are pack': 'Arpack',
+    'revise': 'Revise',
+}
+ctx.lists['user.code_functions'] = {
+    "abs": "abs",
+    "all run": "allrun",
+    "broadcast": "broadcast",
+    "change folder": "cd",
+    "collect": "collect",
+    "conn as array": "connasarray",
+    "conjugate": "conj",
+    "copy to": "copyto!",
+    "correlation": "cor",
+    "cosine": "cos",
+    "count": "count",
+    "covariance": "cov",
+    "deep copy": "deepcopy",
+    "debt": "det",
+    "diff": "diff",
+    "difference": "diff",
+    "display": "display",
+    "dot": "dot",
+    "each index": "eachindex",
+    "eigen": "eigen",
+    "ell type": "eltype",
+    "enumerate": "enumerate",
+    "figure": "figure",
+    "Phil in place": "fill!",
+    "Phil": "fill",
+    "find all": "findall",
+    "for each": "foreach",
+    "get": "get",
+    "hoe cat": "hcat",
+    "imag": "imag",
+    "include": "include",
+    "is a prox": "isapprox",
+    "isempty": "is empty",
+    "last index": "lastindex",
+    "len": "length",
+    "length": "length",
+    "log": "log",
+    "max": "max",
+    "maximum": "maximum",
+    "mean": "mean",
+    "min": "min",
+    "minimum": "minimum",
+    "norm": "norm",
+    "one": "one",
+    "open": "open",
+    "fun": "phun",
+    "plot": "plot",
+    "print": "print",
+    "print line": "println",
+    "push": "push!",
+    "random": "rand",
+    "lynn space": "range",
+    "range": "range",
+    "round": "round",
+    "real": "real",
+    "reshape": "reshape",
+    "scatter": "scatter",
+    "similar": "similar",
+    "sine": "sin",
+    "size": "size",
+    "sort": "sort",
+    "squirt": "sqrt",
+    "squeeze": "squeeze",
+    "sub set": "subset",
+    "subset": "subset",
+    "sum": "sum",
+    "time": "time",
+    "time nano": "time_ns",
+    "trace": "tr",
+    "transpose": "transpose",
+    "type of": "typeof",
+    "unique": "unique",
+    "vee cat": "vcat",
+    "vec": "vec",
+    "vector": "vec",
+    "view": "view",
+    "zero": "zero",
+    "zip": "zip",
 }
 
-"""a set of fields used in python docstrings that will follow the
-reStructuredText format"""
-docstring_fields = {
-    "class": ":class:",
-    "function": ":func:",
-    "parameter": ":param:",
-    "raise": ":raise:",
-    "returns": ":return:",
-    "type": ":type:",
-    "return type": ":rtype:",
-    # these are sphinx-specific
-    "see also": ".. seealso:: ",
-    "notes": ".. notes:: ",
-    "warning": ".. warning:: ",
-    "todo": ".. todo:: ",
+ctx.lists['user.code_type'] = {
+    'float sixty four': 'Float64',
+    'int sixty four': 'i64',
+    'boolean': 'Bool',
+    'string': 'string',
 }
 
-mod.list("python_docstring_fields", desc="python docstring fields")
-ctx.lists["user.python_docstring_fields"] = docstring_fields
-
-type_list = {
-    "boolean": "bool",
-    "integer": "int",
-    "string": "str",
-    "none": "None",
-    "dick": "Dict",
-    "float": "float",
-    "any": "Any",
-    "tuple": "Tuple",
-    "union": "UnionAny",
-    "iterable": "Iterable",
-    "vector": "Vector",
-    "bytes": "bytes",
-    "sequence": "Sequence",
-    "callable": "Callable",
-    "list": "List",
-    "no return": "NoReturn",
-}
-
-mod.list("python_type_list", desc="python types")
-ctx.lists["user.python_type_list"] = type_list
-
-exception_list = [
-    "BaseException",
-    "SystemExit",
-    "KeyboardInterrupt",
-    "GeneratorExit",
-    "Exception",
-    "StopIteration",
-    "StopAsyncIteration",
-    "ArithmeticError",
-    "FloatingPointError",
-    "OverflowError",
-    "ZeroDivisionError",
-    "AssertionError",
-    "AttributeError",
-    "BufferError",
-    "EOFError",
-    "ImportError",
-    "ModuleNotFoundError",
-    "LookupError",
-    "IndexError",
-    "KeyError",
-    "MemoryError",
-    "NameError",
-    "UnboundLocalError",
-    "OSError",
-    "BlockingIOError",
-    "ChildProcessError",
-    "ConnectionError",
-    "BrokenPipeError",
-    "ConnectionAbortedError",
-    "ConnectionRefusedError",
-    "ConnectionResetError",
-    "FileExistsError",
-    "FileNotFoundError",
-    "InterruptedError",
-    "IsADirectoryError",
-    "NotADirectoryError",
-    "PermissionError",
-    "ProcessLookupError",
-    "TimeoutError",
-    "ReferenceError",
-    "RuntimeError",
-    "NotImplementedError",
-    "RecursionError",
-    "SyntaxError",
-    "IndentationError",
-    "TabError",
-    "SystemError",
-    "TypeError",
-    "ValueError",
-    "UnicodeError",
-    "UnicodeDecodeError",
-    "UnicodeEncodeError",
-    "UnicodeTranslateError",
-    "Warning",
-    "DeprecationWarning",
-    "PendingDeprecationWarning",
-    "RuntimeWarning",
-    "SyntaxWarning",
-    "UserWarning",
-    "FutureWarning",
-    "ImportWarning",
-    "UnicodeWarning",
-    "BytesWarning",
-    "ResourceWarning",
-]
-mod.list("python_exception", desc="python exceptions")
-ctx.lists["user.python_exception"] = {
-    " ".join(re.findall("[A-Z][^A-Z]*", exception)).lower(): exception
-    for exception in exception_list
-}
-
-
-@ctx.action_class("user")
+@ctx.action_class('user')
 class UserActions:
-    def code_operator_indirection():           actions.auto_insert('')
-    def code_operator_address_of():            actions.auto_insert('')
-    def code_operator_structure_dereference(): actions.auto_insert('')
-    def code_operator_lambda():                actions.auto_insert('')
+    def code_operator_lambda():
+        actions.insert('|| ')
+        actions.edit.left()
+        actions.edit.left()
+
     def code_operator_subscript():
         actions.insert('[]')
-        actions.key('left')
-    def code_operator_assignment():                      actions.auto_insert(' = ')
-    def code_operator_subtraction():                     actions.auto_insert(' - ')
-    def code_operator_subtraction_assignment():          actions.auto_insert(' -= ')
-    def code_operator_addition():                        actions.auto_insert(' + ')
-    def code_operator_addition_assignment():             actions.auto_insert(' += ')
-    def code_operator_multiplication():                  actions.auto_insert(' * ')
-    def code_operator_multiplication_assignment():       actions.auto_insert(' *= ')
-    def code_operator_exponent():                        actions.auto_insert(' ** ')
-    def code_operator_division():                        actions.auto_insert(' / ')
-    def code_operator_division_assignment():             actions.auto_insert(' /= ')
-    def code_operator_modulo():                          actions.auto_insert(' % ')
-    def code_operator_modulo_assignment():               actions.auto_insert(' %= ')
-    def code_operator_equal():                           actions.auto_insert(' == ')
-    def code_operator_not_equal():                       actions.auto_insert(' != ')
-    def code_operator_greater_than():                    actions.auto_insert(' > ')
-    def code_operator_greater_than_or_equal_to():        actions.auto_insert(' >= ')
-    def code_operator_less_than():                       actions.auto_insert(' < ')
-    def code_operator_less_than_or_equal_to():           actions.auto_insert(' <= ')
-    def code_operator_and():                             actions.auto_insert(' and ')
-    def code_operator_or():                              actions.auto_insert(' or ')
-    def code_operator_bitwise_and():                     actions.auto_insert(' & ')
-    def code_operator_bitwise_and_assignment():          actions.auto_insert(' &= ')
-    def code_operator_bitwise_or():                      actions.auto_insert(' | ')
-    def code_operator_bitwise_or_assignment():           actions.auto_insert(' |= ')
-    def code_operator_bitwise_exclusive_or():            actions.auto_insert(' ^ ')
-    def code_operator_bitwise_exclusive_or_assignment(): actions.auto_insert(' ^= ')
-    def code_operator_bitwise_left_shift():              actions.auto_insert(' << ')
-    def code_operator_bitwise_left_shift_assignment():   actions.auto_insert(' <<= ')
-    def code_operator_bitwise_right_shift():             actions.auto_insert(' >> ')
-    def code_operator_bitwise_right_shift_assignment():  actions.auto_insert(' >>= ')
-    def code_self():                                     actions.auto_insert('self')
-    def code_null():                                     actions.auto_insert('None')
-    def code_is_null():                                  actions.auto_insert(' is None')
-    def code_is_not_null():                              actions.auto_insert(' is not None')
-    def code_state_if():
-        actions.insert('if :')
-        actions.key('left')
-    def code_state_else_if():
-        actions.insert('elif :')
-        actions.key('left')
-    def code_state_else():
-        actions.insert('else:')
-        actions.key('enter')
+        actions.edit.left()
+
+    def code_operator_increment():
+        actions.insert(' += 1')
+
+    def code_operator_indirection():
+        actions.auto('*')
+
+    def code_operator_address_of():
+        actions.auto('&')
+
+    def code_operator_assignment():
+        actions.auto(' = ')
+
+    def code_operator_subtraction():
+        actions.auto(' - ')
+
+    def code_operator_subtraction_assignment():
+        actions.auto(' -= ')
+
+    def code_operator_addition():
+        actions.auto(' + ')
+
+    def code_operator_addition_assignment():
+        actions.auto(' += ')
+
+    def code_operator_multiplication():
+        actions.auto(' * ')
+
+    def code_operator_multiplication_assignment():
+        actions.auto(' *= ')
+
+    def code_operator_exponent():
+        actions.auto('.pow()');
+        actions.edit.left();
+
+    def code_operator_division():
+        actions.auto(' / ')
+
+    def code_operator_division_assignment():
+        actions.auto(' /= ')
+
+    def code_operator_modulo():
+        actions.auto(' % ')
+
+    def code_operator_modulo_assignment():
+        actions.auto(' %= ')
+
+    def code_operator_equal():
+        actions.auto(' == ')
+
+    def code_operator_not_equal():
+        actions.auto(' != ')
+
+    def code_operator_greater_than():
+        actions.auto(' > ')
+
+    def code_operator_greater_than_or_equal_to():
+        actions.auto(' >= ')
+
+    def code_operator_less_than():
+        actions.auto(' < ')
+
+    def code_operator_less_than_or_equal_to():
+        actions.auto(' <= ')
+
+    def code_operator_and():
+        actions.auto(' && ')
+
+    def code_operator_or():
+        actions.auto(' || ')
+
+    def code_operator_bitwise_and():
+        actions.auto(' & ')
+
+    def code_operator_bitwise_or():
+        actions.auto(' | ')
+
+    def code_operator_bitwise_exclusive_or():
+        actions.auto(' ^ ')
+
+    def code_operator_bitwise_left_shift():
+        actions.auto(' << ')
+
+    def code_operator_bitwise_left_shift_assignment():
+        actions.auto(' <<= ')
+
+    def code_operator_bitwise_right_shift():
+        actions.auto(' >> ')
+
+    def code_operator_bitwise_right_shift_assignment():
+        actions.auto(' >>= ')
+
+    def code_operator_object_accessor():
+        actions.auto('.')
+
     def code_state_switch():
-        actions.insert('switch ()')
+        actions.insert('match ')
+
+    def code_block():
+        actions.auto('{\n\n}')
         actions.edit.left()
-    def code_state_case():
-        actions.insert('case \nbreak;')
         actions.edit.up()
-    def code_state_for(): actions.auto_insert('for ')
-    def code_state_for_each():
-        actions.insert('for in ')
-        actions.key('left')
-        actions.edit.word_left()
-        actions.key('space')
-        actions.edit.left()
-    def code_state_while():
-        actions.insert('while :')
-        actions.edit.left()
-    def code_type_class(): actions.auto_insert('class ')
-    def code_import():     actions.auto_insert('import ')
-    def code_from_import():
-        actions.insert('from import ')
-        actions.key('left')
-        actions.edit.word_left()
-        actions.key('space')
-        actions.edit.left()
-    def code_comment(): actions.auto_insert('# ')
+        actions.key('tab')
+
+    def code_import():
+        actions.auto('import ')
+
+    def code_comment_line_prefix():
+        actions.auto('#')
+
+    def code_comment_documentation():
+        actions.auto('""" ')
+
+    def code_self():
+        actions.auto('self')
+
+    def code_insert_true():
+        actions.auto('true')
+
+    def code_insert_false():
+        actions.auto('false')
+
+    def code_state_if():
+        actions.insert('if ')
+
+    def code_state_else():
+        actions.insert('else ')
+
+    def code_state_else_if():
+        actions.insert('else if ')
+
     def code_state_return():
         actions.insert('return ')
-    def code_true():            actions.auto_insert('True')
-    def code_false():           actions.auto_insert('False')
-    def code_document_string(): actions.user.insert_cursor('"""[|]"""')
-    def code_insert_function(text: str, selection: str):
-        if selection:
-            text = text + "({})".format(selection)
-        else:
-            text = text + "()"
-        actions.user.paste(text)
-        actions.edit.left()
 
-    def code_default_function(text: str):
-        actions.user.code_public_function(text)
+    def code_insert_function(text: str, selection: str):
+        actions.user.paste(f'{text}({selection or ""})')
+        actions.edit.left()
 
     def code_private_function(text: str):
-        """Inserts private function declaration"""
-        result = "def _{}():".format(
-            actions.user.formatted_text(
-                text, settings.get("user.code_private_function_formatter")
-            )
-        )
+        actions.insert('function ')
+        formatter = settings.get('user.code_private_function_formatter')
+        function_name = actions.user.formatted_text(text, formatter)
+        actions.user.code_insert_function(function_name, None)
 
-        actions.user.paste(result)
-        actions.edit.left()
-        actions.edit.left()
+    def code_protected_function(text: str):
+        actions.insert('pub(crate) fn ')
+        formatter = settings.get('user.code_protected_function_formatter')
+        function_name = actions.user.formatted_text(text, formatter)
+        actions.user.code_insert_function(function_name, None)
 
     def code_public_function(text: str):
-        result = "def {}():".format(
-            actions.user.formatted_text(
-                text, settings.get("user.code_public_function_formatter")
-            )
-        )
-        actions.user.paste(result)
-        actions.edit.left()
-        actions.edit.left()
+        actions.insert('function ')
+        formatter = settings.get('user.code_public_function_formatter')
+        function_name = actions.user.formatted_text(text, formatter)
+        actions.user.code_insert_function(function_name, None)
 
+    def code_default_function(text: str):
+        actions.user.code_private_function(text)
 
-@mod.action_class
-class module_actions:
-    # TODO this could go somewhere else
-    def insert_cursor(text: str):
-        """Insert a string. Leave the cursor wherever [|] is in the text"""
-        if "[|]" in text:
-            end_pos = text.find("[|]")
-            s = text.replace("[|]", "")
-            actions.insert(s)
-            actions.key(f"left:{len(s) - end_pos}")
-        else:
-            actions.insert(text)
+    def code_insert_type_annotation(type: str):
+        actions.insert(f'::{type}')
 
+    def code_insert_return_type(type: str):
+        actions.insert(f' -> {type}')
+
+    def code_state_for():
+        actions.insert('for ')
+
+    def code_state_return():
+        actions.insert('return ')

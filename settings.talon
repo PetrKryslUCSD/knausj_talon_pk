@@ -19,7 +19,7 @@ settings():
     user.mouse_enable_pop_stops_scroll = 1
 
     # Enable pop click with 'control mouse' mode
-    user.mouse_enable_pop_click = 0
+    user.mouse_enable_pop_click = 1
 
     # When enabled, the 'Scroll Mouse' GUI will not be shown.
     user.mouse_hide_mouse_gui = 0
@@ -29,6 +29,9 @@ settings():
 
     # The amount to scroll up/down (equivalent to mouse wheel on Windows by default)
     user.mouse_wheel_down_amount = 120
+
+    # The amount to scroll left/right
+    user.mouse_wheel_horizontal_amount = 40
 
     # Mouse grid and friends put the number one on the bottom left (vs on the top left)
     user.grids_put_one_bottom_left = 1
@@ -45,9 +48,7 @@ settings():
     # copying surrounding text before inserting. This can be slow and may not
     # work in some applications. You may wish to enable this on a
     # per-application basis.
-    #user.context_sensitive_dictation = 1
+    # user.context_sensitive_dictation = 1
 
-    speech.record_all = 1
-
-# uncomment tag to enable mouse grid
-# tag(): user.mouse_grid_enabled
+# Uncomment this to enable the curse yes/curse no commands (show hide mouse cursor). See issue #688.
+# tag(): user.mouse_cursor_commands_enable

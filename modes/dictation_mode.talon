@@ -1,16 +1,26 @@
 mode: dictation
 -
-^press <user.keys>$: key("{keys}")
+^press <user.modifiers>$: key(modifiers)
+^press <user.keys>$: key(keys)
 
-# Everything here should call auto_insert to preserve the state to correctly auto-capitalize/auto-space.
-<user.prose>: auto_insert(prose)
-new line: "\n"
-new paragraph: "\n\n"
-cap <user.word>:
-    result = user.formatted_text(word, "CAPITALIZE_FIRST_WORD")
-    auto_insert(result)
+# Everything here should call `auto_insert()` (instead of `insert()`), to preserve the state to correctly auto-capitalize/auto-space.
+# (Talonscript string literals implicitly call `auto_insert`, so there's no need to wrap those)
+<user.raw_prose>: auto_insert(raw_prose)
+cap: user.dictation_format_cap()
+# Hyphenated variants are for Dragon.
+(no cap | no-caps): user.dictation_format_no_cap()
+(no space | no-space): user.dictation_format_no_space()
+^cap that$: user.dictation_reformat_cap()
+^(no cap | no-caps) that$: user.dictation_reformat_no_cap()
+^(no space | no-space) that$: user.dictation_reformat_no_space()
+
 # Petr Krysl 2020: I would like to make that the same commands that I use in the command mode
 slap: auto_insert("new-line")
+
+#corrections
+# Petr Krysl 2020: I would like to make that the same commands that I use in the command mode
+undo: edit.undo()
+oops: edit.undo()
 
 # Navigation
 go up <number_small> (line|lines):
@@ -25,8 +35,6 @@ go left <number_small> (word|words):
 go right <number_small> (word|words):
     edit.word_right()
     repeat(number_small - 1)
-go way left: edit.line_start()
-go way right: edit.line_end()
 go line start: edit.line_start()
 go line end: edit.line_end()
 
@@ -65,11 +73,6 @@ formatted <user.format_text>:
     user.dictation_insert_raw(format_text)
 ^format selection <user.formatters>$:
     user.formatters_reformat_selection(formatters)
-
-#corrections
-# Petr Krysl 2020: I would like to make that the same commands that I use in the command mode
-undo: edit.undo()
-oops: edit.undo()
 
 # Corrections
 scratch that: user.clear_last_phrase()

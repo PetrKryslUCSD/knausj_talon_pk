@@ -1,7 +1,9 @@
-find it:
+# Petr Krysl 2022: I like these shorter versions
+search:
     edit.find()
 
-next one:
+# Find Next (next match)
+netch:
     edit.find_next()
 
 # Petr Krysl 2020: I like these shorter versions
@@ -11,11 +13,24 @@ next one:
 (go word right | skip right):
     edit.word_right()
 
-go left:
-    edit.left()
+[go] way left:
+    edit.line_start()
+    edit.line_start()
 
-go right:
-    edit.right()
+[go] way right:
+    edit.line_end()
+
+[go] way down:
+    edit.file_end()
+
+[go] way up:
+    edit.file_start()
+    
+[go] line start:
+    edit.line_start()
+
+[go] line end:
+    edit.line_end()
 
 go up:
     edit.up()
@@ -23,26 +38,6 @@ go up:
 go down:
     edit.down()
 
-go line start:
-    edit.line_start()
-
-go line end:
-    edit.line_end()
-
-# Petr Krysl 2020: I like these shorter versions
-(go way left | way left):
-    edit.line_start()
-    edit.line_start()
-
-(go way right | way right):
-    edit.line_end()
-
-(go way down | way down):
-    edit.file_end()
-
-(go way up | way up):
-    edit.file_start()
-    
 go bottom:
     edit.file_end()
     
@@ -63,20 +58,6 @@ select line:
 select all:
     edit.select_all()
 
-select left:
-    edit.extend_left()
-
-select right:
-    edit.extend_right()
-
-select up:
-    edit.extend_line_up()
-
-select down:
-    edit.extend_line_down()
-
-select word:
-    edit.select_word()
 
 # Petr Krysl 2020: I like these shorter versions
 (select word left | ex left):
@@ -97,11 +78,15 @@ select word:
 (select down | ex down):
     edit.extend_line_down()
 
-select way up:
+(select way up | ex way up):
     edit.extend_file_start()
 
-select way down:
+(select way down | ex way down):
     edit.extend_file_end()
+
+select word:
+    edit.select_word()
+
 
 # editing
 indent [more]:
@@ -226,3 +211,4 @@ cut word right:
 cut line:
     edit.select_line()
     edit.cut()
+
