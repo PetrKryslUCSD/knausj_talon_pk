@@ -11,7 +11,7 @@ window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end
 
-please [<user.text>]:
+comm pal [<user.text>]:
     user.vscode("workbench.action.showCommands")
     insert(user.text or "")
     
@@ -107,6 +107,37 @@ toggle mark: user.vscode("bookmarks.toggle")
 go next mark: user.vscode("bookmarks.jumpToNext")
 go last mark: user.vscode("bookmarks.jumpToPrevious")
 
+# Petr Krysl 2022
+go line:
+    key(ctrl-g)
+go <number>:
+    key(ctrl-g)
+    insert("{number}")
+    key(enter)
+
+# Editing (Petr Krysl 2022)
+# Using anchor (Petr Krysl 2022)
+sark: 
+    key(ctrl-k)
+    key(ctrl-b)
+ex ark:
+    key(ctrl-k)
+    key(ctrl-k)
+# Selecting word
+sword: key(ctrl-d)
+# Swap line up or down
+scoot up:
+    key(alt-up)
+scoot down:
+    key(alt-down)
+
+# Petr Krysl 2022
+toggle comment:
+    key(ctrl-/)
+tail comment:
+    key(end)
+    insert(" # ")
+
 # Folding
 fold that: user.vscode("editor.fold")
 unfold that: user.vscode("editor.unfold")
@@ -142,13 +173,20 @@ git revert: user.vscode("git.revertChange")
 git stash: user.vscode("git.stash")
 git stash pop: user.vscode("git.stashPop")
 git status: user.vscode("workbench.scm.focus")
-git stage: user.vscode("git.stage")
+# Petr Krysl 2022
+git stage: user.vscode("Git: Stage Changes")
 git stage all: user.vscode("git.stageAll")
 git unstage: user.vscode("git.unstage")
 git unstage all: user.vscode("git.unstageAll")
 pull request: user.vscode("pr.create")
 change next: key(alt-f5)
 change last: key(shift-alt-f5)
+
+# Running (Petr Krysl 2022)
+eval: key(ctrl-enter)
+run: 
+    key(ctrl-s)
+    user.vscode("Julia: Execute File in REPL")
 
 #Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
