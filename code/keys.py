@@ -166,6 +166,7 @@ symbol_key_words = {  # Petr Krysl, 2022 /\--9"!`;'=~'_$[](){}<>^@%#*|""
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
+    "hyphen": "-", 
     "equals": "=",
     "plus": "+",
     "bang": "!",
