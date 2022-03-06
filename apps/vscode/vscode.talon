@@ -130,6 +130,8 @@ scoot up:
     key(alt-up)
 scoot down:
     key(alt-down)
+# Indentation
+no indent: key(shift-tab:6)
 
 # Petr Krysl 2022
 toggle comment:
@@ -137,6 +139,8 @@ toggle comment:
 tail comment:
     key(end)
     insert(" # ")
+
+# 
 
 # Folding
 fold that: user.vscode("editor.fold")
