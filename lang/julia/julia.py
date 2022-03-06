@@ -121,7 +121,7 @@ ctx.lists['user.code_type'] = {
 @ctx.action_class('user')
 class UserActions:
     def code_operator_lambda():
-        actions.insert('|| ')
+        actions.insert('() -> ')
         actions.edit.left()
         actions.edit.left()
 

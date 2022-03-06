@@ -42,14 +42,17 @@ go tab:
 	key("ctrl-shift-x")
 	key("ctrl-p")
 
-# Go to a code symbol match in the project
+# Go to a code symbol match in the project or locally in a source file
 go symbol:
 	key("ctrl-shift-r")
+go local [symbol]:
+    key("ctrl-r")
 
 # Go to a definition
 go def:
-    key("ctrl-shift-x")
-    key("ctrl-shift-d")
+    key("f12")
+    #key("ctrl-shift-x")
+    #key("ctrl-shift-d")
         
 # Go to mark: swap current position with the mark
 go ark:
@@ -170,6 +173,9 @@ reflow:
 	key(ctrl-shift-x)
 	key(ctrl-shift-alt-q)
 
+toggle comment:
+    key(ctrl-/)
+
 # Swap line up or down
 scoot up:
 	key(ctrl-shift-up)
@@ -224,8 +230,7 @@ eval:
 # Evaluate current file
 run:
     key("ctrl-s")
-    key("ctrl-shift-x")
-    key("ctrl-e")
+    key("f5")
 
 
 # Evaluate file using the build system
