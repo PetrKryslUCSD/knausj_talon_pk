@@ -224,7 +224,7 @@ simple_keys = [
     "insert",
     "pagedown",
     "pageup",
-    "space",
+    # "space",
     "tab",
 ]
 
@@ -232,7 +232,7 @@ simple_keys = [
 alternate_keys = {
     "del": "delete",
     'smack': 'backspace',
-    #'junk': 'backspace',
+    'blank': 'space',  # Petr Krysl: space was getting confused with paste
     "page up": "pageup",
     "page down": "pagedown",
 }
