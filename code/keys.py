@@ -5,10 +5,10 @@ import sys
 
 # Petr Krysl, 2022
 # changed word for n, and i, c (cap was interfering with cut), soot
-# was being interpreted as cut
+# was being interpreted as cut, oats was getting confused with cut
 
 # abcdefghijklmnopqrstuvwxyz
-default_alphabet = "amp blue caf drum eve fox gust harp ilk jury keel look made nose oats pal quench red soy trap urge vest whale plex yank zip".split(
+default_alphabet = "amp blue caf drum eve fox gust harp ilk jury keel look made nose oak pal quench red sit trap urge vest whale plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -230,7 +230,7 @@ simple_keys = [
 
 # Petr Krysl 2022: I like these words for the delete and backspace keys
 alternate_keys = {
-    "del": "delete",
+    "strike": "delete",
     'smack': 'backspace',
     'blank': 'space',  # Petr Krysl: space was getting confused with paste
     "page up": "pageup",
