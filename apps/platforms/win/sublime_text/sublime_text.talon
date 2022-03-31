@@ -97,14 +97,14 @@ focus column  <number>:
 # Operating on Tabs
 # close file tab
 tab close: app.tab_close()
-tab back:
+tab previous:
     key(ctrl-shift-tab)
-tab for:
+tab next:
     key(ctrl-shift-tab)
 
 # Jumping about
-jump back: key(alt--)
-jump for: key("alt-shift--")
+jump previous: key(alt--)
+jump next: key("alt-shift--")
 
 # Re-center the view (watch out: conflicts with Origami)
 recenter:
@@ -222,6 +222,12 @@ bullet:
 	key(home)
 	insert("- ")
 	
+# Quote the current selection with back ticks
+bee tick that:
+    key(ctrl-x)
+    key(`)
+    key(ctrl-v)
+    key(`)
 
 # Evaluate code
 eval:
