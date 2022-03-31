@@ -216,8 +216,9 @@ ctx.lists["self.arrow_key"] = {
     "up": "up",
 }
 
+# Petr Krysl 2022
 simple_keys = [
-    "end",
+    # "end",
     "enter",
     "escape",
     "home",
@@ -232,7 +233,7 @@ simple_keys = [
 alternate_keys = {
     "strike": "delete",
     'smack': 'backspace',
-    'blank': 'space',  # Petr Krysl: space was getting confused with paste
+    'space': 'space',  # Petr Krysl: space was getting confused with paste
     "page up": "pageup",
     "page down": "pagedown",
 }
