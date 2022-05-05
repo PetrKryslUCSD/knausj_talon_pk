@@ -217,6 +217,14 @@ args:
 assign:
 	insert(" = ")
 
+round to square:
+    key(ctrl-x)
+    key(delete)
+    key(backspace)
+    key("[")
+    key(ctrl-v)
+    key("]")
+
 # Insert "- " in markdown to make a bullet
 bullet:
 	key(home)
