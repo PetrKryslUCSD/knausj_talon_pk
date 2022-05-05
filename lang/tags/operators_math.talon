@@ -6,6 +6,7 @@ op (minus | subtract): user.code_operator_subtraction()
 op (plus | add): user.code_operator_addition()
 op (times | multiply): user.code_operator_multiplication()
 op divide: user.code_operator_division()
+op backslash: insert(" \\ ")
 op mod: user.code_operator_modulo()
 (op (power | exponent) | to the power [of]): user.code_operator_exponent()
 
