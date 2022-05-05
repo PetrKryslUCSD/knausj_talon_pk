@@ -139,6 +139,14 @@ toggle comment:
 tail comment:
     key(end)
     insert(" # ")
+assign: insert(" = ")
+recenter: key(ctrl-l)
+search:
+    key(ctrl-f)
+(netch | next match):
+    key(f3)
+search in files:
+    key(ctrl-shift-f)
 
 # 
 
