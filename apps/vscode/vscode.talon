@@ -114,6 +114,7 @@ go <number>:
     key(ctrl-g)
     insert("{number}")
     key(enter)
+go any: key(ctrl-p)
 
 # Editing (Petr Krysl 2022)
 # Using anchor (Petr Krysl 2022)
@@ -148,7 +149,40 @@ search:
 search in files:
     key(ctrl-shift-f)
 
-# 
+# Petr Krysl 2022
+# Julia package commands. These should be moved to Julia.talon 
+# after it becomes possible to switch to a different context 
+# in the terminal.
+pack envy: 
+    insert("using Pkg; ") 
+    insert('Pkg.activate("."); ') 
+    insert('Pkg.instantiate(); ') 
+
+pack envy revise: 
+    insert("using Revise; using Pkg; ") 
+    insert('Pkg.activate("."); ') 
+    insert('Pkg.instantiate();') 
+
+pack test: 
+    insert("using Pkg; ") 
+    insert('Pkg.test(); ') 
+
+pack update: 
+    insert("using Pkg; ") 
+    insert('Pkg.update(); ') 
+
+pack status: 
+    insert("using Pkg; ") 
+    insert('Pkg.status(); ') 
+
+pack build: 
+    insert("using Pkg; ") 
+    insert('Pkg.build(); ') 
+
+pack precompile: 
+    insert("using Pkg; ") 
+    insert('Pkg.precompile(); ') 
+
 
 # Folding
 fold that: user.vscode("editor.fold")
