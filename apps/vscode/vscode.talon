@@ -11,7 +11,7 @@ window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end
 
-comm pal [<user.text>]:
+compal [<user.text>]:
     user.vscode("workbench.action.showCommands")
     insert(user.text or "")
     
@@ -90,7 +90,7 @@ refactor this: user.vscode("editor.action.refactor")
 
 #code navigation
 (go declaration | follow): user.vscode("editor.action.revealDefinition")
-go back: user.vscode("workbench.action.navigateBack")
+go backward: user.vscode("workbench.action.navigateBack")
 go forward: user.vscode("workbench.action.navigateForward")
 go implementation: user.vscode("editor.action.goToImplementation")
 go type: user.vscode("editor.action.goToTypeDefinition")
@@ -100,6 +100,7 @@ go recent [<user.text>]:
     sleep(50ms)
     insert(text or "")
     sleep(250ms)
+
     
 # Bookmarks. Requires Bookmarks plugin
 go marks: user.vscode("workbench.view.extension.bookmarks")
@@ -115,6 +116,9 @@ go <number>:
     insert("{number}")
     key(enter)
 go any: key(ctrl-p)
+go symbol: 
+    key(ctrl-p)
+    key(@)
 
 # Editing (Petr Krysl 2022)
 # Using anchor (Petr Krysl 2022)
@@ -148,6 +152,39 @@ search:
     key(f3)
 search in files:
     key(ctrl-shift-f)
+
+round to square:
+    key(ctrl-x)
+    key(delete)
+    key(backspace)
+    key("[")
+    key(ctrl-v)
+    key("]")
+of type: insert("::")
+tit case: 
+    key(ctrl-shift-p)
+    insert("Transform to Title Case")
+    key(enter)
+low case: 
+    key(ctrl-shift-p)
+    insert("Transform to Lowercase")
+    key(enter)
+up case: 
+    key(ctrl-shift-p)
+    insert("Transform to Uppercase")
+    key(enter)
+
+# Petr Krysl 2022
+to folder:
+    user.vscode("copyFilePath")
+    key(ctrl-shift-p)
+    insert("Terminal: Focus Next Terminal in Terminal Group")
+    sleep(100ms)
+    key(enter)
+    sleep(700ms)
+    insert("cd(dirname(raw\"\"))")
+    key(left:3)
+    key(ctrl-v)
 
 # Petr Krysl 2022
 # Julia package commands. These should be moved to Julia.talon 
