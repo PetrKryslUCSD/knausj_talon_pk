@@ -42,6 +42,7 @@ state comprehension:
 state where:
     insert(" where {}")
     key(end left:1)
+of type: insert("::")
     
 dock string: 
     key(home)
@@ -79,10 +80,10 @@ macro test: insert("@test ")
 macro time: insert("@time ") 
 macro view: insert("@view ")
 macro which: insert("@which ")
-macro debug: insert("@debug ")
-macro info: insert("@info ")
-macro warn: insert("@warn ")
-macro error: insert("@error ")
+macro debug: insert("@debug \"$(@__FILE__): \"")
+macro info: insert("@info \"$(@__FILE__): \"")
+macro warn: insert("@warn \"$(@__FILE__): \"")
+macro error: insert("@error \"$(@__FILE__): \"")
 macro infiltrate: insert("@infiltrate ")
 macro exit: insert("@exit ")
 macro continue: insert("@continue ")
