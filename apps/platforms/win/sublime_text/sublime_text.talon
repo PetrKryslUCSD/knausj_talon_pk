@@ -155,13 +155,13 @@ reindent:
 no indent:
 	key(ctrl-[:7)
 
-# Miscellaneous editing
+# Miscellaneous EDITING
 
-(uppercase | upcase): 
+(uppercase | up case): 
 	key(ctrl-k)
 	key(ctrl-u)
 
-(lower | lowercase | downcase): 
+(lower | lowercase | low case): 
 	key(ctrl-k)
 	key(ctrl-l)
 
