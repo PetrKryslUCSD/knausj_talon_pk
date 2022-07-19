@@ -104,7 +104,8 @@ go recent [<user.text>]:
     
 # Bookmarks. Requires Bookmarks plugin
 go marks: user.vscode("workbench.view.extension.bookmarks")
-toggle mark: user.vscode("bookmarks.toggle")
+# Petr Krysl, 2022
+mark [toggle]: user.vscode("bookmarks.toggle")
 go next mark: user.vscode("bookmarks.jumpToNext")
 go last mark: user.vscode("bookmarks.jumpToPrevious")
 
@@ -137,6 +138,10 @@ scoot down:
     key(alt-down)
 # Indentation
 no indent: key(shift-tab:6)
+reindent: 
+    key(ctrl-shift-p)
+    insert("Reindent Selected Lines")
+    key(enter)
 
 # Petr Krysl 2022
 toggle comment:
@@ -173,6 +178,18 @@ up case:
     key(ctrl-shift-p)
     insert("Transform to Uppercase")
     key(enter)
+# Insert "- " in markdown to make a bullet
+bullet:
+	key(home)
+	insert("- ")
+    key(end)
+# Quote the current selection with back ticks
+bee tick that:
+    key(ctrl-x)
+    key(`)
+    key(ctrl-v)
+    key(`)
+
 
 # Petr Krysl 2022
 to folder:
