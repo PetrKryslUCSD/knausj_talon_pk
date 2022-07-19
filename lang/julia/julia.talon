@@ -34,7 +34,9 @@ state enum <user.text>:
 toggle use: user.code_toggle_libraries()
 
 state using: "using "
-end: "end"
+end: 
+    insert("end ")
+    key(backspace)
 state comprehension:
     insert("[index_ for index_ in eachindex(collection)]")
     key(end left:7)
@@ -42,6 +44,9 @@ state comprehension:
 state where:
     insert(" where {}")
     key(end left:1)
+state for loop:
+    insert("for  in ")
+    key(end left:4)
 of type: insert("::")
     
 dock string: 
