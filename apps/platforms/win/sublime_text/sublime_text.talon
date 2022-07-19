@@ -111,8 +111,8 @@ recenter:
 	key("ctrl-k")
 	key("ctrl-c")
 
-bookmark set: key(ctrl-f2)
-bookmark next: key(f2)
+[book] mark set: key(ctrl-f2)
+[book] mark next: key(f2)
 
 # Replaying ST macro
 replay mac:
