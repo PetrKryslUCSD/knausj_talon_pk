@@ -5,6 +5,7 @@ os: linux
 
 # some shortcuts
 insert my name:  insert("Petr Krysl")
+insert my Github handle:  insert("PetrKryslUCSD")
 insert my last name:  insert("Krysl")
 insert my first name:  insert("Petr")
 insert gmail:  insert("krysl.petr@gmail.com")
