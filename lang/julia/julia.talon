@@ -44,10 +44,17 @@ state comprehension:
 state where:
     insert(" where {}")
     key(end left:1)
-state for loop:
-    insert("for  in ")
-    key(end left:4)
+state for each index:
+    insert("for _ in eachindex()")
+    key(end left:1)
+state for all pairs:
+    insert("for (, ) in pairs()")
+    key(end left:1)
+state for axes:
+    insert("for _ in axes()")
+    key(end left:1)
 of type: insert("::")
+of subtype: insert("<:")
     
 dock string: 
     key(home)
@@ -69,9 +76,8 @@ test module:
     insert("   @test 1 == 1\n")
     insert("   true\n")
     insert("end\n")
+    insert("test()\n")
     insert("end\n")
-    insert("using .mbas001\n")
-    insert("mbas001.test()\n")
 
 macro fusion: insert("@. ") 
 macro assert: insert("@assert ") 
@@ -85,10 +91,18 @@ macro test: insert("@test ")
 macro time: insert("@time ") 
 macro view: insert("@view ")
 macro which: insert("@which ")
-macro debug: insert("@debug \"$(@__FILE__): \"")
-macro info: insert("@info \"$(@__FILE__): \"")
-macro warn: insert("@warn \"$(@__FILE__): \"")
-macro error: insert("@error \"$(@__FILE__): \"")
+macro debug: 
+    insert("@debug \"\"")
+    key(left)
+macro info: 
+    insert("@info \"\"")
+    key(left)
+macro warn: 
+    insert("@warn \"\"")
+    key(left)
+macro error: 
+    insert("@error \"\"")
+    key(left)
 macro infiltrate: insert("@infiltrate ")
 macro exit: insert("@exit ")
 macro continue: insert("@continue ")
