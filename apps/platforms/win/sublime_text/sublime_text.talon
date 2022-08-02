@@ -217,6 +217,8 @@ args:
 assign:
 	insert(" = ")
 
+op pair: insert(" => ")
+
 round to square:
     key(ctrl-x)
     key(delete)
