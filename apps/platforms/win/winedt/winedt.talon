@@ -46,5 +46,5 @@ reflow: key(alt-shift-insert)
 
 tit case: key(alt-up)
 
-bookmark set: key("alt-f11") 
-bookmark next: key("ctrl-f11")  
+[book] mark set: key("alt-f11") 
+[book] mark next: key("ctrl-f11")  
