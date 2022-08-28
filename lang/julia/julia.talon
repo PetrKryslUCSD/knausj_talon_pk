@@ -56,7 +56,7 @@ state for axes:
 of type: insert("::")
 of subtype: insert("<:")
     
-dock string: 
+doc string: 
     key(home)
     key(enter up)
     insert("\"\"\"")
