@@ -64,6 +64,7 @@ ctx.lists['user.code_functions'] = {
     "include": "include",
     "is a prox": "isapprox",
     "isempty": "is empty",
+    "join path": "joinpath",
     "last index": "lastindex",
     "len": "length",
     "length": "length",
