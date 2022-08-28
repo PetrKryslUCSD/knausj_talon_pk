@@ -54,43 +54,43 @@ run calibration: user.mouse_calibrate()
 # 	user.grid_close()
 
 # Petr Krysl, 2022 My own mouse commands
-<user.modifiers> (chip left | chiple): 
+<user.modifiers> lefty: 
     key("{modifiers}:down")
     mouse_click(0)
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-<user.modifiers> (chip right | chipper): 
+<user.modifiers> righty: 
     key("{modifiers}:down")
     mouse_click(1)
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-chiple: 
+lefty: 
     mouse_click()
     # close the mouse grid
     user.grid_close()
-dub chiple: 
+dub lefty: 
     mouse_click()
     mouse_click()
     # close the mouse grid
     user.grid_close()
-chipper: 
+righty: 
     mouse_click(1)
     # close the mouse grid
     user.grid_close()
-trip chiple: 
+trip lefty: 
     mouse_click()
     mouse_click()
     mouse_click()
     # close the mouse grid
     user.grid_close()
 
-left drag | drag:
+drag | lefty drag:
 	user.mouse_drag(0)
 	# close the mouse grid
 	user.grid_close()
-right drag | righty drag:
+righty drag:
 	user.mouse_drag(1)
 	# close the mouse grid
 	user.grid_close()
@@ -120,7 +120,7 @@ wheel upper: user.mouse_scroll_up_continuous()
 wheel upper here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up_continuous()
-wheel gaze: user.mouse_gaze_scroll()
+wheel [gaze]: user.mouse_gaze_scroll()
 wheel gaze here:
     user.mouse_move_center_active_window()
     user.mouse_gaze_scroll()
