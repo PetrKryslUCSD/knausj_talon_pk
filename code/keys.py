@@ -3,12 +3,12 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-# Petr Krysl, 2022
-# changed word for n, and i, c (cap was interfering with cut), soot
-# was being interpreted as cut, oats was getting confused with cut
+# Petr Krysl, 2022 changed word for n, and i, c (cap was interfering with cut),
+# soot was being interpreted as cut, oats was getting confused with cut, whale
+# was getting confused with pal, amp with amper 
 
-# abcdefghijklmnopqrstuvwxyz
-default_alphabet = "amp blue caf drum eve fox gust harp ilk jury keel look made nose oak pal quench red sit trap urge vest whale plex yank zip".split(
+# abcdefghijklmnopqrstuvwxyz 
+default_alphabet = "air blue caf drum eve fox gust harp ilk jury keel look made nose oak pal quench red sit trap urge vest will plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
