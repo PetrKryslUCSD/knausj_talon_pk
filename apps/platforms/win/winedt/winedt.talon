@@ -37,7 +37,7 @@ latex equation:
     insert("\\ref{}")
 
 latex ref: 
-    insert("\\ref{}")
+    insert("~\\ref{}")
 
 latex citation: 
     insert("~\\cite{}")
