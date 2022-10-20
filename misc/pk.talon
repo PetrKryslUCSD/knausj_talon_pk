@@ -11,7 +11,7 @@ insert my first name:  insert("Petr")
 insert gmail:  insert("krysl.petr@gmail.com")
 insert private gmail:  insert("petr.krysl.san.diego@gmail.com")
 insert earthlink email:  insert("pkrysl@earthlink.net")
-insert ucsd email:  insert("pkrysl@ucsd.edu")
+insert university email:  insert("pkrysl@ucsd.edu")
 
 # switch application on the desktop
 switch app: key(alt-tab)
