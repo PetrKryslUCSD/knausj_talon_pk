@@ -60,6 +60,10 @@ reindent:
 no indent:
 	key(ctrl-[:7)
 
+end: 
+    "end "
+    key(backspace)
+
 # Miscellaneous editing
 
 (uppercase | up case): 

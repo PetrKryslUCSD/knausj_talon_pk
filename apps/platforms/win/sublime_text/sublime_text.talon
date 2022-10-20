@@ -217,6 +217,10 @@ args:
 assign:
 	insert(" = ")
 
+end: 
+    "end "
+    key(backspace)
+
 op pair: insert(" => ")
 
 round to square:
