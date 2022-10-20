@@ -22,7 +22,7 @@ action(edit.indent_more): key(tab)
 action(edit.indent_less): key(shift-tab)
 
 search: key(ctrl-f)
-netch: key(f3)
+next match: key(alt-f3)
 
 go line: key(ctrl-g)
 
