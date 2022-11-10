@@ -34,9 +34,11 @@ state enum <user.text>:
 toggle use: user.code_toggle_libraries()
 
 state using: "using "
+state import: "import "
 end: 
     insert("end ")
     key(backspace)
+else: insert("else")
 state comprehension:
     insert("[index_ for index_ in eachindex(collection)]")
     key(end left:7)
@@ -46,13 +48,30 @@ state where:
     key(end left:1)
 state for each index:
     insert("for _ in eachindex()")
+    key(enter)
+    insert("end ")
+    key(backspace up)
     key(end left:1)
 state for all pairs:
     insert("for (, ) in pairs()")
+    key(enter)
+    insert("end ")
+    key(backspace up)
     key(end left:1)
 state for axes:
     insert("for _ in axes()")
+    key(enter)
+    insert("end ")
+    key(backspace up)
     key(end left:1)
+state function:
+    insert("function ()")
+    key(enter)
+    insert("end ")
+    key(backspace up)
+    key(end left:2)
+
+
 of type: insert("::")
 of subtype: insert("<:")
     
