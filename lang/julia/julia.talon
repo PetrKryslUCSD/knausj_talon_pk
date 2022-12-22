@@ -122,6 +122,9 @@ macro warn:
 macro error: 
     insert("@error \"\"")
     key(left)
+# Infiltrator
 macro infiltrate: insert("@infiltrate ")
 macro exit: insert("@exit ")
+macro trace: insert("@trace ")
+macro locals: insert("@locals ")
 macro continue: insert("@continue ")
