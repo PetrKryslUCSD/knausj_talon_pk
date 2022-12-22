@@ -25,6 +25,10 @@ search: key(ctrl-f)
 next match: key(alt-f3)
 
 go line: key(ctrl-g)
+go <number>:
+    key(ctrl-g)
+    insert("{number}")
+    key(enter)
 
 sark: key("alt-f11") 
 ex ark: key(ctrl-shift-f11)
@@ -47,4 +51,5 @@ reflow: key(alt-shift-insert)
 tit case: key(alt-up)
 
 [book] mark set: key("alt-f11") 
-[book] mark next: key("ctrl-f11")  
+[book] mark previous: key("ctrl-shift-backspace")  
+[book] mark next: key("ctrl-shift-delete")  
