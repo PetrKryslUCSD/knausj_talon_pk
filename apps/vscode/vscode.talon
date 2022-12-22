@@ -142,6 +142,8 @@ reindent:
     key(ctrl-shift-p)
     insert("Reindent Selected Lines")
     key(enter)
+recenter: 
+    user.vscode("Recenter Top Bottom")
 
 # Petr Krysl 2022
 toggle comment:
@@ -150,7 +152,7 @@ tail comment:
     key(end)
     insert(" # ")
 assign: insert(" = ")
-recenter: key(ctrl-l)
+
 search:
     key(ctrl-f)
 (netch | next match):
