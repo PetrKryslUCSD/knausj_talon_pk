@@ -1,6 +1,9 @@
 #custom vscode commands go here
 app: vscode
 -
+settings():
+    insert_wait = 10.0
+
 tag(): user.find_and_replace
 tag(): user.line_commands
 tag(): user.multiple_cursors
@@ -289,6 +292,22 @@ eval: key(ctrl-enter)
 run: 
     key(ctrl-s)
     user.vscode("Julia: Execute File in REPL")
+build: 
+    key(alt-ctrl-b)
+      
+# LaTeX
+
+latex equation: 
+    insert("~()")
+    key(left)
+    insert("\\ref{")
+
+latex ref: 
+    insert("~\\ref{")
+
+latex citation: 
+    insert("~\\cite{")
+  
 
 #Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
