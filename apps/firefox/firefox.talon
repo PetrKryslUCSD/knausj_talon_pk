@@ -10,3 +10,8 @@ tab search <user.text>$:
     insert("% {text}")
     key(down)
     
+# ad hoc macro
+score it:
+    key(backspace)
+    insert("10")
+    key(enter)
