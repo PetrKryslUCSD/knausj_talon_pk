@@ -26,6 +26,11 @@ search:
 search in files:
 	key(ctrl-shift-f)
 
+go project:
+    key(ctrl-shift-p)
+    insert("Project: Quick Switch Project")
+    key(enter)
+
 go any:
 	key(ctrl-p)
 
@@ -142,10 +147,12 @@ unfold all:
     key("ctrl-j")
 
 # Indentation
-action(edit.indent_less):
-	key("ctrl-[")
+indent less:
+    edit.line_start()
+    key("ctrl-[")
 
-action(edit.indent_more):
+indent more:
+    edit.line_start()
 	key(ctrl-])
 
 reindent: 
@@ -222,6 +229,7 @@ end:
     key(backspace)
 
 op pair: insert(" => ")
+op in: insert(" in ")
 
 round to square:
     key(ctrl-x)
