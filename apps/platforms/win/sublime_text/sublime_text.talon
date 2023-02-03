@@ -321,3 +321,11 @@ pack build:
 pack precompile: 
     insert("using Pkg; ") 
     insert('Pkg.precompile(); ') 
+
+jay term:
+    key(ctrl-shift-p)
+    insert("Terminus: Open Default Shell in Tab")
+    key(enter)
+    sleep(1000ms)
+    insert("julia -t4")
+    key(enter)
