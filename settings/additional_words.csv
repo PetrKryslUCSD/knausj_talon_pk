@@ -67,4 +67,10 @@ diagonal,Diagon
 coordinates,cornets
 
 discretized
+JuliaRegistrator,julia registrator
 
+bivector,by vector
+bistatic,by static
+monostatic,mono static
+
+git,get
