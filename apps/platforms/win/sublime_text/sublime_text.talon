@@ -266,7 +266,7 @@ run:
 
 
 # Evaluate file using the build system
-build:
+Ju[lia] build:
     key(ctrl-b)
 
 # Copy name of the file to the clipboard 
