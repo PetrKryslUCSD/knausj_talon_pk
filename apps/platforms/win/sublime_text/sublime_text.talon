@@ -64,6 +64,9 @@ go ark:
     key(ctrl-k)
     key(ctrl-x)
 
+go error:
+    key("f4")
+
 # Outdated: Spring to a given line (by number)
 #go line <number>:
 #	t = clip.text()
