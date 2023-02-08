@@ -95,11 +95,12 @@ focus sidebar: key("ctrl-0")
 # Switch to single column layout
 single column: key("alt-shift-1")
 
-# Switch to two-column layout
+# Switch to two-column or two-rows layout
 two columns: key("alt-shift-2")
+two rows: key("alt-shift-8")
 
 # Focus column
-focus column  <number>:
+focus [column] <number>:
     key("ctrl-{number}")
 
 # Operating on Tabs
