@@ -82,7 +82,7 @@ swig:
 	key("ctrl-shift-x")
 
 # Move view to group (column) <number>
-cast column <number>:
+group <number>:
     key("ctrl-shift-{number}")
 
 # Toggle sidebar
