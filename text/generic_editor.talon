@@ -6,7 +6,7 @@ search:
 netch:
     edit.find_next()
 
-# Petr Krysl 2020: I like these shorter versions
+# Petr Krysl 2020-2023: I like these shorter versions: skip, way, up, down, left, right
 (go word left | skip left):
     edit.word_left()
 
@@ -26,17 +26,23 @@ netch:
 [go] way up:
     edit.file_start()
     
-[go] line start:
+go line start:
     edit.line_start()
 
-[go] line end:
+go line end:
     edit.line_end()
 
-go up:
+[go] up:
     edit.up()
 
-go down:
+[go] down:
     edit.down()
+
+[go] right:
+        edit.right()
+
+[go] left:
+        edit.left()
 
 go bottom:
     edit.file_end()
@@ -44,11 +50,10 @@ go bottom:
 go top:
     edit.file_start()
 
-# Petr Krysl 2020: I like these shorter versions
-[go] page down:
+go page down:
     edit.page_down()
 
-[go] page up:
+go page up:
     edit.page_up()
 
 # selecting
