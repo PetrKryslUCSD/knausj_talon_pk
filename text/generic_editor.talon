@@ -32,16 +32,16 @@ go line start:
 go line end:
     edit.line_end()
 
-[go] up:
+go up:
     edit.up()
 
-[go] down:
+go down:
     edit.down()
 
-[go] right:
+go right:
         edit.right()
 
-[go] left:
+go left:
         edit.left()
 
 go bottom:
