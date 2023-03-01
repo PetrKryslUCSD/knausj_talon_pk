@@ -269,6 +269,11 @@ run:
 Ju[lia] build:
     key(ctrl-b)
 
+# Access history  (using REPLHistory)
+show history:
+    insert("using REPLHistory; print(history())")
+    key("enter")
+
 # Copy name of the file to the clipboard 
 clip name:
 	key("ctrl-shift-x")
