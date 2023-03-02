@@ -58,7 +58,7 @@ go def:
     key("f12")
     #key("ctrl-shift-x")
     #key("ctrl-shift-d")
-        
+
 # Go to mark: swap current position with the mark
 go ark:
     key(ctrl-k)
@@ -349,3 +349,7 @@ terminus:
     insert("Terminus: Open Default Shell in Tab")
     key(enter)
     
+
+# Show documentation in da REPL
+show docs:
+    key("alt-f12")
