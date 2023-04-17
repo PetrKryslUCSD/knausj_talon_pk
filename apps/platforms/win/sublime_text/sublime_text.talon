@@ -278,6 +278,7 @@ run:
 # Evaluate file using the build system
 Ju[lia] build:
     key(ctrl-b)
+    key("ctrl-shift-2")
 
 # Access history  (using REPLHistory)
 show history:
