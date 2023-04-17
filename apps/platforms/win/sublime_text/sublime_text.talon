@@ -345,13 +345,11 @@ pack precompile:
 
 pack remove helpers:
     insert("using Pkg; ")
-    insert('Pkg.rm("AbbreviatedStackTraces"); ')
     insert('Pkg.rm("Revise"); ')
     insert('Pkg.rm("REPLHistory"); ')
 
 pack add helpers:
     insert("using Pkg; ")
-    insert('Pkg.add("AbbreviatedStackTraces"); ')
     insert('Pkg.add("Revise"); ')
     insert('Pkg.add("REPLHistory"); ')
 
