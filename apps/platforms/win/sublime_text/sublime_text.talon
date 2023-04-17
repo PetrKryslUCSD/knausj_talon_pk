@@ -11,9 +11,19 @@ tag(): user.line_commands
 # tag(): user.splits
 tag(): user.tabs
 
+# New window
+new window:
+    key(ctrl-shift-p)
+    insert("Window: New Window")
+    key(enter)
+close window:
+    key(ctrl-shift-p)
+    insert("Window: Close Window")
+    key(enter)
+
 # Navigation, searching
 
-compal [<user.text>]:
+(compal | command) [<user.text>]:
 	key(ctrl-shift-p)
 	insert(user.text or "")
 
