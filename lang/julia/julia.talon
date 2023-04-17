@@ -44,7 +44,7 @@ state comprehension:
     key(end left:7)
     key("ctrl-d")
 state where:
-    insert(" where {}")
+    insert(" where { ")
     key(end left:1)
 state for each index:
     insert("for _ in eachindex()")
@@ -52,7 +52,7 @@ state for each index:
     insert("end ")
     key(backspace up)
     key(end left:1)
-state for all pairs:
+state for pairs:
     insert("for (, ) in pairs()")
     key(enter)
     insert("end ")
@@ -98,7 +98,8 @@ test module:
     insert("test()\n")
     insert("end\n")
 
-macro fusion: insert("@. ") 
+macro edit: insert("@edit ")
+macro fusion: insert("@. ")
 macro assert: insert("@assert ") 
 macro history: insert("@history ") 
 macro breakpoint: insert("@bp ") 
@@ -106,7 +107,10 @@ macro code warn type: insert("@code_warntype ")
 macro elapsed: insert("@elapsed ")
 macro in bounds: insert("@inbounds ")
 macro show: insert("@show ")
-macro test: insert("@test ") 
+macro spawn: insert("@spawn ")
+macro threads: insert("@threads ")
+macro sync: insert("@sync ")
+macro test: insert("@test ")
 macro time: insert("@time ") 
 macro view: insert("@view ")
 macro which: insert("@which ")
