@@ -312,43 +312,43 @@ submit line:
 # Julia package commands. These should be moved to Julia.talon 
 # after it becomes possible to switch to a different context 
 # in the terminal.
-pack envy: 
+pacman envy:
     insert("using Pkg; ") 
     insert('Pkg.activate("."); ') 
     insert('Pkg.instantiate(); ') 
 
-pack envy revise: 
+pacman envy revise:
     insert("using Revise; using Pkg; ") 
     insert('Pkg.activate("."); ') 
     insert('Pkg.instantiate();') 
 
-pack test: 
+pacman test:
     insert("using Pkg; ") 
     insert('Pkg.test(); ') 
 
-pack update: 
+pacman update:
     insert("using Pkg; ") 
     insert('Pkg.update(); ') 
 
-pack status: 
+pacman status:
     insert("using Pkg; ") 
     insert('Pkg.status(); ') 
 
-pack build: 
+pacman build:
     insert("using Pkg; ") 
     insert('Pkg.build(); ') 
 
-pack precompile: 
+pacman precompile:
     insert("using Pkg; ") 
     insert('Pkg.precompile(); ') 
 
 
-pack remove helpers:
+pacman remove helpers:
     insert("using Pkg; ")
     insert('Pkg.rm("Revise"); ')
     insert('Pkg.rm("REPLHistory"); ')
 
-pack add helpers:
+pacman add helpers:
     insert("using Pkg; ")
     insert('Pkg.add("Revise"); ')
     insert('Pkg.add("REPLHistory"); ')
