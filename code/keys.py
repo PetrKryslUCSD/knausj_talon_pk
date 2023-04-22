@@ -8,7 +8,7 @@ import sys
 # was getting confused with pal, amp with amper 
 
 # abcdefghijklmnopqrstuvwxyz 
-default_alphabet = "air blue caf drum eve fox gust harp ilk jury keel look made nose oak pal quench red sit trap urge vest will plex yank zip".split(
+default_alphabet = "air blue caf doom em fox gust harp ice jury keel look made nose oak pal quench red sit trap urge vest will plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
