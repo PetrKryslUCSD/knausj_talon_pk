@@ -83,6 +83,7 @@ ctx.lists['user.code_functions'] = {
     "open": "open",
     "fun": "phun",
     "pairs": "pairs",
+    "parse": "parse",
     "plot": "plot",
     "print": "print",
     "print line": "println",
