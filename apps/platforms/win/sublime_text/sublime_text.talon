@@ -274,10 +274,11 @@ run:
     key("ctrl-s")
     key("f5")
 
-
 # Evaluate file using the build system
 Ju[lia] build:
-    key(ctrl-b)
+    key("ctrl-shift-p")
+    insert("Build With: Julia open REPL")
+    key("enter")
     key("ctrl-shift-2")
 
 # Access history  (using REPLHistory)
