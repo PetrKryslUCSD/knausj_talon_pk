@@ -300,15 +300,6 @@ to folder:
     key("ctrl-shift-x")
     key("ctrl-f")
 
-submit line:
-    mouse_click()
-    mouse_click()
-    mouse_click()
-    key("ctrl-c")
-    key("ctrl-v")
-    key("enter")
-
-
 # Julia package commands. These should be moved to Julia.talon 
 # after it becomes possible to switch to a different context 
 # in the terminal.
