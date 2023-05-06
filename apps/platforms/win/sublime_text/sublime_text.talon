@@ -274,6 +274,12 @@ run:
     key("ctrl-s")
     key("f5")
 
+# Evaluate current file (even when not in the current folder)
+run path:
+    key("ctrl-s")
+    key("ctrl-shift-x")
+    key("ctrl-shift-p")
+
 # Evaluate file using the build system
 Ju[lia] build:
     key("ctrl-shift-p")
