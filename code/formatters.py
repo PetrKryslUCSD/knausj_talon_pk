@@ -270,8 +270,8 @@ def unformat_text(text: str) -> str:
 
 ctx.lists["self.formatters"] = formatters_words.keys()
 ctx.lists["self.prose_formatter"] = {
-    "say": "NOOP",
-    "speak": "NOOP",
+    # "say": "NOOP",  # Petr Krysl 2023
+    # "speak": "NOOP", # Petr Krysl 2023
     "sentence": "CAPITALIZE_FIRST_WORD",
 }
 
