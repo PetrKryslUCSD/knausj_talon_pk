@@ -7,8 +7,8 @@ import sys
 # soot was being interpreted as cut, oats was getting confused with cut, whale
 # was getting confused with pal, amp with amper 
 
-# abcdefghijklmnopqrstuvwxyz 
-default_alphabet = "air blue caf doom em fox gust harp ice jury keel look made nose oak pal quench red sit trap urge vest will plex yank zoo".split(
+# abcdefghijklmnopqrstuvwxyz
+default_alphabet = "air blue caf dame ella fox gust harp ice jay keel look made nose oats pal quench red sit trap urge vest will plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
