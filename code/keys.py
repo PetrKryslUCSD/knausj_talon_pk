@@ -8,7 +8,7 @@ import sys
 # was getting confused with pal, amp with amper 
 
 # abcdefghijklmnopqrstuvwxyz
-default_alphabet = "air blue caf dame ella fox gust harp ice jay keel look made nose oats pal quench red sit trap urge vest will plex yank zoo".split(
+default_alphabet = "air blue caf doom ell fox gust harp ice jay keel look made nose oats pal quench red saw trap urge vest witch plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -195,6 +195,7 @@ symbol_key_words = {  # Petr Krysl, 2022 /\--9"!`;'=~'_$[](){}<>^@%#*|""
     "amper": "&",
     "pipe": "|",
     "quote": '"',
+    "quote mark": '"',
     "star": "*",
     "hash": "#",
     "Percy": "%",
