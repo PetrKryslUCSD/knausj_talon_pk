@@ -212,7 +212,7 @@ completion:
 ex kets:
 	key(ctrl-shift-m)
 
-# Expand the selection to line
+# Expand the selection to line|
 ex line:
 	key(ctrl-l)
 
@@ -223,11 +223,12 @@ ex cope:
 # The following two commands work together to set a mark, move the point 
 # to somewhere else, and then extend the selection between the current 
 # position of the point and the mark. 
+# Petr Krysl 2023
 (set mark | sark):
 	key(ctrl-k)
 	key(ctrl-space)
 
-(select to mark | ex ark):
+(select to mark | ex mark):
 	key(ctrl-k)
 	key(ctrl-a)
 
@@ -243,6 +244,7 @@ end:
     key(backspace)
 
 op pair: insert(" => ")
+
 op in: insert(" in ")
 
 round to square:
@@ -275,7 +277,7 @@ run:
     key("f5")
 
 # Evaluate current file (even when not in the current folder)
-run path:
+run from:
     key("ctrl-s")
     key("ctrl-shift-x")
     key("ctrl-shift-p")
@@ -357,3 +359,20 @@ terminus:
 # Show documentation in da REPL
 show docs:
     key("alt-f12")
+
+web docs:
+    key(ctrl-c)
+    key("ctrl-shift-p")
+    insert("Open URL (Use Input)")
+    key(enter)
+    insert("http://google.com/search?q=Julia ")
+    key(ctrl-v)
+    key(enter)
+
+Julia docs:
+    key(ctrl-c)
+    key("ctrl-shift-p")
+    insert("Open URL (Use Input)")
+    key(enter)
+    insert("https://docs.julialang.org/en/v1")
+    key(enter)
