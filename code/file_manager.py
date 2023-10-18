@@ -89,7 +89,8 @@ if app.platform == "windows":
     one_drive_path = os.path.expanduser(os.path.join("~", "OneDrive"))
 
     # this is probably not the correct way to check for onedrive, quick and dirty
-    if os.path.isdir(os.path.expanduser(os.path.join("~", r"OneDrive\Desktop"))):
+    # Petr Krysl: ignore the OneDrive directory
+    if False: # os.path.isdir(os.path.expanduser(os.path.join("~", r"OneDrive\Desktop"))):
         default_folder = os.path.join("~", "Desktop")
 
         directories_to_remap = {
@@ -185,6 +186,7 @@ class Actions:
             path = directories_to_remap[path]
 
         path = os.path.expanduser(os.path.join("~", path))
+
         actions.user.file_manager_open_directory(path)
 
     def file_manager_get_directory_by_index(index: int) -> str:
