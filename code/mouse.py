@@ -296,7 +296,7 @@ def show_cursor_helper(show):
 #             ctrl.mouse_click(button=0, hold=16000)
 
 # Petr Krysl 2021: 
-# I don't have eye tracking: I use an inferred mouse camera. I
+# I don't have eye tracking: I use an infrared mouse camera. I
 # need to turn off the checks for eye gaze tracking.
 def on_pop(active):
     if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (gaze_job or scroll_job):
