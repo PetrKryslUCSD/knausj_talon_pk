@@ -123,22 +123,20 @@ formatters_dict = {
 }
 
 # This is the mapping from spoken phrases to formatters
+# 2023 Petr Krysl
 formatters_words = {
-    "allcaps": formatters_dict["ALL_CAPS"],
-    "alldown": formatters_dict["ALL_LOWERCASE"],
-    "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
-    "dotted": formatters_dict["DOT_SEPARATED"],
-    "dubstring": formatters_dict["DOUBLE_QUOTED_STRING"],
-    "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
-    "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
-    "kebab": formatters_dict["DASH_SEPARATED"],
-    "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-    "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
-    "slasher": formatters_dict["SLASH_SEPARATED"],
-    "smash": formatters_dict["NO_SPACES"],
-    "snake": formatters_dict["SNAKE_CASE"],
-    "string": formatters_dict["SINGLE_QUOTED_STRING"],
-    "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
+    "allcapped": formatters_dict["ALL_CAPS"], # ALL CAPS
+    "cameled": formatters_dict["PRIVATE_CAMEL_CASE"],
+    "dotted": formatters_dict["DOT_SEPARATED"], # don't.separate.it
+    "dundered": formatters_dict["DOUBLE_UNDERSCORE"], # __double__underscore
+    "hammered": formatters_dict["PUBLIC_CAMEL_CASE"], # PublicCamelCase
+    "kebabed": formatters_dict["DASH_SEPARATED"], # dash-separated
+    "packed": formatters_dict["DOUBLE_COLON_SEPARATED"], # double:separated
+    "padded": formatters_dict["SPACE_SURROUNDED_STRING"], #  space surrounded string
+    "slashed": formatters_dict["SLASH_SEPARATED"], # /slash/separated
+    "smashed": formatters_dict["NO_SPACES"], # nospaces
+    "snaked": formatters_dict["SNAKE_CASE"], # snake_case
+    "titled": formatters_dict["CAPITALIZE_ALL_WORDS"], # Capitalize All Words
 }
 
 all_formatters = {}
