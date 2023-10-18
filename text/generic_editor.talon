@@ -64,7 +64,7 @@ select all:
     edit.select_all()
 
 
-# Petr Krysl 2020: I like these shorter versions
+# Petr Krysl 2023: I like these shorter versions
 (select word left | ex left):
     edit.extend_word_left()
 
@@ -82,16 +82,6 @@ select all:
 
 (select down | ex down):
     edit.extend_line_down()
-
-(select way up | ex way up):
-    edit.extend_file_start()
-
-(select way down | ex way down):
-    edit.extend_file_end()
-
-select word:
-    edit.select_word()
-
 
 # editing
 indent [more]:
