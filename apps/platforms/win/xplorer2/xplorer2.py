@@ -41,9 +41,9 @@ if app.platform == "windows":
     one_drive_path = os.path.expanduser(os.path.join("~", "OneDrive"))
 
     # this is probably not the correct way to check for onedrive, quick and dirty
-    if os.path.isdir(os.path.expanduser(os.path.join("~", r"OneDrive\Desktop"))):
+    if False: #os.path.isdir(os.path.expanduser(os.path.join("~", r"OneDrive\Desktop"))):
+        print("Have OneDrive")
         default_folder = os.path.join("~", "Desktop")
-
         directories_to_remap = {
             "Desktop": os.path.join(user_path, "Desktop"),
             "Documents": os.path.join(user_path, "Documents"),
@@ -54,6 +54,7 @@ if app.platform == "windows":
             "Videos": os.path.join(user_path, "Videos"),
         }
     else:
+        print("Ignoring OneDrive")
         # todo use expanduser for cross platform support
         directories_to_remap = {
             "Desktop": os.path.join(user_path, "Desktop"),

@@ -31,24 +31,69 @@ go <number>:
     key(enter)
 
 sark: key("alt-f11") 
-ex ark: key(ctrl-shift-f11)
+ex mark: key(ctrl-shift-f11)
 
 compile: key(shift-ctrl-p)
 
-latex equation: 
+new paragraph: 
+    key(enter:2)
+latex equation [ref]: 
     insert("~()")
     key(left)
-    insert("\\ref{}")
+    insert("\\ref{")
 
 latex ref: 
-    insert("~\\ref{}")
-
+    insert("~\\ref{")
+latex hyper [ref]: 
+    insert("~\\href{")
+    
 latex citation: 
-    insert("~\\cite{}")
+    insert("~\\cite{")
+math roman:
+    insert("\\mathrm{}")
+    key(left:1)
+math bold:
+    insert("\\mathbf{}")
+    key(left:1)
+math underline:
+    insert("\\underline{{}}")
+    key(left:1)
+bold math:
+    insert("\\boldmath$$")
+    key(left:1)
+math box:
+    insert("\\mbox{}")
+    key(left:1)    
+math big par:
+    insert("\\left(\\right)")
+    key(left:7)
+math prime:
+    insert("\\prime")
+math partial:
+    insert("\\partial")
+math sub:
+    insert("_{}")
+    key(left:1)
+math super:
+    insert("^{}")
+    key(left:1)
+math big square:
+    insert("\\left[\\right]")
+    key(left:7)
+math array:
+    insert("\\begin{{array}}{{}}\\end{{array}}") 
+    key(left:12)
+latex begin:
+    insert("\\begin{")
+math fraction:
+    insert("\\frac{{}}{{}}")
+    key(left:3)
 
 reflow: key(alt-shift-insert)
 
 tit case: key(alt-up)
+low case: key(ctrl-alt-down)
+up case: key(ctrl-alt-up)
 
 [book] mark set: key("alt-f11") 
 [book] mark previous: key("ctrl-shift-backspace")  
