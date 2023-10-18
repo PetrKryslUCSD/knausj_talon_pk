@@ -3,12 +3,14 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-# Petr Krysl, 2022 changed word for n, and i, c (cap was interfering with cut),
+# Petr Krysl, 2022-2023 changed word for n, and i, c (cap was interfering with cut),
 # soot was being interpreted as cut, oats was getting confused with cut, whale
-# was getting confused with pal, amp with amper 
+# was getting confused with pal, amp with amper, ice with paste. fox
+# interferred with oops and cut. oats interfered with oops. pal was often
+# misheard as colon. nose was often misheard as paste.
 
 # abcdefghijklmnopqrstuvwxyz
-default_alphabet = "air blue caf doom eve fox gust harp ice jay keel look made nose oats pal quench red saw trap urge vest witch plex yank zoo".split(
+default_alphabet = "air blue caf deep ease flow gust harp imp jay keel lick made noob oy pooh quench red slew trap urge van witch plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -143,7 +145,9 @@ punctuation_words = {
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
+    "dot drop": ";",# Petr Krysl, 2023
     "colon": ":",
+    "two dots": ":", # Petr Krysl, 2023
     "forward slash": "/",
     "quest": "?", # Petr Krysl, 2022
     "exclamation mark": "!",
@@ -163,7 +167,7 @@ symbol_key_words = {  # Petr Krysl, 2022 /\--9"!`;'=~'_$[](){}<>^@%#*|""
     "dot": ".",
     "point": ".",
     "slash": "/",
-    "backslash": "\\",
+    "whack": "\\",
     "minus": "-",
     "dash": "-",
     "hyphen": "-", 
