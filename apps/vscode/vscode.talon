@@ -129,7 +129,7 @@ go symbol:
 sark: 
     key(ctrl-k)
     key(ctrl-b)
-ex ark:
+ex mark:
     key(ctrl-k)
     key(ctrl-k)
 # Selecting word
@@ -295,7 +295,7 @@ build:
       
 # LaTeX
 
-latex equation: 
+latex equation [ref]: 
     insert("~()")
     key(left)
     insert("\\ref{")
@@ -305,7 +305,45 @@ latex ref:
 
 latex citation: 
     insert("~\\cite{")
-  
+math roman:
+    insert("\\mathrm{}")
+    key(left:1)
+math bold:
+    insert("\\mathbf{}")
+    key(left:1)
+math underline:
+    insert("\\underline{{}}")
+    key(left:1)
+bold math:
+    insert("\\boldmath$$")
+    key(left:1)
+math box:
+    insert("\\mbox{}")
+    key(left:1)    
+math big par:
+    insert("\\left(\\right)")
+    key(left:7)
+math prime:
+    insert("\\prime")
+math partial:
+    insert("\\partial")
+math sub:
+    insert("_{}")
+    key(left:1)
+math super:
+    insert("^{}")
+    key(left:1)
+math big square:
+    insert("\\left[\\right]")
+    key(left:7)
+math array:
+    insert("\\begin{{array}}{{}}\\end{{array}}") 
+    key(left:12)
+latex begin:
+    insert("\\begin{")
+math fraction:
+    insert("\\frac{{}}{{}}")
+    key(left:3)
 
 #Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
