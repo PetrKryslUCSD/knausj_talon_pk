@@ -96,6 +96,7 @@ test module:
     insert("   true\n")
     insert("end\n")
     insert("test()\n")
+    insert("nothing\n")
     insert("end\n")
 
 macro edit: insert("@edit ")
