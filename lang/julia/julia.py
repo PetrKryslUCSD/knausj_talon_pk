@@ -118,6 +118,7 @@ ctx.lists['user.code_functions'] = {
     "vector": "vec",
     "view": "view",
     "zero": "zero",
+    "zeros": "zeros",
     "zip": "zip",
 }
 
