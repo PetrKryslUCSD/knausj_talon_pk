@@ -163,12 +163,10 @@ unfold all:
 
 # Indentation
 indent less:
-    edit.line_start()
-    key("ctrl-[")
+    key("shift-tab")
 
 indent more:
-    edit.line_start()
-	key(ctrl-])
+    key("tab")
 
 reindent: 
 	key(ctrl-shift-x)
