@@ -47,7 +47,8 @@ go any:
 go line:
 	key(ctrl-g)
 
-go <number>:
+# I was getting colon mixed up with "go one".
+go line <number>:
 	key(ctrl-g)
 	insert("{number}")
 	key(enter)
