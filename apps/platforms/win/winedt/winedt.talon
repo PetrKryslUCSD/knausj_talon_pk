@@ -25,7 +25,7 @@ search: key(ctrl-f)
 next match: key(alt-f3)
 
 go line: key(ctrl-g)
-go <number>:
+go line <number>:
     key(ctrl-g)
     insert("{number}")
     key(enter)
