@@ -127,11 +127,11 @@ formatters_dict = {
 formatters_words = {
     "allcapped": formatters_dict["ALL_CAPS"], # ALL CAPS
     "cameled": formatters_dict["PRIVATE_CAMEL_CASE"],
-    "dotted": formatters_dict["DOT_SEPARATED"], # don't.separate.it
+    "dotted": formatters_dict["DOT_SEPARATED"], # don't.separate
     "dundered": formatters_dict["DOUBLE_UNDERSCORE"], # __double__underscore
     "hammered": formatters_dict["PUBLIC_CAMEL_CASE"], # PublicCamelCase
-    "kebabed": formatters_dict["DASH_SEPARATED"], # dash-separated
-    "packed": formatters_dict["DOUBLE_COLON_SEPARATED"], # double:separated
+    "dashed": formatters_dict["DASH_SEPARATED"], # public-camel-case
+    "packed": formatters_dict["DOUBLE_COLON_SEPARATED"], # this::is::packed
     "padded": formatters_dict["SPACE_SURROUNDED_STRING"], #  space surrounded string
     "slashed": formatters_dict["SLASH_SEPARATED"], # /slash/separated
     "smashed": formatters_dict["NO_SPACES"], # nospaces
