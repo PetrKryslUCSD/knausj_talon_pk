@@ -10,7 +10,7 @@ import sys
 # misheard as colon. nose was often misheard as paste.
 
 # abcdefghijklmnopqrstuvwxyz
-default_alphabet = "air blue caf deep ease flow gust harp itch jay keel lick made noob oy pit quench red slew trap urge van witch plex yank zoo".split(
+default_alphabet = "air blue caf deep ease flow gust harp ike jay keel lick made near oink pit quench red slew trap urge vest witch plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -226,8 +226,7 @@ simple_keys = [
     # "end",
     "enter",
     "escape",
-    "home",
-    "insert",
+    "way left", # home is often getting confused
     "pagedown",
     "pageup",
     # "space",
