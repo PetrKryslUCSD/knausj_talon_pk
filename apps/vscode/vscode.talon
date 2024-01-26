@@ -30,10 +30,7 @@ bar toggle: user.vscode("workbench.action.toggleSidebarVisibility") # Petr Krysl
 
     
 # Panels. Use focus: Petr Krysl 2024
-panel control: user.vscode("workbench.panel.repl.view.focus")
-panel output: user.vscode("workbench.panel.output.focus")
 focus problems: user.vscode("workbench.panel.markers.view.focus")
-panel switch: user.vscode("workbench.action.togglePanel")
 focus terminal: user.vscode("workbench.action.terminal.focus")
 focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
