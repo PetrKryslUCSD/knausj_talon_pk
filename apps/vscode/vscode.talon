@@ -27,10 +27,6 @@ bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
 bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
 
-symbol hunt [<user.text>]:
-    user.vscode("workbench.action.gotoSymbol")
-    sleep(50ms)
-    insert(text or "")
     
 # Panels
 panel control: user.vscode("workbench.panel.repl.view.focus")
@@ -53,10 +49,6 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
-file hunt [<user.text>]:
-    user.vscode("workbench.action.quickOpen")
-    sleep(50ms)
-    insert(text or "")
 file copy path: user.vscode("copyFilePath")
 file create sibling: user.vscode_and_wait("explorer.newFile")
 file create: user.vscode("workbench.action.files.newUntitledFile")
@@ -115,7 +107,7 @@ go last mark: user.vscode("bookmarks.jumpToPrevious")
 # Petr Krysl 2022
 go line:
     key(ctrl-g)
-go <number>:
+go line <number>:
     key(ctrl-g)
     insert("{number}")
     key(enter)
@@ -143,7 +135,7 @@ scoot down:
 no indent: key(shift-tab:6)
 reindent: 
     key(ctrl-shift-p)
-    insert("Reindent Selected Lines")
+    insert("Format Selection")
     key(enter)
 recenter: 
     user.vscode("Recenter Top Bottom")
@@ -293,8 +285,8 @@ run:
 build: 
     key(alt-ctrl-b)
       
-# LaTeX
-
+# LaTeX 
+# Petr Krysl 2024
 latex equation [ref]: 
     insert("~()")
     key(left)
@@ -359,7 +351,7 @@ debug console: user.vscode("workbench.debug.action.toggleRepl")
 
 # Terminal
 terminal external: user.vscode("workbench.action.terminal.openNativeConsole")
-terminal new: user.vscode("workbench.action.terminal.new")
+terminal [new]: user.vscode("workbench.action.terminal.new")
 terminal next: user.vscode("workbench.action.terminal.focusNext")
 terminal last: user.vscode("workbench.action.terminal.focusPrevious")
 terminal split: user.vscode("workbench.action.terminal.split")
@@ -371,8 +363,9 @@ terminal scroll down: user.vscode("workbench.action.terminal.scrollDown")
 terminal <number_small>: user.vscode_terminal(number_small)
 
 #TODO: should this be added to linecommands?
-copy line down: user.vscode("editor.action.copyLinesDownAction")
-copy line up: user.vscode("editor.action.copyLinesUpAction")
+# Petr Krysl 2024
+clone line [down]: user.vscode("editor.action.copyLinesDownAction")
+clone line up: user.vscode("editor.action.copyLinesUpAction")
 
 #Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")

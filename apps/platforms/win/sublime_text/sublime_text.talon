@@ -117,10 +117,10 @@ focus [column] <number>:
 # Operating on Tabs
 # close file tab
 tab close: app.tab_close()
-tab previous:
+tab for:
     key(ctrl-shift-tab)
-tab next:
-    key(ctrl-shift-tab)
+tab back:
+    key(ctrl-tab)
 
 # Jumping about
 jump previous: key(alt--)
@@ -276,10 +276,14 @@ run:
     key("f5")
 
 # Evaluate current file (even when not in the current folder)
-run from:
+run path:
     key("ctrl-s")
     key("ctrl-shift-x")
     key("ctrl-shift-p")
+
+# Recall commands in the REPL
+up one: key(up:1)
+up two: key(up:2)
 
 # Evaluate file using the build system
 Ju[lia] build:
