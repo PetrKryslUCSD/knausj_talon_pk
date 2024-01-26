@@ -85,11 +85,10 @@ language switch: user.vscode("workbench.action.editor.changeLanguageMode")
 refactor rename: user.vscode("editor.action.rename")
 refactor this: user.vscode("editor.action.refactor")
 
-#code navigation
-(go declaration | follow): user.vscode("editor.action.revealDefinition")
+#code navigation Petr Krysl 2024
 go backward: user.vscode("workbench.action.navigateBack")
 go forward: user.vscode("workbench.action.navigateForward")
-go implementation: user.vscode("editor.action.goToImplementation")
+go def: key(f12)
 go type: user.vscode("editor.action.goToTypeDefinition")
 go usage: user.vscode("references-view.find")
 go recent [<user.text>]:
