@@ -14,6 +14,7 @@ window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end
 
+# Petr Krysl 2024
 compal [<user.text>]:
     user.vscode("workbench.action.showCommands")
     insert(user.text or "")
@@ -25,15 +26,15 @@ bar outline: user.vscode("outline.focus")
 bar run: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
-bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
+bar toggle: user.vscode("workbench.action.toggleSidebarVisibility") # Petr Krysl 2024
 
     
-# Panels
+# Panels. Use focus: Petr Krysl 2024
 panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
-panel problems: user.vscode("workbench.panel.markers.view.focus")
+focus problems: user.vscode("workbench.panel.markers.view.focus")
 panel switch: user.vscode("workbench.action.togglePanel")
-panel terminal: user.vscode("workbench.action.terminal.focus")
+focus terminal: user.vscode("workbench.action.terminal.focus")
 focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
 # Settings
@@ -50,6 +51,10 @@ zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
 file copy path: user.vscode("copyFilePath")
+# Petr Krysl 2024
+file copy relative: 
+    key(ctrl-k)
+    key(ctrl-shift-c)
 file create sibling: user.vscode_and_wait("explorer.newFile")
 file create: user.vscode("workbench.action.files.newUntitledFile")
 file rename:
@@ -124,6 +129,10 @@ sark:
 ex mark:
     key(ctrl-k)
     key(ctrl-k)
+# expand selection, Petr Krysl 2024
+ex ex: 
+    key(shift-alt-right)
+
 # Selecting word
 sword: key(ctrl-d)
 # Swap line up or down
