@@ -30,9 +30,9 @@ bar toggle: user.vscode("workbench.action.toggleSidebarVisibility") # Petr Krysl
 
     
 # Panels. Use focus: Petr Krysl 2024
-focus problems: user.vscode("workbench.panel.markers.view.focus")
-focus terminal: user.vscode("workbench.action.terminal.focus")
-focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
+go problems: user.vscode("workbench.panel.markers.view.focus")
+go terminal: user.vscode("workbench.action.terminal.focus")
+go editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
 # Settings
 show settings: user.vscode("workbench.action.openGlobalSettings")
@@ -86,11 +86,13 @@ refactor rename: user.vscode("editor.action.rename")
 refactor this: user.vscode("editor.action.refactor")
 
 #code navigation Petr Krysl 2024
-go backward: user.vscode("workbench.action.navigateBack")
-go forward: user.vscode("workbench.action.navigateForward")
+# go back and forth between editing locations
+go back: user.vscode("workbench.action.navigateBack")
+go fore: user.vscode("workbench.action.navigateForward")
+# go to the definition
 go def: key(f12)
-go type: user.vscode("editor.action.goToTypeDefinition")
-go usage: user.vscode("references-view.find")
+go name: key(ctrl-t)
+go references: user.vscode("references-view.find")
 go recent [<user.text>]:
     user.vscode("workbench.action.openRecent")
     sleep(50ms)
@@ -160,6 +162,7 @@ search:
 search in files:
     key(ctrl-shift-f)
 
+# Command to convert content in round brackets (parentheses) to content in square brackets.
 round to square:
     key(ctrl-x)
     key(delete)
@@ -180,6 +183,9 @@ up case:
     key(ctrl-shift-p)
     insert("Transform to Uppercase")
     key(enter)
+
+# Rewrap text
+reflow: key(alt-q)
 # Insert "- " in markdown to make a bullet
 bullet:
 	key(home)
