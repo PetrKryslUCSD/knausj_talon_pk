@@ -19,6 +19,13 @@ compal [<user.text>]:
     user.vscode("workbench.action.showCommands")
     insert(user.text or "")
     
+# Open folder 
+open folder: 
+    key(ctrl-k)
+    key(ctrl-o)
+# 
+start repl: user.vscode("Julia: Start REPL")
+
 # Sidebar
 bar explore: user.vscode("workbench.view.explorer")
 bar extensions: user.vscode("workbench.view.extensions")
@@ -46,23 +53,12 @@ theme switch: user.vscode("workbench.action.selectTheme")
 wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
-# File Commands
+# File name commands
 file copy path: user.vscode("copyFilePath")
 # Petr Krysl 2024
 file copy relative: 
     key(ctrl-k)
     key(ctrl-shift-c)
-file create sibling: user.vscode_and_wait("explorer.newFile")
-file create: user.vscode("workbench.action.files.newUntitledFile")
-file rename:
-    user.vscode("fileutils.renameFile")
-    sleep(150ms)
-file move:
-    user.vscode("fileutils.moveFile")
-    sleep(150ms)
-file open folder: user.vscode("revealFileInOS")
-file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
-save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
@@ -140,10 +136,7 @@ scoot down:
     key(alt-down)
 # Indentation
 no indent: key(shift-tab:6)
-reindent: 
-    key(ctrl-shift-p)
-    insert("Format Selection")
-    key(enter)
+reindent: user.vscode("Format Selection")
 recenter: 
     user.vscode("Recenter Top Bottom")
 
@@ -154,6 +147,11 @@ tail comment:
     key(end)
     insert(" # ")
 assign: insert(" = ")
+
+# Add missing operators Petr Krysl 2024
+op pair: insert(" => ")
+
+op in: insert(" in ")
 
 search:
     key(ctrl-f)
@@ -171,19 +169,10 @@ round to square:
     key(ctrl-v)
     key("]")
 of type: insert("::")
-tit case: 
-    key(ctrl-shift-p)
-    insert("Transform to Title Case")
-    key(enter)
-low case: 
-    key(ctrl-shift-p)
-    insert("Transform to Lowercase")
-    key(enter)
-up case: 
-    key(ctrl-shift-p)
-    insert("Transform to Uppercase")
-    key(enter)
-
+tit case: user.vscode("Transform to Title Case")
+low case: user.vscode("Transform to Lowercase")
+up case: user.vscode("Transform to Uppercase")
+    
 # Rewrap text
 reflow: key(alt-q)
 # Insert "- " in markdown to make a bullet
@@ -198,50 +187,47 @@ bee tick that:
     key(ctrl-v)
     key(`)
 
+# Accommodate the nonsense with special copy and paste commands in the terminal Petr Krysl 2024
+terminal copy: key(ctrl-shift-c)
+terminal paste: key(ctrl-shift-v)
 
 # Petr Krysl 2022
 to folder:
     user.vscode("copyFilePath")
-    key(ctrl-shift-p)
-    insert("Terminal: Focus Next Terminal in Terminal Group")
+    sleep(100ms)
+    user.vscode("Terminal: Focus Next Terminal in Terminal Group")
     sleep(100ms)
     key(enter)
-    sleep(700ms)
+    sleep(1000ms)
     insert("cd(dirname(raw\"\"))")
     key(left:3)
-    key(ctrl-v)
+    key(ctrl-shift-v)
+    key(backspace:3)
 
 # Petr Krysl 2022
 # Julia package commands. These should be moved to Julia.talon 
 # after it becomes possible to switch to a different context 
 # in the terminal.
 package envy: 
-    insert("using Pkg; ") 
-    insert('Pkg.activate("."); ') 
-    insert('Pkg.instantiate(); ') 
+    insert('using Pkg; Pkg.activate("."); Pkg.instantiate(); ') 
 
 package revise: 
     insert("using Revise; using Pkg; ") 
 
 package test: 
-    insert("using Pkg; ") 
-    insert('Pkg.test(); ') 
+    insert('using Pkg; Pkg.test(); ') 
 
 package update: 
-    insert("using Pkg; ") 
-    insert('Pkg.update(); ') 
+    insert('using Pkg; Pkg.update(); ') 
 
 package status: 
-    insert("using Pkg; ") 
-    insert('Pkg.status(); ') 
+    insert('using Pkg; Pkg.status(); ') 
 
 package build: 
-    insert("using Pkg; ") 
-    insert('Pkg.build(); ') 
+    insert('using Pkg; Pkg.build(); ') 
 
 package precompile: 
-    insert("using Pkg; ") 
-    insert('Pkg.precompile(); ') 
+    insert('using Pkg; Pkg.precompile(); ') 
 
 
 # Folding
@@ -360,18 +346,7 @@ debug continue: user.vscode("workbench.action.debug.continue")
 debug restart: user.vscode("workbench.action.debug.restart")
 debug console: user.vscode("workbench.debug.action.toggleRepl")
 
-# Terminal
-terminal external: user.vscode("workbench.action.terminal.openNativeConsole")
-terminal [new]: user.vscode("workbench.action.terminal.new")
-terminal next: user.vscode("workbench.action.terminal.focusNext")
-terminal last: user.vscode("workbench.action.terminal.focusPrevious")
-terminal split: user.vscode("workbench.action.terminal.split")
-terminal zoom: user.vscode("workbench.action.toggleMaximizedPanel")
-terminal trash: user.vscode("workbench.action.terminal.kill")
-terminal toggle: user.vscode_and_wait("workbench.action.terminal.toggleTerminal")
-terminal scroll up: user.vscode("workbench.action.terminal.scrollUp")
-terminal scroll down: user.vscode("workbench.action.terminal.scrollDown")
-terminal <number_small>: user.vscode_terminal(number_small)
+
 
 #TODO: should this be added to linecommands?
 # Petr Krysl 2024
@@ -382,10 +357,6 @@ clone line up: user.vscode("editor.action.copyLinesUpAction")
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
 
-minimap: user.vscode("editor.action.toggleMinimap")
-maximize: user.vscode("workbench.action.minimizeOtherEditors")
-restore: user.vscode("workbench.action.evenEditorWidths")
-
 replace here:
     user.replace("")
     key(cmd-alt-l)
@@ -394,17 +365,5 @@ hover show: user.vscode("editor.action.showHover")
 
 join lines: user.vscode("editor.action.joinLines")
 
-full screen: user.vscode("workbench.action.toggleFullScreen")
-
-curse undo: user.vscode("cursorUndo")
-
 select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
-
-# jupyter
-cell next: user.vscode("jupyter.gotoNextCellInFile")
-cell last: user.vscode("jupyter.gotoPrevCellInFile")
-cell run above: user.vscode("jupyter.runallcellsabove.palette")
-cell run: user.vscode("jupyter.runcurrentcell")
-
-install local: user.vscode("workbench.extensions.action.installVSIX")
