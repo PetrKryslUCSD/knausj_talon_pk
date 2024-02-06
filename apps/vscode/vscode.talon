@@ -33,7 +33,8 @@ bar outline: user.vscode("outline.focus")
 bar run: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
-bar toggle: user.vscode("workbench.action.toggleSidebarVisibility") # Petr Krysl 2024
+# Petr Krysl 2024
+sidebar: user.vscode("workbench.action.toggleSidebarVisibility") 
 
     
 # Panels. Use focus: Petr Krysl 2024
@@ -188,8 +189,8 @@ bee tick that:
     key(`)
 
 # Accommodate the nonsense with special copy and paste commands in the terminal Petr Krysl 2024
-terminal copy: key(ctrl-shift-c)
-terminal paste: key(ctrl-shift-v)
+(repl|terminal) copy: key(ctrl-shift-c)
+(repl|terminal) paste: key(ctrl-shift-v)
 
 # Petr Krysl 2022
 to folder:
