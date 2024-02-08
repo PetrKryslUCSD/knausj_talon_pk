@@ -57,7 +57,7 @@ zen switch: user.vscode("workbench.action.toggleZenMode")
 # File name commands
 file copy path: user.vscode("copyFilePath")
 # Petr Krysl 2024
-file copy relative: 
+file copy relative [path]: 
     key(ctrl-k)
     key(ctrl-shift-c)
 
@@ -115,6 +115,7 @@ go any: key(ctrl-p)
 go symbol: 
     key(ctrl-p)
     key(@)
+    
 
 # Editing (Petr Krysl 2022)
 # Using anchor (Petr Krysl 2022)
@@ -280,8 +281,15 @@ eval: key(ctrl-enter)
 run: 
     key(ctrl-s)
     user.vscode("Julia: Execute File in REPL")
-build: 
-    key(alt-ctrl-b)
+include file: 
+    key(shift-alt-c)
+    user.vscode("workbench.action.terminal.focus")
+    sleep(1000ms)
+    insert("include(basename(raw))")
+    key(left:2)
+    key(")
+    key(shift-ctrl-v)
+    key(")
       
 # LaTeX 
 # Petr Krysl 2024
