@@ -54,9 +54,9 @@ theme switch: user.vscode("workbench.action.selectTheme")
 wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
-# File name commands
-file copy path: user.vscode("copyFilePath")
-# Petr Krysl 2024
+# File name commands Petr Krysl 2024
+file copy name: key(ctrl-alt-e)
+file copy path: key(shift-alt-c)
 file copy relative [path]: 
     key(ctrl-k)
     key(ctrl-shift-c)
@@ -193,18 +193,15 @@ bee tick that:
 (repl|terminal) copy: key(ctrl-shift-c)
 (repl|terminal) paste: key(ctrl-shift-v)
 
-# Petr Krysl 2022
+# Petr Krysl 2024
 to folder:
-    user.vscode("copyFilePath")
-    sleep(100ms)
+    key(shift-alt-c)
     user.vscode("Terminal: Focus Next Terminal in Terminal Group")
-    sleep(100ms)
-    key(enter)
     sleep(1000ms)
     insert("cd(dirname(raw\"\"))")
     key(left:3)
     key(ctrl-shift-v)
-    key(backspace:3)
+    key(end)
 
 # Petr Krysl 2022
 # Julia package commands. These should be moved to Julia.talon 
@@ -278,19 +275,28 @@ change last: key(shift-alt-f5)
 
 # Running (Petr Krysl 2022)
 eval: key(ctrl-enter)
-run: 
-    key(ctrl-s)
-    user.vscode("Julia: Execute File in REPL")
-include file: 
-    key(shift-alt-c)
-    user.vscode("workbench.action.terminal.focus")
+#run: 
+#    key(ctrl-s)
+#    user.vscode("Julia: Execute File in REPL")
+run file: 
+    key(ctrl-alt-e)
+    user.vscode("Terminal: Focus Next Terminal in Terminal Group")
     sleep(1000ms)
-    insert("include(basename(raw))")
-    key(left:2)
-    key(")
+    insert("include(basename(raw\"\"))")
+    key(end)
+    key(left:3)
     key(shift-ctrl-v)
-    key(")
-      
+    key(end)
+run path:
+    key(shift-alt-c)
+    user.vscode("Terminal: Focus Next Terminal in Terminal Group")
+    sleep(1000ms)
+    insert("include(raw\"\")")
+    key(end)
+    key(left:2)
+    key(shift-ctrl-v)
+    key(end)
+
 # LaTeX 
 # Petr Krysl 2024
 latex equation [ref]: 
