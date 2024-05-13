@@ -9,8 +9,8 @@ import sys
 # interferred with oops and cut. oats interfered with oops. pal was often
 # misheard as colon. nose was often misheard as paste.
 
-# abcdefghijklmnopqrstuvwxyz
-default_alphabet = "air blue caf deep ease flow gust harp ike jay keel lick made near owl pit quench red slew trap urge vest witch plex yank zoo".split(
+# abcdefghijklmnopqrstuvwxyz 
+default_alphabet = "air blue caf din emi flow gust harp ike jay keel lick made near out pie quench red slew trap urge vick witch plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
