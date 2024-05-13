@@ -19,11 +19,11 @@ compal [<user.text>]:
     user.vscode("workbench.action.showCommands")
     insert(user.text or "")
     
-# Open folder 
+# Open folder  Petr Krysl 2024
 open folder: 
     key(ctrl-k)
     key(ctrl-o)
-# 
+# Start REPL
 start repl: user.vscode("Julia: Start REPL")
 
 # Sidebar
@@ -131,19 +131,19 @@ ex ex:
 
 # Selecting word
 sword: key(ctrl-d)
-# Swap line up or down
+# Swap line up or down Petr Krysl 2024
 scoot up:
     key(alt-up)
 scoot down:
     key(alt-down)
 # Indentation
 no indent: key(shift-tab:6)
-reindent: user.vscode("Format Selection")
+reformat: user.vscode("Format Selection")
 recenter: 
     user.vscode("Recenter Top Bottom")
 
-# Petr Krysl 2022
-toggle comment:
+# Petr Krysl 2024
+flip comment:
     key(ctrl-/)
 tail comment:
     key(end)
@@ -152,7 +152,6 @@ assign: insert(" = ")
 
 # Add missing operators Petr Krysl 2024
 op pair: insert(" => ")
-
 op in: insert(" in ")
 
 search:
@@ -161,6 +160,11 @@ search:
     key(f3)
 search in files:
     key(ctrl-shift-f)
+# Petr Krysl 2024
+quick search:
+    key(ctrl-shift-p)
+    key(backspace)
+    key(%)
 
 # Command to convert content in round brackets (parentheses) to content in square brackets.
 round to square:
@@ -171,6 +175,7 @@ round to square:
     key(ctrl-v)
     key("]")
 of type: insert("::")
+of subtype: insert("<:")
 tit case: user.vscode("Transform to Title Case")
 low case: user.vscode("Transform to Lowercase")
 up case: user.vscode("Transform to Uppercase")
@@ -203,7 +208,7 @@ to folder:
     key(ctrl-shift-v)
     key(end)
 
-# Petr Krysl 2022
+# Petr Krysl 2024
 # Julia package commands. These should be moved to Julia.talon 
 # after it becomes possible to switch to a different context 
 # in the terminal.
@@ -211,7 +216,7 @@ package envy:
     insert('using Pkg; Pkg.activate("."); Pkg.instantiate(); ') 
 
 package revise: 
-    insert("using Revise; using Pkg; ") 
+    insert("using Revise; ") 
 
 package test: 
     insert('using Pkg; Pkg.test(); ') 
@@ -275,27 +280,37 @@ change last: key(shift-alt-f5)
 
 # Running (Petr Krysl 2022)
 eval: key(ctrl-enter)
-#run: 
-#    key(ctrl-s)
-#    user.vscode("Julia: Execute File in REPL")
+eval move: key(shift-enter)
+run: 
+    key(ctrl-s)
+    key(alt-j)
+    key(alt-r)
 run file: 
-    key(ctrl-alt-e)
-    user.vscode("Terminal: Focus Next Terminal in Terminal Group")
+    key(ctrl-s)
     sleep(1000ms)
-    insert("include(basename(raw\"\"))")
-    key(end)
-    key(left:3)
+    key(ctrl-alt-e)
+    user.vscode("Terminal: Focus Terminal")
+    sleep(1000ms)
+    insert("include(basename(raw\"")
     key(shift-ctrl-v)
+    insert("\"))")
     key(end)
 run path:
-    key(shift-alt-c)
-    user.vscode("Terminal: Focus Next Terminal in Terminal Group")
+    key(ctrl-s)
     sleep(1000ms)
-    insert("include(raw\"\")")
-    key(end)
-    key(left:2)
+    key(shift-alt-c)
+    user.vscode("Terminal: Focus Terminal")
+    sleep(1000ms)
+    insert("include(raw\"")
     key(shift-ctrl-v)
+    insert("\")")
     key(end)
+repeat command:
+    key(ctrl-s)
+    user.vscode("Terminal: Focus Terminal")
+    sleep(1000ms)
+    key(up)
+    key(enter)
 
 # LaTeX 
 # Petr Krysl 2024
