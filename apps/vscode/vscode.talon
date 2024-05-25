@@ -128,6 +128,10 @@ ex mark:
 # expand selection, Petr Krysl 2024
 ex ex: 
     key(shift-alt-right)
+# expanded selection to the interior between brackets, Petr Krysl 2024
+# needs the extension Bracket Select
+ex kets: 
+    key(alt-a)
 
 # Selecting word
 sword: key(ctrl-d)
@@ -289,7 +293,8 @@ run file:
     key(ctrl-s)
     sleep(1000ms)
     key(ctrl-alt-e)
-    user.vscode("Terminal: Focus Terminal")
+    #user.vscode("Terminal: Focus Terminal")
+    key(ctrl-`)
     sleep(1000ms)
     insert("include(basename(raw\"")
     key(shift-ctrl-v)
@@ -299,7 +304,8 @@ run path:
     key(ctrl-s)
     sleep(1000ms)
     key(shift-alt-c)
-    user.vscode("Terminal: Focus Terminal")
+    #user.vscode("Terminal: Focus Terminal")
+    key(ctrl-`)
     sleep(1000ms)
     insert("include(raw\"")
     key(shift-ctrl-v)
