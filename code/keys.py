@@ -10,7 +10,7 @@ import sys
 # misheard as colon. nose was often misheard as paste.
 
 # abcdefghijklmnopqrstuvwxyz 
-default_alphabet = "air blue caf din emi flow gust harp ike jay keel lick made near out pie quench red slew trap urge vick witch plex yank zoo".split(
+default_alphabet = "air blue caf dip elm flow gust harp ike jay keel lick made near out pie quench red slew trap urge vick witch plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
