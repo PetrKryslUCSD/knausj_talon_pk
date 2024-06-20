@@ -285,10 +285,7 @@ change last: key(shift-alt-f5)
 # Running (Petr Krysl 2022)
 eval: key(ctrl-enter)
 eval move: key(shift-enter)
-run: 
-    key(ctrl-s)
-    key(alt-j)
-    key(alt-r)
+
 run file: 
     key(ctrl-s)
     sleep(1000ms)
@@ -300,7 +297,7 @@ run file:
     key(shift-ctrl-v)
     insert("\"))")
     key(end)
-run path:
+run [with path]:
     key(ctrl-s)
     sleep(1000ms)
     key(shift-alt-c)
