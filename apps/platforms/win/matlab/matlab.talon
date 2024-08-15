@@ -1,7 +1,7 @@
 os: windows
-and app.name: MATLAB R2021b
+and app.name: MATLAB R2024a
 os: windows
-and app.exe: MATLAB.exe
+and app.exe: matlab.exe
 -
 tag(): user.find_and_replace
 tag(): user.line_commands
@@ -54,7 +54,7 @@ action(edit.indent_less):
 action(edit.indent_more):
 	key(ctrl-])
 
-reindent: 
+reformat: 
 	key(ctrl-i)
 
 no indent:
@@ -82,7 +82,7 @@ comment out:
     key(ctrl-r)
 
 uncomment:
-    key(ctrl-t)
+    key(ctrl-shift-r)
 
 # Swap line up or down
 scoot up:
@@ -110,6 +110,25 @@ args:
 assign:
 	insert(" = ")
 
+op times: insert(" * ")
+op plus: insert(" + ")
+op minus: insert(" - ")
+op divide: insert(" / ")
+op whack: insert(" \ ")
+op power: insert("^")
+
+funk squirt: 
+	insert("sqrt()")
+	key(left)
+
+funk cosine: 
+	insert("cos()")
+	key(left)
+
+funk sine: 
+	insert("sin()")
+	key(left)
+
 # Evaluate code
 eval:
     key("f9")
@@ -120,3 +139,4 @@ run:
 
 avw [prefix]:
     insert("avw_")
+
