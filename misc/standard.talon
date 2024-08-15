@@ -21,7 +21,7 @@ copy: edit.copy()
 cut: edit.cut() 
 paste: edit.paste() 
 undo: edit.undo() 
-oops: edit.undo() 
+nope: edit.undo() 
 redo: edit.redo() 
 
 paste match: edit.paste_match_style()

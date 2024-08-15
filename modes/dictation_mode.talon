@@ -20,7 +20,7 @@ slap: auto_insert("new-line")
 #corrections
 # Petr Krysl 2020: I would like to make that the same commands that I use in the command mode
 undo: edit.undo()
-oops: edit.undo()
+nope: edit.undo()
 
 # Navigation
 go up <number_small> (line|lines):
