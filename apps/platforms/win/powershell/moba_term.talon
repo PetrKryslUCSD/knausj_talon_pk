@@ -45,4 +45,9 @@ git status:
     insert("git status")
 git pull: 
     insert("git pull")
+
+show queue:    insert("squeue ")
+submit batch:    insert("sbatch ")
+cancel job:    insert("scancel ")
+
         
