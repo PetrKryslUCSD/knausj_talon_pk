@@ -7,10 +7,11 @@ import sys
 # soot was being interpreted as cut, oats was getting confused with cut, whale
 # was getting confused with pal, amp with amper, ice with paste. fox
 # interferred with oops and cut. oats interfered with oops. pal was often
-# misheard as colon. nose was often misheard as paste.
+# misheard as colon. nose was often misheard as paste. ike was often misheard. pie was getting confused with i.
+# 
 
 # abcdefghijklmnopqrstuvwxyz 
-default_alphabet = "air blue caf dip elm flow gust harp ike jay keel lick made near out pie quench red slew trap urge vow witch plex yank zoo".split(
+default_alphabet = "air blue caf dip elm flow gust harp i jay keel lick made near out pin quench red slew trap urge vow witch plex yank zoo".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
