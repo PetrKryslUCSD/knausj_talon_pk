@@ -130,8 +130,12 @@ ex ex:
     key(shift-alt-right)
 # expanded selection to the interior between brackets, Petr Krysl 2024
 # needs the extension Bracket Select
-ex kets: 
+ex cats: 
     key(alt-a)
+ex point:
+    key("shift:down")
+    mouse_click(0)
+    key("shift:up")
 
 # Selecting word
 sword: key(ctrl-d)
