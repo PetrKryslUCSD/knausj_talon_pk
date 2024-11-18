@@ -6,7 +6,7 @@ ctx = Context()
 apps = mod.apps
 apps.winedt = """
 os: windows
-and app.name: WinEdt 10.3
+and app.name: WinEdt 11
 os: windows
 and app.name: WinEdt.exe
 """

@@ -1,5 +1,5 @@
 os: windows
-and app.name: WinEdt 10.0
+and app.name: WinEdt 11
 os: windows
 and app.exe: WinEdt.exe
 -
