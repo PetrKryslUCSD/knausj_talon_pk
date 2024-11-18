@@ -40,6 +40,8 @@ recall:
 
 list all long:
     insert("ls -al ")
+tale follow:
+    insert("tail -f ")
 
 git status: 
     insert("git status")
