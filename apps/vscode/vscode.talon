@@ -112,10 +112,16 @@ go line <number>:
     insert("{number}")
     key(enter)
 go any: key(ctrl-p)
-go symbol: 
+go local: 
+    key(ctrl-c)
     key(ctrl-p)
     key(@)
-    
+    # key(ctrl-v)
+go workspace: 
+    key(ctrl-c)
+    key(ctrl-p)
+    key(#)
+    # key(ctrl-v)
 
 # Editing (Petr Krysl 2022)
 # Using anchor (Petr Krysl 2022)
